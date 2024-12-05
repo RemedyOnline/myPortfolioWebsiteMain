@@ -6,6 +6,7 @@ export default {
 		extend: {
 			colors: {
 				"theme-color": "#5A93C8",
+				"myBorder-color": "#5A93C8",
 			},
 			fontFamily: {
 				DancingScript: ["Dancing Script", "cursive"],

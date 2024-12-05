@@ -9,3 +9,7 @@
 		font-family: "Parkinsans", system-ui;
 	}
 }
+
+* {
+	@apply transition-colors duration-200;
+}
