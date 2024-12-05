@@ -6,7 +6,7 @@ import logo from "../assets/images/RemedyOnline-Logo.png";
 const LandingPage = () => {
   return (
     <section>
-      <header className="flex justify-around items-center py-2 bg-slate-100">
+      <header className="fixed top-0 left-0 z-50 w-full flex justify-around items-center py-2 bg-slate-100">
         <div className="flex justify-center">
           <img src={logo} className="w-20 " alt="logo" />
           <div className="text-2xl font-semibold">
@@ -54,7 +54,7 @@ const LandingPage = () => {
           Hire Me!
         </button>
       </header>
-      <section id="hero" className="h-screen bg-blue-100"></section>
+      <section id="hero" className="h-screen"></section>
     </section>
   );
 };
