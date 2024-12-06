@@ -1,7 +1,7 @@
 import { Link as ScrollLink } from "react-scroll";
 import logo from "../assets/images/RemedyOnlineLogo.png";
 import { useTheme } from "../contexts/ThemeContext";
-import myProfilePic from "../assets/images/myProfilePic.png";
+import myProfilePic from "../assets/images/myProfile.png";
 import fcGhana from "../assets/images/logos/fcGhanaLogo.png";
 import fleetLabs from "../assets/images/logos/fleetLabs.jpg";
 import giKace from "../assets/images/logos/giKaceLogo.png";
@@ -22,6 +22,7 @@ import {
 	Github,
 	Instagram,
 	Linkedin,
+	Menu,
 	Moon,
 	Sun,
 	Trophy,
@@ -29,9 +30,15 @@ import {
 	UserCheck,
 	Users2,
 } from "lucide-react";
+import { useState } from "react";
 
 const LandingPageMain = () => {
 	const { theme, toggleTheme } = useTheme();
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const toggleMenu = () => {
+		setIsMenuOpen((prev) => !prev);
+	};
 
 	return (
 		<section className="bg-slate-200 dark:bg-neutral-900 text-slate-800 dark:text-slate-200">
@@ -53,7 +60,14 @@ const LandingPageMain = () => {
 						</p>
 					</div>
 				</div>
-				<nav className="xl:text-2xl lg:text-xl md:text-lg sm:text-base sm:flex 2xl:gap-8 xl:gap-6 lg:gap-4 md:gap-2 sm:gap-1 hidden">
+				{/* absolute sm:static top-14 left-0 w-full sm:w-auto bg-slate-200 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent flex flex-col sm:flex-row sm:items-center sm:gap-4 px-4 sm:px-0 transition-all duration-300 ${
+            isMenuOpen ? "block" : "hidden sm:flex"
+          }` */}
+				<nav
+					className={`absolute sm:static right-0 top-16 px-4 py-2 w-1/2 sm:w-auto bg-slate-200 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent flex flex-col sm:flex-row sm:items-center xl:text-2xl lg:text-xl md:text-lg 2xl:gap-8 xl:gap-6 lg:gap-4 md:gap-2 sm:gap-1 transition-all duration-500 ${
+						isMenuOpen ? "block" : "hidden sm:flex"
+					}`}
+				>
 					<ScrollLink
 						to="home"
 						className="px-2 py-2 rounded-xl hover:cursor-pointer hover:underline"
@@ -85,7 +99,7 @@ const LandingPageMain = () => {
 						Contact
 					</ScrollLink>
 				</nav>
-				<div className="flex items-center lg:gap-6 md:gap-4 sm:gap-2 gap-1   text-nowrap">
+				<div className="hidden sm:flex items-center lg:gap-6 md:gap-4 sm:gap-2 gap-1 text-nowrap">
 					<button
 						onClick={toggleTheme}
 						className="lg:p-3 p-2 bg-slate-200 dark:bg-slate-500 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600"
@@ -96,23 +110,29 @@ const LandingPageMain = () => {
 							<Moon className="h-6 w-6 text-gray-500 dark:text-slate-200" />
 						)}
 					</button>
-					<button className="px-5 py-2 xl:text-2xl lg:text-xl md:text-lg sm:text-base bg-theme-color  text-slate-200 rounded-md">
+					<button className="md:px-5 px-2 py-2 xl:text-xl lg:text-lg md:text-base bg-theme-color  text-slate-200 rounded-md">
 						Hire Me!
 					</button>
 				</div>
+				<button
+					onClick={toggleMenu}
+					className="lg:p-3 p-2 bg-slate-200 dark:bg-slate-500 rounded-lg sm:hidden hover:bg-slate-300 dark:hover:bg-slate-600"
+				>
+					<Menu className="h-6 w-6 text-gray-500 dark:text-slate-200" />
+				</button>
 			</header>
 			{/* Hero section */}
 			<section
 				id="hero-section"
-				className={`h-screen bg-cover bg-center overflow-hidden grid md:flex justify-center items-center py-20 px-10 bg-lightModeBG dark:bg-darkModeBG ${
+				className={`h-screen bg-cover bg-center overflow-hidden grid gap-5 md:flex justify-between items-center py-20 px-10 bg-lightModeBG dark:bg-darkModeBG ${
 					theme === "darkMode" ? "darkModeBG" : "lightModeBG"
 				} `}
 			>
 				<div className="sm:space-y-5 space-y-2 mx-auto md:w-2/3">
-					<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base">
+					<p className="xl:text-2xl lg:text-xl md:text-lg sm:text-base">
 						Hello...
 					</p>
-					<p className="xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl">
+					<p className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
 						I&apos;m{" "}
 						<span className="text-theme-color font-JetBrainsMono">
 							&lt;Michael/&gt;
@@ -126,17 +146,17 @@ const LandingPageMain = () => {
 							UX Designer🎨
 						</span>
 					</p>
-					<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+					<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
 						I craft seamless, user-focused digital experiences, transforming
 						complex challenges into impactful solutions. <br /> Let&apos;s
 						create something extraordinary together.
 					</p>
 					<div className="text-nowrap flex flex-col md:space-y-5 space-y-2">
 						<div className="sm:text-base text-sm flex md:space-x-5 space-x-2">
-							<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 xl:text-2xl lg:text-xl md:text-lg sm:text-base">
+							<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 xl:text-xl lg:text-lg md:text-base">
 								View Portfolio
 							</button>
-							<button className="md:px-5 px-2 py-2 border-2 border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 xl:text-2xl lg:text-xl md:text-lg sm:text-base">
+							<button className="md:px-5 px-2 py-2 border-2 border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 xl:text-xl lg:text-lg md:text-base">
 								Download CV
 							</button>
 						</div>
@@ -163,7 +183,11 @@ const LandingPageMain = () => {
 					</div>
 				</div>
 				<div className="mx-auto">
-					<img src={myProfilePic} alt="myPicture" className="sm:w-full w-56" />
+					<img
+						src={myProfilePic}
+						alt="myPicture"
+						className="2xl:w-96 xl:w-60 lg:w-60 md:w-52 w-48"
+					/>
 				</div>
 			</section>
 			{/* Hallmark */}
@@ -177,10 +201,10 @@ const LandingPageMain = () => {
 							size={40}
 							className="self-center text-slate-600 dark:text-slate-300"
 						/>
-						<p className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							2+
 						</p>
-						<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+						<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
 							Years of Experience
 						</p>
 					</div>
@@ -189,10 +213,10 @@ const LandingPageMain = () => {
 							size={40}
 							className="self-center text-slate-600 dark:text-slate-300"
 						/>
-						<p className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							14+
 						</p>
-						<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+						<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
 							Completed Projects
 						</p>
 					</div>
@@ -201,10 +225,10 @@ const LandingPageMain = () => {
 							size={40}
 							className="self-center text-slate-600 dark:text-slate-300"
 						/>
-						<p className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							100+
 						</p>
-						<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+						<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
 							Satified Clients
 						</p>
 					</div>
@@ -213,10 +237,10 @@ const LandingPageMain = () => {
 							size={40}
 							className="self-center text-slate-600 dark:text-slate-300"
 						/>
-						<p className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							7+
 						</p>
-						<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+						<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
 							Languages / Frameworks
 						</p>
 					</div>
@@ -225,10 +249,10 @@ const LandingPageMain = () => {
 							size={40}
 							className="self-center text-slate-600 dark:text-slate-300"
 						/>
-						<p className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							11+
 						</p>
-						<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+						<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
 							Certifications Earned
 						</p>
 					</div>
@@ -237,10 +261,10 @@ const LandingPageMain = () => {
 							size={40}
 							className="self-center text-slate-600 dark:text-slate-300"
 						/>
-						<p className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							2+
 						</p>
-						<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+						<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
 							Cross-Functional Team Collaborations
 						</p>
 					</div>
@@ -254,26 +278,26 @@ const LandingPageMain = () => {
 				<div className="md:space-y-10 space-y-4 rounded-xl md:m-5 m-2">
 					<div className="grid sm:grid-cols-10 md:gap-10 gap-4">
 						<div className="sm:col-span-6 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 rounded-xl sm:h-full h-fit">
-							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm">
 								1
 							</span>
-							<h2 className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 								Frontend Web Development👨‍💻
 							</h2>
-							<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
 								I build responsive and interactive websites using TailwindCSS
 								and modern frameworks like React, ensuring optimal performance
 								across devices.
 							</p>
 						</div>
 						<div className="sm:col-span-4 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 rounded-xl sm:h-full h-fit">
-							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm">
 								2
 							</span>
-							<h2 className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 								Graphic Design🖼️
 							</h2>
-							<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
 								I create visually appealing graphics, logos, and digital assets
 								that align with branding and marketing goals.
 							</p>
@@ -281,26 +305,26 @@ const LandingPageMain = () => {
 					</div>
 					<div className="grid sm:grid-cols-10 md:gap-10 gap-4">
 						<div className="sm:col-span-4 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 rounded-xl sm:h-full h-fit">
-							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm">
 								3
 							</span>
-							<h2 className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 								IT Support Specialist🛠️
 							</h2>
-							<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
 								With a Computer Engineering background, I provide technical
 								support, troubleshoot hardware/software issues, and ensure
 								system efficiency.
 							</p>
 						</div>
 						<div className="sm:col-span-6 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 rounded-xl sm:h-full h-fit">
-							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm">
 								4
 							</span>
-							<h2 className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 								UI/UX Design🎨
 							</h2>
-							<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
+							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
 								I design intuitive and visually engaging user interfaces,
 								focusing on seamless user experiences for both web and mobile
 								applications.
@@ -315,22 +339,32 @@ const LandingPageMain = () => {
 					About Me
 				</h2>
 				<div className="md:space-y-10 space-y-4 rounded-xl md:m-5 m-2">
-					<div className="grid sm:grid-cols-10 md:gap-10 gap-4">
-						<div className="sm:col-span-4 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 rounded-xl sm:h-full h-fit">
+					<div className="grid lg:grid-cols-10 md:gap-10 gap-4">
+						<div className="flex justify-between md:col-span-3 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 rounded-xl sm:h-full h-fit">
 							<img
 								src={myPassportPic}
 								alt="myPicture"
-								className="sm:col-span-5 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 rounded-xl "
+								className="md:col-span-5 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 rounded-xl "
+							/>
+							<img
+								src={myPassportPic}
+								alt="myPicture"
+								className="hidden sm:block md:hidden bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 rounded-xl "
+							/>
+							<img
+								src={myPassportPic}
+								alt="myPicture"
+								className="hidden sm:block md:hidden bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 rounded-xl "
 							/>
 						</div>
-						<div className="sm:col-span-6 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 rounded-xl sm:h-full h-fit">
-							<h2 className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+						<div className="sm:col-span-7 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 rounded-xl sm:h-full h-fit">
+							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 								<span className="text-slate-600 dark:text-slate-300 ">
 									I&apos;m
 								</span>{" "}
 								Michael Agyemang Prempeh...
 							</h2>
-							<p className="xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm">
+							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm text-sm">
 								I am a Frontend Web Developer with hands on experience in
 								crafting responsive, user friendly web interfaces. Over the past
 								year, I have honed my skills in building modern, interactive
@@ -344,96 +378,166 @@ const LandingPageMain = () => {
 							</p>
 						</div>
 					</div>
-					<div className="grid sm:grid-cols-10 md:gap-10 gap-4">
-						<div className="sm:col-span-5 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5  rounded-xl sm:h-full h-fit">
-							<h2 className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+					<div className="grid lg:grid-cols-10 md:gap-10 gap-4">
+						<div className="sm:col-span-5 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 rounded-xl sm:h-full h-fit">
+							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl mb-5 text-theme-color font-bold font-JetBrainsMono">
 								Education
 							</h2>
-							<div className="lg:space-y-5 md:space-y-3 space-y-2 xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm">
-								<div className="flex lg:gap-8 md:gap-5 sm:gap-3 gap-2">
+							<div className="lg:space-y-5 md:space-y-3 space-y-2 ">
+								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2">
 									<img
 										src={mest}
 										alt="school-logo"
 										className="lg:w-36 md:w-24 w-16 lg:h-36 md:h-24 h-16"
 									/>
-									<div>
-										<p className="lg:text-2xl md:text-xl sm:text-lg text-base">
+									<div className="flex flex-col justify-around">
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
 											Web Development Training
 										</p>
-										<p className="font-bold lg:text-2xl md:text-xl sm:text-lg text-base">
+										<p className="font-bold xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
 											Generation Ghana/MEST Africa
 										</p>
-										<p className="lg:text-xl md:text-lg sm:text-base text-xs p-1 border-2 w-fit rounded-md">
-											Sept 2024 - Present
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs p-1 border-[0.1px] w-fit rounded-md">
+											Sept 2024 - Nov 2024
 										</p>
 									</div>
 								</div>
-								<div className="flex lg:gap-8 md:gap-5 sm:gap-3 gap-2">
+								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2">
 									<img
 										src={icms}
 										alt="school-logo"
 										className="lg:w-36 md:w-24 w-16 lg:h-36 md:h-24 h-16"
 									/>
-									<div>
-										<p className="lg:text-2xl md:text-xl sm:text-lg text-base">
+									<div className="flex flex-col justify-around">
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
 											Advanced Diploma in Occupational Health and Safety
 											Management
 										</p>
-										<p className="font-bold lg:text-2xl md:text-xl sm:text-lg text-base">
+										<p className="font-bold xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
 											Imperial College of Mines and Safety
 										</p>
-										<p className="lg:text-xl md:text-lg sm:text-base text-xs p-1 border-2 w-fit rounded-md">
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs p-1 border-[0.1px] w-fit rounded-md">
 											Sept 2019 - Sept 2023
 										</p>
 									</div>
 								</div>
-								<div className="flex lg:gap-8 md:gap-5 sm:gap-3 gap-2">
+								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2">
 									<img
 										src={uenr}
 										alt="school-logo"
 										className="lg:w-36 md:w-24 w-16 lg:h-36 md:h-24 h-16"
 									/>
-									<div>
-										<p className="lg:text-2xl md:text-xl sm:text-lg text-base">
+									<div className="flex flex-col justify-around">
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
 											BSc. Computer Engineering
 										</p>
-										<p className="font-bold lg:text-2xl md:text-xl sm:text-lg text-base">
+										<p className="font-bold xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
 											University of Energy and Natural Resources
 										</p>
-										<p className="lg:text-xl md:text-lg sm:text-base text-xs p-1 border-2 w-fit rounded-md">
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs p-1 border-[0.1px] w-fit rounded-md">
 											Sept 2019 - Sept 2023
 										</p>
 									</div>
 								</div>
-								<div className="flex lg:gap-8 md:gap-5 sm:gap-3 gap-2">
+								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2">
 									<img
 										src={kuhis}
 										alt="school-logo"
 										className="lg:w-36 md:w-24 w-16 lg:h-36 md:h-24 h-16"
 									/>
-									<div>
-										<p className="lg:text-2xl md:text-xl sm:text-lg text-base">
+									<div className="flex flex-col justify-around">
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
 											General Science
 										</p>
-										<p className="font-bold lg:text-2xl md:text-xl sm:text-lg text-base">
+										<p className="font-bold xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
 											Kumasi High School
 										</p>
-										<p className="lg:text-xl md:text-lg sm:text-base text-xs p-1 border-2 w-fit rounded-md">
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs p-1 border-[0.1px] w-fit rounded-md">
 											July 2016 - July 2019
 										</p>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="sm:col-span-5 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 rounded-xl sm:h-full h-fit">
-							<h2 className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl  text-theme-color font-bold font-JetBrainsMono">
+						<div className="sm:col-span-5 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 rounded-xl sm:h-full h-fit">
+							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl mb-5 text-theme-color font-bold font-JetBrainsMono">
 								Experience
 							</h2>
-							<p className="xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-sm">
-								I design intuitive and visually engaging user interfaces,
-								focusing on seamless user experiences for both web and mobile
-								applications.
-							</p>
+							<div className="lg:space-y-5 md:space-y-3 space-y-2 ">
+								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2">
+									<img
+										src={mest}
+										alt="school-logo"
+										className="lg:w-36 md:w-24 w-16 lg:h-36 md:h-24 h-16"
+									/>
+									<div className="flex flex-col justify-around">
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
+											Web Development Training
+										</p>
+										<p className="font-bold xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
+											Generation Ghana/MEST Africa
+										</p>
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs p-1 border-[0.1px] w-fit rounded-md">
+											Sept 2024 - Nov 2024
+										</p>
+									</div>
+								</div>
+								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2">
+									<img
+										src={icms}
+										alt="school-logo"
+										className="lg:w-36 md:w-24 w-16 lg:h-36 md:h-24 h-16"
+									/>
+									<div className="flex flex-col justify-around">
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
+											Advanced Diploma in Occupational Health and Safety
+											Management
+										</p>
+										<p className="font-bold xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
+											Imperial College of Mines and Safety
+										</p>
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs p-1 border-[0.1px] w-fit rounded-md">
+											Sept 2019 - Sept 2023
+										</p>
+									</div>
+								</div>
+								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2">
+									<img
+										src={uenr}
+										alt="school-logo"
+										className="lg:w-36 md:w-24 w-16 lg:h-36 md:h-24 h-16"
+									/>
+									<div className="flex flex-col justify-around">
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
+											BSc. Computer Engineering
+										</p>
+										<p className="font-bold xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
+											University of Energy and Natural Resources
+										</p>
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs p-1 border-[0.1px] w-fit rounded-md">
+											Sept 2019 - Sept 2023
+										</p>
+									</div>
+								</div>
+								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2">
+									<img
+										src={kuhis}
+										alt="school-logo"
+										className="lg:w-36 md:w-24 w-16 lg:h-36 md:h-24 h-16"
+									/>
+									<div className="flex flex-col justify-around">
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
+											General Science
+										</p>
+										<p className="font-bold xl:text-xl lg:text-lg md:text-base sm:text-base text-xs">
+											Kumasi High School
+										</p>
+										<p className="xl:text-xl lg:text-lg md:text-base sm:text-base text-xs p-1 border-[0.1px] w-fit rounded-md">
+											July 2016 - July 2019
+										</p>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
