@@ -64,7 +64,7 @@ const LandingPageMain = () => {
             isMenuOpen ? "block" : "hidden sm:flex"
           }` */}
 				<nav
-					className={`absolute sm:static right-0 top-16 px-4 py-2 w-1/2 sm:w-auto bg-slate-200 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent flex flex-col sm:flex-row sm:items-center xl:text-2xl lg:text-xl md:text-lg 2xl:gap-8 xl:gap-6 lg:gap-4 md:gap-2 sm:gap-1 transition-all duration-500 ${
+					className={`absolute sm:static right-0 top-16 px-4 py-2 w-1/2 sm:w-auto bg-slate-100 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent flex flex-col sm:flex-row sm:items-center xl:text-2xl lg:text-xl md:text-lg 2xl:gap-8 xl:gap-6 lg:gap-4 md:gap-2 sm:gap-1 transition-all duration-500 shadow-2xl sm:shadow-none ${
 						isMenuOpen ? "block" : "hidden sm:flex"
 					}`}
 				>
@@ -99,10 +99,14 @@ const LandingPageMain = () => {
 						Contact
 					</ScrollLink>
 				</nav>
-				<div className="hidden sm:flex items-center lg:gap-6 md:gap-4 sm:gap-2 gap-1 text-nowrap">
+				<div
+					className={`absolute right-0 mt-5 sm:mt-0 top-64 flex sm:static items-center lg:gap-6 md:gap-4 gap-2 text-nowrap px-5 py-2 w-1/2 sm:w-auto bg-slate-100 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent shadow-2xl sm:shadow-none ${
+						isMenuOpen ? "sm:flex" : "hidden"
+					}`}
+				>
 					<button
 						onClick={toggleTheme}
-						className="lg:p-3 p-2 bg-slate-200 dark:bg-slate-500 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600"
+						className="lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 shadow-xl sm:shadow-sm"
 					>
 						{theme === "darkMode" ? (
 							<Sun className="h-6 w-6 text-gray-500 dark:text-slate-200" />
@@ -110,13 +114,13 @@ const LandingPageMain = () => {
 							<Moon className="h-6 w-6 text-gray-500 dark:text-slate-200" />
 						)}
 					</button>
-					<button className="md:px-5 px-2 py-2 xl:text-xl lg:text-lg md:text-base bg-theme-color  text-slate-200 rounded-md">
+					<button className="md:px-5 px-2 py-2 xl:text-xl lg:text-lg md:text-base bg-theme-color  text-slate-100 rounded-md sm:shadow-sm">
 						Hire Me!
 					</button>
 				</div>
 				<button
 					onClick={toggleMenu}
-					className="lg:p-3 p-2 bg-slate-200 dark:bg-slate-500 rounded-lg sm:hidden hover:bg-slate-300 dark:hover:bg-slate-600"
+					className="lg:p-3 p-2 bg-slate-100 dark:bg-slate-700 rounded-lg sm:hidden hover:bg-slate-300 dark:hover:bg-slate-600 shadow-sm"
 				>
 					<Menu className="h-6 w-6 text-gray-500 dark:text-slate-200" />
 				</button>
@@ -124,13 +128,13 @@ const LandingPageMain = () => {
 			{/* Hero section */}
 			<section
 				id="hero-section"
-				className={`h-screen bg-cover bg-center overflow-hidden grid gap-5 md:flex justify-between items-center py-20 px-10 bg-lightModeBG dark:bg-darkModeBG ${
+				className={`h-screen bg-cover bg-center overflow-hidden grid gap-5 md:flex justify-between items-center py-20 px-6 sm:px-10 bg-lightModeBG dark:bg-darkModeBG ${
 					theme === "darkMode" ? "darkModeBG" : "lightModeBG"
 				} `}
 			>
 				<div className="sm:space-y-5 space-y-2 mx-auto md:w-2/3">
 					<p className="xl:text-2xl lg:text-xl md:text-lg sm:text-base">
-						Hello...
+						Hello...👋
 					</p>
 					<p className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
 						I&apos;m{" "}
@@ -139,44 +143,44 @@ const LandingPageMain = () => {
 						</span>
 						<br />A passionate{" "}
 						<span className="text-theme-color font-semibold font-JetBrainsMono">
-							Frontend Web Developer👨‍💻
+							Frontend Developer👨‍💻
 						</span>{" "}
 						<br />&{" "}
 						<span className="text-theme-color font-semibold font-JetBrainsMono">
 							UX Designer🎨
 						</span>
 					</p>
-					<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
+					<p className="xl:text-xl lg:text-lg md:text-base text-sm">
 						I craft seamless, user-focused digital experiences, transforming
 						complex challenges into impactful solutions. <br /> Let&apos;s
 						create something extraordinary together.
 					</p>
 					<div className="text-nowrap flex flex-col md:space-y-5 space-y-2">
 						<div className="sm:text-base text-sm flex md:space-x-5 space-x-2">
-							<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 xl:text-xl lg:text-lg md:text-base">
+							<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-100 xl:text-xl lg:text-lg md:text-base shadow-md">
 								View Portfolio
 							</button>
-							<button className="md:px-5 px-2 py-2 border-2 border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 xl:text-xl lg:text-lg md:text-base">
+							<button className="md:px-5 px-2 py-2 border-2 border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 xl:text-xl lg:text-lg md:text-base shadow-md">
 								Download CV
 							</button>
 						</div>
 						<div className="flex sm:space-x-5 space-x-2 text-slate-800">
-							<button className="p-2 bg-slate-200 dark:bg-neutral-400 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
+							<button className="p-2 shadow-lg bg-slate-200 dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
 								<Linkedin />
 							</button>
-							<button className="p-2 bg-slate-200 dark:bg-neutral-400 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
+							<button className="p-2 shadow-lg bg-slate-200 dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
 								<Github />
 							</button>
-							<button className="p-2 bg-slate-200 dark:bg-neutral-400 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
+							<button className="p-2 shadow-lg bg-slate-200 dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
 								<Codepen />
 							</button>
-							<button className="p-2 bg-slate-200 dark:bg-neutral-400 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
+							<button className="p-2 shadow-lg bg-slate-200 dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
 								<Instagram />
 							</button>
-							<button className="p-2 bg-slate-200 dark:bg-neutral-400 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
+							<button className="p-2 shadow-lg bg-slate-200 dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
 								<Twitter />
 							</button>
-							<button className="p-2 bg-slate-200 dark:bg-neutral-400 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
+							<button className="p-2 shadow-lg bg-slate-200 dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
 								<Facebook />
 							</button>
 						</div>
@@ -195,76 +199,58 @@ const LandingPageMain = () => {
 				<h2 className="md:p-5 p-3 xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-Caprasimo text-theme-color">
 					My HallMark
 				</h2>
-				<div className="grid grid-cols-2 sm:grid-cols-3">
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-5 md:space-y-3 space-y-1">
-						<BriefcaseBusiness
-							size={40}
-							className="self-center text-slate-600 dark:text-slate-300"
-						/>
+				<div className="grid grid-cols-2 sm:grid-cols-3 2xl:flex 2xl:flex-wrap 2xl:justify-center">
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-5 md:space-y-3 space-y-1 2xl:max-w-64 2xl:min-w-64 ">
+						<BriefcaseBusiness className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							2+
 						</p>
-						<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
+						<p className="xl:text-xl lg:text-lg md:text-base text-sm">
 							Years of Experience
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-5 md:space-y-3 space-y-1">
-						<Trophy
-							size={40}
-							className="self-center text-slate-600 dark:text-slate-300"
-						/>
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-5 md:space-y-3 space-y-1 2xl:max-w-64 2xl:min-w-64 ">
+						<Trophy className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							14+
 						</p>
-						<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
+						<p className="xl:text-xl lg:text-lg md:text-base text-sm">
 							Completed Projects
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-5 md:space-y-3 space-y-1">
-						<UserCheck
-							size={40}
-							className="self-center text-slate-600 dark:text-slate-300"
-						/>
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-5 md:space-y-3 space-y-1 2xl:max-w-64 2xl:min-w-64 ">
+						<UserCheck className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							100+
 						</p>
-						<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
+						<p className="xl:text-xl lg:text-lg md:text-base text-sm">
 							Satified Clients
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-5 md:space-y-3 space-y-1">
-						<BookCheck
-							size={40}
-							className="self-center text-slate-600 dark:text-slate-300"
-						/>
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-5 md:space-y-3 space-y-1 2xl:max-w-64 2xl:min-w-64 ">
+						<BookCheck className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							7+
 						</p>
-						<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
+						<p className="xl:text-xl lg:text-lg md:text-base text-sm">
 							Languages / Frameworks
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-5 md:space-y-3 space-y-1">
-						<Award
-							size={40}
-							className="self-center text-slate-600 dark:text-slate-300"
-						/>
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-5 md:space-y-3 space-y-1 2xl:max-w-64 2xl:min-w-64 ">
+						<Award className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							11+
 						</p>
-						<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
+						<p className="xl:text-xl lg:text-lg md:text-base text-sm">
 							Certifications Earned
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-5 md:space-y-3 space-y-1">
-						<Users2
-							size={40}
-							className="self-center text-slate-600 dark:text-slate-300"
-						/>
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-5 md:space-y-3 space-y-1 2xl:max-w-64 2xl:min-w-64 ">
+						<Users2 className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							2+
 						</p>
-						<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
+						<p className="xl:text-xl lg:text-lg md:text-base text-sm">
 							Cross-Functional Team Collaborations
 						</p>
 					</div>
@@ -284,7 +270,7 @@ const LandingPageMain = () => {
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 								Frontend Web Development👨‍💻
 							</h2>
-							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
+							<p className="xl:text-xl lg:text-lg md:text-base text-sm">
 								I build responsive and interactive websites using TailwindCSS
 								and modern frameworks like React, ensuring optimal performance
 								across devices.
@@ -297,7 +283,7 @@ const LandingPageMain = () => {
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 								Graphic Design🖼️
 							</h2>
-							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
+							<p className="xl:text-xl lg:text-lg md:text-base text-sm">
 								I create visually appealing graphics, logos, and digital assets
 								that align with branding and marketing goals.
 							</p>
@@ -311,7 +297,7 @@ const LandingPageMain = () => {
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 								IT Support Specialist🛠️
 							</h2>
-							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
+							<p className="xl:text-xl lg:text-lg md:text-base text-sm">
 								With a Computer Engineering background, I provide technical
 								support, troubleshoot hardware/software issues, and ensure
 								system efficiency.
@@ -324,7 +310,7 @@ const LandingPageMain = () => {
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 								UI/UX Design🎨
 							</h2>
-							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm">
+							<p className="xl:text-xl lg:text-lg md:text-base text-sm">
 								I design intuitive and visually engaging user interfaces,
 								focusing on seamless user experiences for both web and mobile
 								applications.
@@ -349,7 +335,7 @@ const LandingPageMain = () => {
 							<img
 								src={myPassportPic}
 								alt="myPicture"
-								className="hidden sm:block md:hidden bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 rounded-xl "
+								className="hidden sm:block lg:hidden bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 rounded-xl "
 							/>
 							<img
 								src={myPassportPic}
@@ -364,11 +350,13 @@ const LandingPageMain = () => {
 								</span>{" "}
 								Michael Agyemang Prempeh...
 							</h2>
-							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm text-sm">
+							<p className="xl:text-xl lg:text-lg md:text-base text-sm">
 								I am a Frontend Web Developer with hands on experience in
 								crafting responsive, user friendly web interfaces. Over the past
 								year, I have honed my skills in building modern, interactive
-								websites using HTML, CSS, JavaScript, and frameworks like React.
+								websites using HTML, CSS, JavaScript, and frameworks like React.{" "}
+								<br />
+								<br />
 								My background in UI/UX Design equips me with a unique ability to
 								blend aesthetics and functionality, ensuring seamless user
 								experiences. Proficient in tools like Figma and Adobe Creative
@@ -376,6 +364,14 @@ const LandingPageMain = () => {
 								collaborating effectively with teams to deliver innovative and
 								impactful digital solutions.
 							</p>
+							<div className="sm:text-base text-sm flex md:space-x-5 space-x-2 pt-2">
+								<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 xl:text-xl lg:text-lg md:text-base">
+									View Portfolio
+								</button>
+								<button className="md:px-5 px-2 py-2 border-2 border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 xl:text-xl lg:text-lg md:text-base">
+									Download CV
+								</button>
+							</div>
 						</div>
 					</div>
 					<div className="grid lg:grid-cols-10 md:gap-10 gap-4">
