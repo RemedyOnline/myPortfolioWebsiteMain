@@ -37,9 +37,14 @@ import { useState } from "react";
 const LandingPageMain = () => {
 	const { theme, toggleTheme } = useTheme();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isExpanded, setIsExpanded] = useState(false);
 
 	const toggleMenu = () => {
 		setIsMenuOpen((prev) => !prev);
+	};
+
+	const toggleExpanded = () => {
+		setIsExpanded((prevState) => !prevState);
 	};
 
 	return (
@@ -172,10 +177,10 @@ const LandingPageMain = () => {
 					</p>
 					<div className="text-nowrap flex flex-col md:space-y-5 space-y-2">
 						<div className="sm:text-base text-sm flex md:space-x-5 space-x-2">
-							<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-100 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs shadow-md">
+							<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-100 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
 								View Portfolio
 							</button>
-							<button className="md:px-5 px-2 py-2 border-2 border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs shadow-md">
+							<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
 								Download CV
 							</button>
 						</div>
@@ -215,7 +220,7 @@ const LandingPageMain = () => {
 					My HallMark
 				</h2>
 				<div className="grid grid-cols-2 sm:grid-cols-3 2xl:flex 2xl:flex-wrap 2xl:justify-center">
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-3 md:space-y-2 space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md ">
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md ">
 						<BriefcaseBusiness className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							2+
@@ -224,7 +229,7 @@ const LandingPageMain = () => {
 							Years of Experience
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-3 md:space-y-2 space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
 						<Trophy className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							14+
@@ -233,7 +238,7 @@ const LandingPageMain = () => {
 							Completed Projects
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-3 md:space-y-2 space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
 						<UserCheck className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							100+
@@ -242,7 +247,7 @@ const LandingPageMain = () => {
 							Satified Clients
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-3 md:space-y-2 space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
 						<BookCheck className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							7+
@@ -251,7 +256,7 @@ const LandingPageMain = () => {
 							Languages / Frameworks
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-3 md:space-y-2 space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
 						<Award className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							11+
@@ -260,7 +265,7 @@ const LandingPageMain = () => {
 							Certifications Earned
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap lg:space-y-3 md:space-y-2 space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
 						<Users2 className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							2+
@@ -285,7 +290,7 @@ const LandingPageMain = () => {
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base  text-theme-color font-bold font-JetBrainsMono">
 								Frontend Web Development👨‍💻
 							</h2>
-							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+							<p className="xl:text-xl  md:text-base sm:text-sm text-xs">
 								I build responsive and interactive websites using TailwindCSS
 								and modern frameworks like React, ensuring optimal performance
 								across devices.
@@ -298,7 +303,7 @@ const LandingPageMain = () => {
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base text-theme-color font-bold font-JetBrainsMono">
 								Graphic Design🖼️
 							</h2>
-							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+							<p className="xl:text-xl  md:text-base sm:text-sm text-xs">
 								I create visually appealing graphics, logos, and digital assets
 								that align with branding and marketing goals.
 							</p>
@@ -312,7 +317,7 @@ const LandingPageMain = () => {
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base  text-theme-color font-bold font-JetBrainsMono">
 								IT Support Specialist🛠️
 							</h2>
-							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+							<p className="xl:text-xl  md:text-base sm:text-sm text-xs">
 								With a Computer Engineering background, I provide technical
 								support, troubleshoot hardware/software issues, and ensure
 								system efficiency.
@@ -325,7 +330,7 @@ const LandingPageMain = () => {
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base  text-theme-color font-bold font-JetBrainsMono">
 								UI/UX Design🎨
 							</h2>
-							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+							<p className="xl:text-xl  md:text-base sm:text-sm text-xs">
 								I design intuitive and visually engaging user interfaces,
 								focusing on seamless user experiences for both web and mobile
 								applications.
@@ -365,7 +370,7 @@ const LandingPageMain = () => {
 								</span>{" "}
 								Michael Agyemang Prempeh...
 							</h2>
-							<p className="xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+							<p className="xl:text-xl  md:text-base sm:text-sm text-xs">
 								I am a Frontend Web Developer with hands on experience in
 								crafting responsive, user friendly web interfaces. Over the past
 								year, I have honed my skills in building modern, interactive
@@ -383,7 +388,7 @@ const LandingPageMain = () => {
 								<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
 									View Portfolio
 								</button>
-								<button className="md:px-5 px-2 py-2 border-2 border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+								<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
 									Download CV
 								</button>
 							</div>
@@ -395,75 +400,75 @@ const LandingPageMain = () => {
 								Education
 							</h2>
 							<div className="grid md:grid-cols-2 gap-3 md:gap-5 ">
-								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2 md:border-b md:border-r md:pb-5 md:pr-5 dark:border-gray-500 border-gray-400">
+								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2 md:border-b md:border-r md:pb-5 md:pr-5 dark:border-neutral-700 border-neutral-300">
 									<img
 										src={mest}
 										alt="school-logo"
-										className="lg:w-28 lg:h-28 md:w-20 md:h-20 w-12 h-12"
+										className="xl:w-28 xl:h-28 lg:w-24 lg:h-24 md:w-20 md:h-20 w-12 h-12"
 									/>
 									<div className="flex flex-col lg:justify-start">
-										<p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-base text-sm">
+										<p className="2xl:text-2xl xl:text-xl md:text-base sm:text-base text-sm">
 											Web Development Training
 										</p>
-										<p className="font-bold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-base text-sm">
+										<p className="font-bold 2xl:text-2xl xl:text-xl  md:text-base sm:text-base text-sm">
 											Generation Ghana/MEST Africa
 										</p>
-										<p className="xl:text-lg lg:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
+										<p className="xl:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
 											Sept 2024 - Nov 2024
 										</p>
 									</div>
 								</div>
-								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2 md:border-b md:border-l md:pb-5 md:pl-5 dark:border-gray-500 border-gray-400">
+								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2 md:border-b md:border-l md:pb-5 md:pl-5 dark:border-neutral-700 border-neutral-300">
 									<img
 										src={icms}
 										alt="school-logo"
-										className="lg:w-28 lg:h-28 md:w-20 md:h-20 w-12 h-12"
+										className="xl:w-28 xl:h-28 lg:w-24 lg:h-24 md:w-20 md:h-20 w-12 h-12"
 									/>
 									<div className="flex flex-col lg:justify-start">
-										<p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-base text-sm">
+										<p className="2xl:text-2xl xl:text-xl md:text-base sm:text-base text-sm">
 											Advanced Diploma in Occupational Health and Safety
 											Management
 										</p>
-										<p className="font-bold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-base text-sm">
+										<p className="font-bold 2xl:text-2xl xl:text-xl  md:text-base sm:text-base text-sm">
 											Imperial College of Mines and Safety
 										</p>
-										<p className="xl:text-lg lg:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
+										<p className="xl:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
 											Sept 2019 - Sept 2023
 										</p>
 									</div>
 								</div>
-								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2 md:border-t md:border-r md:pt-5 md:pr-5 dark:border-gray-500 border-gray-400">
+								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2 md:border-t md:border-r md:pt-5 md:pr-5 dark:border-neutral-700 border-neutral-300">
 									<img
 										src={uenr}
 										alt="school-logo"
-										className="lg:w-28 lg:h-28 md:w-20 md:h-20 w-12 h-12"
+										className="xl:w-28 xl:h-28 lg:w-24 lg:h-24 md:w-20 md:h-20 w-12 h-12"
 									/>
 									<div className="flex flex-col lg:justify-start">
-										<p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-base text-sm">
+										<p className="2xl:text-2xl xl:text-xl md:text-base sm:text-base text-sm">
 											BSc. Computer Engineering
 										</p>
-										<p className="font-bold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-base text-sm">
+										<p className="font-bold 2xl:text-2xl xl:text-xl  md:text-base sm:text-base text-sm">
 											University of Energy and Natural Resources
 										</p>
-										<p className="xl:text-lg lg:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
+										<p className="xl:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
 											Sept 2019 - Sept 2023
 										</p>
 									</div>
 								</div>
-								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2 md:border-t md:border-l md:pt-5 md:pl-5 dark:border-gray-500 border-gray-400">
+								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2 md:border-t md:border-l md:pt-5 md:pl-5 dark:border-neutral-700 border-neutral-300">
 									<img
 										src={kuhis}
 										alt="school-logo"
-										className="lg:w-28 lg:h-28 md:w-20 md:h-20 w-12 h-12"
+										className="xl:w-28 xl:h-28 lg:w-24 lg:h-24 md:w-20 md:h-20 w-12 h-12"
 									/>
 									<div className="flex flex-col lg:justify-start">
-										<p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-base text-sm">
+										<p className="2xl:text-2xl xl:text-xl md:text-base sm:text-base text-sm">
 											General Science
 										</p>
-										<p className="font-bold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-base text-sm">
+										<p className="font-bold 2xl:text-2xl xl:text-xl  md:text-base sm:text-base text-sm">
 											Kumasi High School
 										</p>
-										<p className="xl:text-lg lg:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
+										<p className="xl:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
 											July 2016 - July 2019
 										</p>
 									</div>
@@ -474,32 +479,34 @@ const LandingPageMain = () => {
 				</div>
 			</section>
 			{/* Experience */}
-			<section className="md:m-5 m-2">
-				<div className=" md:p-8 p-5 rounded-xl sm:h-full h-fit">
-					<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl mb-5 text-theme-color font-bold font-JetBrainsMono">
+			<section className="">
+				<div className="md:p-14 sm:p-8 p-6 sm:h-full h-fit">
+					<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl mb-2 sm:mb-3 md:mb-4 xl:mb-5 text-theme-color font-bold font-JetBrainsMono ">
 						Experience
 					</h2>
 					<div>
 						{/* Experience 1 */}
-						<div className="sm:flex">
+						<div className="sm:flex group">
 							<div className="sm:w-1/4 w-full relative">
-								<div className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs sm:mt-2 sm:p-3 pb-2 flex gap-2">
-									<Clock className="text-gray-500 w-4 md:w-5 xl:w-6 self-center" />
-									<p className="self-center">Sept 2024 - Nov 2024</p>
+								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-110">
+									<Clock className="text-gray-500 dark:text-gray-400 w-5 h-5 sm:w-6 sm:h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 sm:mt-1 md:mt-0 transition-all duration-30 group-hover:text-theme-color" />
+									<p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
+										Sept 2024 - Nov 2024
+									</p>
 								</div>
 							</div>
-							<div className="sm:w-3/4 w-full sm:border-l dark:border-gray-500 border-gray-400 hover:sm:border-theme-color group">
+							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400 hover:sm:border-theme-color group">
 								<div className="relative">
 									{/* Details */}
 									<div className="ml-5 p-5 shadow-md bg-slate-100 dark:bg-neutral-800 rounded-xl">
-										<span className="absolute top-0 sm:top-6 lg:-left-[9px] md:-left-[7px] sm:-left-[4.5px] left-[5.5px] self-center justify-center flex items-center text-center mx-auto my-auto w-1 h-full sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-slate-100 dark:bg-neutral-800 sm:bg-gray-400 sm:dark:bg-gray-500 group-hover:bg-theme-color rounded-full shadow-md"></span>
+										<span className="absolute top-0 sm:top-6 lg:-left-[9px] md:-left-[7px] sm:-left-[4.5px] left-[5.5px] self-center justify-center flex items-center text-center mx-auto my-auto w-[3px] h-full sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-slate-100 dark:bg-neutral-800 sm:bg-neutral-400 sm:dark:bg-neutral-700 group-hover:bg-theme-color rounded-full shadow-md"></span>
 										<h3 className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm font-bold">
 											Web Developer Trainee
 										</h3>
 										<p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-md sm:text-md text-sm text-gray-500">
 											MEST Africa/Generation
 										</p>
-										<p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs mt-2">
+										<p className="hidden sm:block 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs mt-2">
 											Specializing in frontend development, I gained hands-on
 											experience by building real-world projects such as a
 											Library Management System, an Advertising Website, and a
@@ -508,6 +515,19 @@ const LandingPageMain = () => {
 											ensure seamless functionality while honing my skills in
 											version control and UI/UX integration.
 										</p>
+										<div className="block sm:hidden">
+											<p className=" 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs mt-2">
+												{isExpanded
+													? "Specializing in frontend development, I gained hands-on experience by building real-world projects such as a Library Management System, an Advertising Website, and a School Management System. Collaborating closely with backend developers, I integrated APIs and endpoints to ensure seamless functionality while honing my skills in version control and UI/UX integration."
+													: "Specializing in frontend development, I gained hands-on experience by building real-world projects such as a Library Management System, an Advertising Website, and ..."}
+											</p>
+											<button
+												onClick={toggleExpanded}
+												className="text-theme-color mt-2 underline hover:text-slate-400 hover:font-semibold transition-all duration-300 2xl:text-xl xl:text-lg lg:text-base md:text-sm text-xs"
+											>
+												{isExpanded ? "Show less" : "Read more"}
+											</button>
+										</div>
 									</div>
 								</div>
 							</div>
