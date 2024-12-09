@@ -183,7 +183,7 @@ const LandingPageMain = () => {
 							<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-100 lg:text-base text-sm">
 								View Portfolio
 							</button>
-							<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 lg:text-base text-sm">
+							<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200 lg:text-base text-sm">
 								Download CV
 							</button>
 						</div>
@@ -218,11 +218,11 @@ const LandingPageMain = () => {
 				</div>
 			</section>
 			{/* Hallmark */}
-			<section className="md:p-10 sm:p-6 p-4">
+			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
 				<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					My HallMark
 				</h2>
-				<div className="grid grid-cols-2 sm:grid-cols-3 ">
+				<div className="grid grid-cols-2 sm:grid-cols-3">
 					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
 						<BriefcaseBusiness className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12 transition-all duration-300" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
@@ -246,7 +246,7 @@ const LandingPageMain = () => {
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							100+
 						</p>
-						<p className="lg:text-base sm:text-sm text-xs">Satified Clients</p>
+						<p className="lg:text-base sm:text-sm text-xs">Satisfied Clients</p>
 					</div>
 					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
 						<BookCheck className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12  transition-all duration-300" />
@@ -278,7 +278,7 @@ const LandingPageMain = () => {
 				</div>
 			</section>
 			{/* Services */}
-			<section className="md:p-10 sm:p-6 p-4">
+			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
 				<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					My Services
 				</h2>
@@ -341,7 +341,7 @@ const LandingPageMain = () => {
 				</div>
 			</section>
 			{/* About Me */}
-			<section className="md:p-10 sm:p-6 p-4">
+			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
 				<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					About Me
 				</h2>
@@ -372,7 +372,7 @@ const LandingPageMain = () => {
 								</span>
 							</h2>
 							<p className="lg:text-base sm:text-sm text-xs">
-								I am a Frontend Web Developer with hands on experience in
+								I am a Frontend Web Developer with hands-on experience in
 								crafting responsive, user friendly web interfaces. Over the past
 								year, I have honed my skills in building modern, interactive
 								websites using HTML, CSS, JavaScript, and frameworks like React.{" "}
@@ -389,7 +389,7 @@ const LandingPageMain = () => {
 								<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 lg:text-base sm:text-sm text-xs">
 									View Portfolio
 								</button>
-								<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 lg:text-base sm:text-sm text-xs">
+								<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200 lg:text-base text-sm">
 									Download CV
 								</button>
 							</div>
@@ -414,7 +414,7 @@ const LandingPageMain = () => {
 										<p className="font-bold xl:text-base sm:text-sm text-xs">
 											Generation Ghana/MEST Africa
 										</p>
-										<p className="xl:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
+										<p className=" sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
 											Sept 2024 - Nov 2024
 										</p>
 									</div>
@@ -433,7 +433,7 @@ const LandingPageMain = () => {
 										<p className="font-bold xl:text-base sm:text-sm text-xs">
 											Imperial College of Mines and Safety
 										</p>
-										<p className="xl:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
+										<p className=" sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
 											Sept 2019 - Sept 2023
 										</p>
 									</div>
@@ -451,7 +451,7 @@ const LandingPageMain = () => {
 										<p className="font-bold xl:text-base sm:text-sm text-xs">
 											University of Energy and Natural Resources
 										</p>
-										<p className="xl:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
+										<p className=" sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
 											Sept 2019 - Sept 2023
 										</p>
 									</div>
@@ -469,7 +469,7 @@ const LandingPageMain = () => {
 										<p className="font-bold xl:text-base sm:text-sm text-xs">
 											Kumasi High School
 										</p>
-										<p className="xl:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
+										<p className=" sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
 											July 2016 - July 2019
 										</p>
 									</div>
@@ -480,7 +480,7 @@ const LandingPageMain = () => {
 				</div>
 			</section>
 			{/* Experience */}
-			<section className="">
+			<section className="2xl:max-w-7xl mx-auto">
 				<div className="md:p-14 sm:p-8 p-6 sm:h-full h-fit">
 					<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl mb-2 sm:mb-3 md:mb-4 xl:mb-5 text-theme-color font-bold font-JetBrainsMono ">
 						Experience
@@ -525,10 +525,10 @@ const LandingPageMain = () => {
 											<button
 												onClick={() => toggleExpanded(1)}
 												className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
-													isExpanded ? "static" : "absolute right-0 bottom-0"
+													isExpanded[1] ? "static" : "absolute right-0 bottom-0"
 												}`}
 											>
-												{isExpanded ? "Show less" : "Read more"}
+												{isExpanded[1] ? "Show less" : "Read more"}
 											</button>
 										</div>
 									</div>
@@ -536,7 +536,7 @@ const LandingPageMain = () => {
 							</div>
 						</div>
 						{/* separator */}
-						<div className="sm:flex group">
+						<div className="sm:flex">
 							<div className="sm:w-1/4 w-full relative">
 								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
 									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
@@ -595,10 +595,10 @@ const LandingPageMain = () => {
 											<button
 												onClick={() => toggleExpanded(2)}
 												className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
-													isExpanded ? "static" : "absolute right-0 bottom-0"
+													isExpanded[2] ? "static" : "absolute right-0 bottom-0"
 												}`}
 											>
-												{isExpanded ? "Show less" : "Read more"}
+												{isExpanded[2] ? "Show less" : "Read more"}
 											</button>
 										</div>
 									</div>
@@ -606,7 +606,7 @@ const LandingPageMain = () => {
 							</div>
 						</div>
 						{/* separator */}
-						<div className="sm:flex group">
+						<div className="sm:flex">
 							<div className="sm:w-1/4 w-full relative">
 								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
 									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
@@ -668,10 +668,10 @@ const LandingPageMain = () => {
 											<button
 												onClick={() => toggleExpanded(3)}
 												className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
-													isExpanded ? "static" : "absolute right-0 bottom-0"
+													isExpanded[3] ? "static" : "absolute right-0 bottom-0"
 												}`}
 											>
-												{isExpanded ? "Show less" : "Read more"}
+												{isExpanded[3] ? "Show less" : "Read more"}
 											</button>
 										</div>
 									</div>
@@ -679,7 +679,7 @@ const LandingPageMain = () => {
 							</div>
 						</div>
 						{/* separator */}
-						<div className="sm:flex group">
+						<div className="sm:flex">
 							<div className="sm:w-1/4 w-full relative">
 								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
 									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
@@ -736,10 +736,10 @@ const LandingPageMain = () => {
 											<button
 												onClick={() => toggleExpanded(4)}
 												className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
-													isExpanded ? "static" : "absolute right-0 bottom-0"
+													isExpanded[4] ? "static" : "absolute right-0 bottom-0"
 												}`}
 											>
-												{isExpanded ? "Show less" : "Read more"}
+												{isExpanded[4] ? "Show less" : "Read more"}
 											</button>
 										</div>
 									</div>
