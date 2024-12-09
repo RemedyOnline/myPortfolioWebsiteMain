@@ -37,14 +37,17 @@ import { useState } from "react";
 const LandingPageMain = () => {
 	const { theme, toggleTheme } = useTheme();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [isExpanded, setIsExpanded] = useState(false);
+	const [isExpanded, setIsExpanded] = useState({}); // using an object to track the expanded state of each experience, since using a boolean affects all states...
 
 	const toggleMenu = () => {
 		setIsMenuOpen((prev) => !prev);
 	};
 
-	const toggleExpanded = () => {
-		setIsExpanded((prevState) => !prevState);
+	const toggleExpanded = (id) => {
+		setIsExpanded((prevState) => ({
+			...prevState,
+			[id]: !prevState[id], // this toggles a particular experience by it's id...
+		}));
 	};
 
 	return (
@@ -52,15 +55,11 @@ const LandingPageMain = () => {
 			{/* Navbar... */}
 			<header
 				id="navbar-section"
-				className="fixed top-0 left-0 z-50 w-full px-8 sm:px-9 md:px-10 lg:px-10 xl:px-11 2xl:px-14 flex justify-between items-center backdrop-blur-md border-b-[0.1px] border-slate-300 dark:border-slate-600"
+				className="fixed top-0 left-0 z-50 w-full flex justify-around items-center backdrop-blur-md border-b-[0.1px] border-slate-300 dark:border-slate-600 py-1"
 			>
-				<div className="flex justify-center">
-					<img
-						src={logo}
-						className="xl:h-20 lg:h-16 md:h-14 h-12 self-center"
-						alt="logo"
-					/>
-					<div className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm font-semibold self-center">
+				<div className="flex justify-center gap-1">
+					<img src={logo} className="md:h-14 h-12 self-center" alt="logo" />
+					<div className="lg:text-base text-sm font-semibold self-center">
 						<p>
 							<span className="text-theme-color underline">R</span>emedy <br />
 							<span className="text-theme-color underline">O</span>nline
@@ -68,8 +67,10 @@ const LandingPageMain = () => {
 					</div>
 				</div>
 				<nav
-					className={`absolute sm:static right-0 top-12 px-4 py-2 w-1/2 sm:w-auto bg-slate-100 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent flex flex-col sm:flex-row sm:items-center 2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm 2xl:gap-8 xl:gap-6 lg:gap-4 md:gap-2 sm:gap-1 transition-all duration-500 shadow-sm sm:shadow-none ${
-						isMenuOpen ? "block" : "hidden sm:flex"
+					className={`sm:static px-4 py-2 w-5/12 sm:w-auto bg-slate-100 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent flex flex-col sm:flex-row sm:items-center lg:text-base text-sm 2xl:gap-8 xl:gap-6 lg:gap-4 md:gap-2 gap-1 transition-all duration-700 shadow-md sm:shadow-none ${
+						isMenuOpen
+							? "block absolute right-0 top-14"
+							: "sm:flex absolute right-0 -top-96"
 					}`}
 				>
 					<ScrollLink
@@ -104,21 +105,23 @@ const LandingPageMain = () => {
 					</ScrollLink>
 				</nav>
 				<div
-					className={`absolute right-0 mt-5 sm:mt-0 top-52 flex sm:static items-center lg:gap-6 gap-4 text-nowrap px-5 sm:px-0 py-2 w-1/2 sm:w-auto bg-slate-100 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent shadow-2xl sm:shadow-none ${
-						isMenuOpen ? "flex sm:flex" : "hidden sm:flex"
+					className={`mt-5 sm:mt-0 flex sm:static items-center lg:gap-5 md:gap-4 gap-3 text-nowrap px-5 sm:px-0 py-2 w-5/12 sm:w-auto bg-slate-100 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent transition-all duration-700 shadow-md sm:shadow-none ${
+						isMenuOpen
+							? "flex sm:flex absolute right-0 top-60"
+							: "sm:flex absolute right-0 -top-60"
 					}`}
 				>
 					<button
 						onClick={toggleTheme}
-						className="lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 shadow-xl sm:shadow-sm transition-transform duration-200 ease-in-out"
+						className="lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 shadow-xl sm:shadow-sm transition-transform duration-700 ease-in-out"
 					>
 						{theme === "darkMode" ? (
-							<Sun className="h-5 w-5 md:h-6 md:w-6 text-gray-500 dark:text-slate-200" />
+							<Sun className="h-5 w-5 text-gray-500 dark:text-slate-200" />
 						) : (
-							<Moon className="h-5 w-5 md:h-6 md:w-6 text-gray-500 dark:text-slate-200" />
+							<Moon className="h-5 w-5 text-gray-500 dark:text-slate-200" />
 						)}
 					</button>
-					<button className="md:px-5 px-2 py-2 2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm bg-theme-color text-slate-100 rounded-md sm:shadow-sm">
+					<button className="md:px-5 px-2 py-2 lg:text-base text-sm bg-theme-color text-slate-100 rounded-md sm:shadow-sm">
 						Hire Me!
 					</button>
 				</div>
@@ -128,7 +131,7 @@ const LandingPageMain = () => {
 				>
 					<div
 						className={`transition-transform duration-200 ease-in-out ${
-							isMenuOpen ? "-rotate-180" : "rotate-180"
+							isMenuOpen ? "rotate-0" : "rotate-180"
 						}`}
 					>
 						{isMenuOpen ? (
@@ -148,7 +151,7 @@ const LandingPageMain = () => {
 			>
 				<div className="lg:space-y-5 md:space-y-4 sm:space-y-3 space-y-2 md:w-1/2">
 					<div className="2xl:space-y-4 xl:space-y-1 sm:space-y-2 mx-auto">
-						<p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 2xl:mb-7">
+						<p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm mb-2 md:mb-3 lg:mb-4">
 							Hello...👋
 						</p>
 						<p className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
@@ -170,37 +173,37 @@ const LandingPageMain = () => {
 							</span>
 						</p>
 					</div>
-					<p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm">
+					<p className="lg:text-base sm:text-sm text-xs">
 						I craft seamless, user-focused digital experiences, transforming
 						complex challenges into impactful solutions. <br /> Let&apos;s
-						create something extraordinary together.
+						create something fantastic together.
 					</p>
-					<div className="text-nowrap flex flex-col md:space-y-5 space-y-2">
+					<div className="text-nowrap flex flex-col md:space-y-5 space-y-3">
 						<div className="sm:text-base text-sm flex md:space-x-5 space-x-2">
-							<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-100 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+							<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-100 lg:text-base text-sm">
 								View Portfolio
 							</button>
-							<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+							<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 lg:text-base text-sm">
 								Download CV
 							</button>
 						</div>
 						<div className="flex sm:space-x-5 space-x-2 text-slate-800">
-							<button className="p-2 shadow-lg bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
+							<button className="p-2 shadow-md bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
 								<Linkedin />
 							</button>
-							<button className="p-2 shadow-lg bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
+							<button className="p-2 shadow-md bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
 								<Github />
 							</button>
-							<button className="p-2 shadow-lg bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
+							<button className="p-2 shadow-md bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
 								<Codepen />
 							</button>
-							<button className="p-2 shadow-lg bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
+							<button className="p-2 shadow-md bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
 								<Instagram />
 							</button>
-							<button className="p-2 shadow-lg bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
+							<button className="p-2 shadow-md bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
 								<Twitter />
 							</button>
-							<button className="p-2 shadow-lg bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
+							<button className="p-2 shadow-md bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600">
 								<Facebook />
 							</button>
 						</div>
@@ -210,7 +213,7 @@ const LandingPageMain = () => {
 					<img
 						src={myProfilePic}
 						alt="myPicture"
-						className="2xl:w-96 xl:w-60 lg:w-60 md:w-52 w-48 mx-auto md:ml-10 lg:ml-16 2xl:ml-24"
+						className="2xl:w-96 xl:w-60 lg:w-60 md:w-52 w-48 mx-auto md:ml-5 lg:ml-10 2xl:ml-16"
 					/>
 				</div>
 			</section>
@@ -219,58 +222,56 @@ const LandingPageMain = () => {
 				<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					My HallMark
 				</h2>
-				<div className="grid grid-cols-2 sm:grid-cols-3 2xl:flex 2xl:flex-wrap 2xl:justify-center">
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md ">
-						<BriefcaseBusiness className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
+				<div className="grid grid-cols-2 sm:grid-cols-3 ">
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
+						<BriefcaseBusiness className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12 transition-all duration-300" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							2+
 						</p>
-						<p className="xl:text-xl lg:text-lg md:text-base text-sm">
+						<p className="lg:text-base sm:text-sm text-xs">
 							Years of Experience
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
-						<Trophy className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
+						<Trophy className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12  transition-all duration-300" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							14+
 						</p>
-						<p className="xl:text-xl lg:text-lg md:text-base text-sm">
+						<p className="lg:text-base sm:text-sm text-xs">
 							Completed Projects
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
-						<UserCheck className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
+						<UserCheck className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12  transition-all duration-300" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							100+
 						</p>
-						<p className="xl:text-xl lg:text-lg md:text-base text-sm">
-							Satified Clients
-						</p>
+						<p className="lg:text-base sm:text-sm text-xs">Satified Clients</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
-						<BookCheck className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
+						<BookCheck className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12  transition-all duration-300" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							7+
 						</p>
-						<p className="xl:text-xl lg:text-lg md:text-base text-sm">
+						<p className="lg:text-base sm:text-sm text-xs">
 							Languages / Frameworks
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
-						<Award className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
+						<Award className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12  transition-all duration-300" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							11+
 						</p>
-						<p className="xl:text-xl lg:text-lg md:text-base text-sm">
+						<p className="lg:text-base sm:text-sm text-xs">
 							Certifications Earned
 						</p>
 					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 2xl:max-w-64 2xl:min-w-64 shadow-md">
-						<Users2 className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
+					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
+						<Users2 className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12  transition-all duration-300" />
 						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
 							2+
 						</p>
-						<p className="xl:text-xl lg:text-lg md:text-base text-sm">
+						<p className="lg:text-base sm:text-sm text-xs">
 							Cross-Functional Team Collaborations
 						</p>
 					</div>
@@ -283,54 +284,54 @@ const LandingPageMain = () => {
 				</h2>
 				<div className="md:space-y-10 space-y-4 rounded-xl md:m-5 m-2">
 					<div className="grid sm:grid-cols-10 md:gap-10 gap-4">
-						<div className="sm:col-span-6 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-md rounded-xl sm:h-full h-fit">
+						<div className="sm:col-span-6 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit">
 							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
 								1
 							</span>
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base  text-theme-color font-bold font-JetBrainsMono">
 								Frontend Web Development👨‍💻
 							</h2>
-							<p className="xl:text-xl  md:text-base sm:text-sm text-xs">
+							<p className="lg:text-base sm:text-sm text-xs">
 								I build responsive and interactive websites using TailwindCSS
 								and modern frameworks like React, ensuring optimal performance
 								across devices.
 							</p>
 						</div>
-						<div className="sm:col-span-4 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-md rounded-xl sm:h-full h-fit">
+						<div className="sm:col-span-4 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit">
 							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
 								2
 							</span>
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base text-theme-color font-bold font-JetBrainsMono">
 								Graphic Design🖼️
 							</h2>
-							<p className="xl:text-xl  md:text-base sm:text-sm text-xs">
+							<p className="lg:text-base sm:text-sm text-xs">
 								I create visually appealing graphics, logos, and digital assets
 								that align with branding and marketing goals.
 							</p>
 						</div>
 					</div>
 					<div className="grid sm:grid-cols-10 md:gap-10 gap-4">
-						<div className="sm:col-span-4 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-md rounded-xl sm:h-full h-fit">
+						<div className="sm:col-span-4 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit">
 							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
 								3
 							</span>
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base  text-theme-color font-bold font-JetBrainsMono">
 								IT Support Specialist🛠️
 							</h2>
-							<p className="xl:text-xl  md:text-base sm:text-sm text-xs">
+							<p className="lg:text-base sm:text-sm text-xs">
 								With a Computer Engineering background, I provide technical
 								support, troubleshoot hardware/software issues, and ensure
 								system efficiency.
 							</p>
 						</div>
-						<div className="sm:col-span-6 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-md rounded-xl sm:h-full h-fit">
+						<div className="sm:col-span-6 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit">
 							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
 								4
 							</span>
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base  text-theme-color font-bold font-JetBrainsMono">
 								UI/UX Design🎨
 							</h2>
-							<p className="xl:text-xl  md:text-base sm:text-sm text-xs">
+							<p className="lg:text-base sm:text-sm text-xs">
 								I design intuitive and visually engaging user interfaces,
 								focusing on seamless user experiences for both web and mobile
 								applications.
@@ -346,7 +347,7 @@ const LandingPageMain = () => {
 				</h2>
 				<div className="md:space-y-10 space-y-4 rounded-xl md:m-5 m-2">
 					<div className="grid lg:grid-cols-10 md:gap-10 gap-4">
-						<div className="flex justify-between md:col-span-3 bg-slate-100 w-full dark:bg-neutral-800 md:p-8 shadow-md rounded-xl sm:h-full h-fit sm:gap-3">
+						<div className="flex justify-between md:col-span-3 bg-slate-100 w-full dark:bg-neutral-800 md:p-8 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit sm:gap-3">
 							<img
 								src={myPassportPic}
 								alt="myPicture"
@@ -363,14 +364,14 @@ const LandingPageMain = () => {
 								className="hidden sm:block md:hidden bg-green-200 dark:bg-neutral-800 md:p-8 p-5 rounded-xl "
 							/>
 						</div>
-						<div className="sm:col-span-7 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 rounded-xl sm:h-full h-fit shadow-md">
-							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base  text-theme-color font-bold font-JetBrainsMono">
-								<span className="text-slate-600 dark:text-slate-300 ">
-									I&apos;m
-								</span>{" "}
-								Michael Agyemang Prempeh...
+						<div className="sm:col-span-7 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 rounded-xl sm:h-full h-fit shadow-sm hover:shadow-md">
+							<h2 className="lg:text-2xl md:text-xl sm:text-lg text-base  font-bold font-JetBrainsMono">
+								I&apos;m{" "}
+								<span className="text-theme-color">
+									Michael Agyemang Prempeh...
+								</span>
 							</h2>
-							<p className="xl:text-xl  md:text-base sm:text-sm text-xs">
+							<p className="lg:text-base sm:text-sm text-xs">
 								I am a Frontend Web Developer with hands on experience in
 								crafting responsive, user friendly web interfaces. Over the past
 								year, I have honed my skills in building modern, interactive
@@ -385,32 +386,32 @@ const LandingPageMain = () => {
 								impactful digital solutions.
 							</p>
 							<div className="sm:text-base text-sm flex md:space-x-5 space-x-2 pt-2">
-								<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+								<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 lg:text-base sm:text-sm text-xs">
 									View Portfolio
 								</button>
-								<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+								<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color dark:text-slate-200 lg:text-base sm:text-sm text-xs">
 									Download CV
 								</button>
 							</div>
 						</div>
 					</div>
 					<div className="flex justify-center">
-						<div className="bg-slate-100 dark:bg-neutral-800 rounded-xl md:p-8 p-5 sm:h-full h-fit shadow-md w-full ">
+						<div className="bg-slate-100 dark:bg-neutral-800 rounded-xl md:p-8 p-5 sm:h-full h-fit shadow-sm hover:shadow-md w-full ">
 							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl mb-5 text-theme-color font-bold font-JetBrainsMono">
 								Education
 							</h2>
-							<div className="grid md:grid-cols-2 gap-3 md:gap-5 ">
+							<div className="grid md:grid-cols-2 gap-5">
 								<div className="flex lg:gap-8 md:gap-6 sm:gap-4 gap-2 md:border-b md:border-r md:pb-5 md:pr-5 dark:border-neutral-700 border-neutral-300">
 									<img
 										src={mest}
 										alt="school-logo"
-										className="xl:w-28 xl:h-28 lg:w-24 lg:h-24 md:w-20 md:h-20 w-12 h-12"
+										className="lg:w-24 lg:h-24 md:w-20 md:h-20 w-12 h-12"
 									/>
 									<div className="flex flex-col lg:justify-start">
-										<p className="2xl:text-2xl xl:text-xl md:text-base sm:text-base text-sm">
+										<p className="xl:text-base sm:text-sm text-xs">
 											Web Development Training
 										</p>
-										<p className="font-bold 2xl:text-2xl xl:text-xl  md:text-base sm:text-base text-sm">
+										<p className="font-bold xl:text-base sm:text-sm text-xs">
 											Generation Ghana/MEST Africa
 										</p>
 										<p className="xl:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
@@ -422,14 +423,14 @@ const LandingPageMain = () => {
 									<img
 										src={icms}
 										alt="school-logo"
-										className="xl:w-28 xl:h-28 lg:w-24 lg:h-24 md:w-20 md:h-20 w-12 h-12"
+										className="lg:w-24 lg:h-24 md:w-20 md:h-20 w-12 h-12"
 									/>
 									<div className="flex flex-col lg:justify-start">
-										<p className="2xl:text-2xl xl:text-xl md:text-base sm:text-base text-sm">
+										<p className="xl:text-base sm:text-sm text-xs">
 											Advanced Diploma in Occupational Health and Safety
 											Management
 										</p>
-										<p className="font-bold 2xl:text-2xl xl:text-xl  md:text-base sm:text-base text-sm">
+										<p className="font-bold xl:text-base sm:text-sm text-xs">
 											Imperial College of Mines and Safety
 										</p>
 										<p className="xl:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
@@ -441,13 +442,13 @@ const LandingPageMain = () => {
 									<img
 										src={uenr}
 										alt="school-logo"
-										className="xl:w-28 xl:h-28 lg:w-24 lg:h-24 md:w-20 md:h-20 w-12 h-12"
+										className="lg:w-24 lg:h-24 md:w-20 md:h-20 w-12 h-12"
 									/>
 									<div className="flex flex-col lg:justify-start">
-										<p className="2xl:text-2xl xl:text-xl md:text-base sm:text-base text-sm">
+										<p className="xl:text-base sm:text-sm text-xs">
 											BSc. Computer Engineering
 										</p>
-										<p className="font-bold 2xl:text-2xl xl:text-xl  md:text-base sm:text-base text-sm">
+										<p className="font-bold xl:text-base sm:text-sm text-xs">
 											University of Energy and Natural Resources
 										</p>
 										<p className="xl:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
@@ -459,13 +460,13 @@ const LandingPageMain = () => {
 									<img
 										src={kuhis}
 										alt="school-logo"
-										className="xl:w-28 xl:h-28 lg:w-24 lg:h-24 md:w-20 md:h-20 w-12 h-12"
+										className="lg:w-24 lg:h-24 md:w-20 md:h-20 w-12 h-12"
 									/>
 									<div className="flex flex-col lg:justify-start">
-										<p className="2xl:text-2xl xl:text-xl md:text-base sm:text-base text-sm">
+										<p className="xl:text-base sm:text-sm text-xs">
 											General Science
 										</p>
-										<p className="font-bold 2xl:text-2xl xl:text-xl  md:text-base sm:text-base text-sm">
+										<p className="font-bold xl:text-base sm:text-sm text-xs">
 											Kumasi High School
 										</p>
 										<p className="xl:text-base sm:text-sm text-xs p-1 border-[0.1px] w-fit rounded-md text-theme-color border-theme-color">
@@ -484,13 +485,13 @@ const LandingPageMain = () => {
 					<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl mb-2 sm:mb-3 md:mb-4 xl:mb-5 text-theme-color font-bold font-JetBrainsMono ">
 						Experience
 					</h2>
-					<div>
+					<div className="flex flex-col gap-2 sm:gap-0">
 						{/* Experience 1 */}
 						<div className="sm:flex group">
 							<div className="sm:w-1/4 w-full relative">
-								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-110">
+								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
 									<Clock className="text-gray-500 dark:text-gray-400 w-5 h-5 sm:w-6 sm:h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 sm:mt-1 md:mt-0 transition-all duration-30 group-hover:text-theme-color" />
-									<p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
+									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
 										Sept 2024 - Nov 2024
 									</p>
 								</div>
@@ -498,15 +499,15 @@ const LandingPageMain = () => {
 							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400 hover:sm:border-theme-color group">
 								<div className="relative">
 									{/* Details */}
-									<div className="ml-5 p-5 shadow-md bg-slate-100 dark:bg-neutral-800 rounded-xl">
+									<div className="ml-5 p-5 shadow-sm hover:shadow-md bg-slate-100 dark:bg-neutral-800 rounded-xl">
 										<span className="absolute top-0 sm:top-6 lg:-left-[9px] md:-left-[7px] sm:-left-[4.5px] left-[5.5px] self-center justify-center flex items-center text-center mx-auto my-auto w-[3px] h-full sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-slate-100 dark:bg-neutral-800 sm:bg-neutral-400 sm:dark:bg-neutral-700 group-hover:bg-theme-color rounded-full shadow-md"></span>
-										<h3 className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm font-bold">
+										<h3 className="lg:text-lg md:text-base text-sm font-bold">
 											Web Developer Trainee
 										</h3>
-										<p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-md sm:text-md text-sm text-gray-500">
+										<p className="xl:text-base sm:text-sm text-xs text-gray-500">
 											MEST Africa/Generation
 										</p>
-										<p className="hidden sm:block 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs mt-2">
+										<p className="hidden sm:block lg:text-base sm:text-sm text-xs mt-2">
 											Specializing in frontend development, I gained hands-on
 											experience by building real-world projects such as a
 											Library Management System, an Advertising Website, and a
@@ -515,15 +516,228 @@ const LandingPageMain = () => {
 											ensure seamless functionality while honing my skills in
 											version control and UI/UX integration.
 										</p>
-										<div className="block sm:hidden">
-											<p className=" 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs mt-2">
-												{isExpanded
+										<div className="block sm:hidden relative">
+											<p className="lg:text-base sm:text-sm text-xs mt-2">
+												{isExpanded[1]
 													? "Specializing in frontend development, I gained hands-on experience by building real-world projects such as a Library Management System, an Advertising Website, and a School Management System. Collaborating closely with backend developers, I integrated APIs and endpoints to ensure seamless functionality while honing my skills in version control and UI/UX integration."
 													: "Specializing in frontend development, I gained hands-on experience by building real-world projects such as a Library Management System, an Advertising Website, and ..."}
 											</p>
 											<button
-												onClick={toggleExpanded}
-												className="text-theme-color mt-2 underline hover:text-slate-400 hover:font-semibold transition-all duration-300 2xl:text-xl xl:text-lg lg:text-base md:text-sm text-xs"
+												onClick={() => toggleExpanded(1)}
+												className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
+													isExpanded ? "static" : "absolute right-0 bottom-0"
+												}`}
+											>
+												{isExpanded ? "Show less" : "Read more"}
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						{/* separator */}
+						<div className="sm:flex group">
+							<div className="sm:w-1/4 w-full relative">
+								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
+									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
+										{" "}
+									</p>
+								</div>
+							</div>
+							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400">
+								<div className="relative">
+									{/* Details */}
+									<div className="">
+										<h3 className="lg:text-lg md:text-base text-sm font-bold">
+											{" "}
+										</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						{/* Experience 2 */}
+						<div className="sm:flex group">
+							<div className="sm:w-1/4 w-full relative">
+								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
+									<Clock className="text-gray-500 dark:text-gray-400 w-5 h-5 sm:w-6 sm:h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 sm:mt-1 md:mt-0 transition-all duration-30 group-hover:text-theme-color" />
+									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
+										March 2024 - Present
+									</p>
+								</div>
+							</div>
+							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400 hover:sm:border-theme-color group">
+								<div className="relative">
+									{/* Details */}
+									<div className="ml-5 p-5 shadow-sm hover:shadow-md bg-slate-100 dark:bg-neutral-800 rounded-xl">
+										<span className="absolute top-0 sm:top-6 lg:-left-[9px] md:-left-[7px] sm:-left-[4.5px] left-[5.5px] self-center justify-center flex items-center text-center mx-auto my-auto w-[3px] h-full sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-slate-100 dark:bg-neutral-800 sm:bg-neutral-400 sm:dark:bg-neutral-700 group-hover:bg-theme-color rounded-full shadow-md"></span>
+										<h3 className="lg:text-lg md:text-base text-sm font-bold">
+											UI/UX Designer (Voluntary)
+										</h3>
+										<p className="xl:text-base sm:text-sm text-xs text-gray-500">
+											Fleet Labs Ghana
+										</p>
+										<p className="hidden sm:block lg:text-base sm:text-sm text-xs mt-2">
+											Redesigned a client’s food ordering web app interface,
+											reducing their bounce rate by 60%, and implemented A/B
+											testing strategies for a subscription-based service,
+											achieving a 6% increase in conversion rates and improved
+											user retention. Additionally, conducted user research and
+											developed personas to guide a mobile app redesign,
+											resulting in a 30% boost in user satisfaction and a 15%
+											rise in downloads.
+										</p>
+										<div className="block sm:hidden relative">
+											<p className="lg:text-base sm:text-sm text-xs mt-2">
+												{isExpanded[2]
+													? "Redesigned a client’s food ordering web app interface, reducing their bounce rate by 60%, and implemented A/B testing strategies for a subscription-based service, achieving a 6% increase in conversion rates and improved user retention. Additionally, conducted user research and developed personas to guide a mobile app redesign, resulting in a 30% boost in user satisfaction and a 15% rise in downloads."
+													: "Redesigned a client’s food ordering web app interface, reducing their bounce rate by 60%, and implemented A/B testing strategies for a..."}
+											</p>
+											<button
+												onClick={() => toggleExpanded(2)}
+												className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
+													isExpanded ? "static" : "absolute right-0 bottom-0"
+												}`}
+											>
+												{isExpanded ? "Show less" : "Read more"}
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						{/* separator */}
+						<div className="sm:flex group">
+							<div className="sm:w-1/4 w-full relative">
+								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
+									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
+										{" "}
+									</p>
+								</div>
+							</div>
+							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400">
+								<div className="relative">
+									{/* Details */}
+									<div className="">
+										<h3 className="lg:text-lg md:text-base text-sm font-bold">
+											{" "}
+										</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						{/* Experience 3 */}
+						<div className="sm:flex group">
+							<div className="sm:w-1/4 w-full relative">
+								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
+									<Clock className="text-gray-500 dark:text-gray-400 w-5 h-5 sm:w-6 sm:h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 sm:mt-1 md:mt-0 transition-all duration-30 group-hover:text-theme-color" />
+									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
+										Sept 2023 - Sept 2024
+									</p>
+								</div>
+							</div>
+							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400 hover:sm:border-theme-color group">
+								<div className="relative">
+									{/* Details */}
+									<div className="ml-5 p-5 shadow-sm hover:shadow-md bg-slate-100 dark:bg-neutral-800 rounded-xl">
+										<span className="absolute top-0 sm:top-6 lg:-left-[9px] md:-left-[7px] sm:-left-[4.5px] left-[5.5px] self-center justify-center flex items-center text-center mx-auto my-auto w-[3px] h-full sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-slate-100 dark:bg-neutral-800 sm:bg-neutral-400 sm:dark:bg-neutral-700 group-hover:bg-theme-color rounded-full shadow-md"></span>
+										<h3 className="lg:text-lg md:text-base text-sm font-bold">
+											IT Support Specialist (NSS)
+										</h3>
+										<p className="xl:text-base sm:text-sm text-xs text-gray-500">
+											Forestry Commission, HQ
+										</p>
+										<p className="hidden sm:block lg:text-base sm:text-sm text-xs mt-2">
+											At the Database and Applications Unit, I contributed to
+											revamping the company’s website using modern design
+											principles, enhancing accessibility across devices, and
+											achieving a 52% increase in user satisfaction. I
+											collaborated with senior developers on the design and
+											development of the “Green Ghana” mobile app, boosting
+											brand visibility and driving a 46% increase in website
+											traffic within the first month. Additionally, I supported
+											the maintenance of websites and web applications by
+											assisting with bug fixes and performance optimizations to
+											enhance user experience.
+										</p>
+										<div className="block sm:hidden relative">
+											<p className="lg:text-base sm:text-sm text-xs mt-2">
+												{isExpanded[3]
+													? "At the Database and Applications Unit, I contributed to revamping the company’s website using modern design principles, enhancing accessibility across devices, and achieving a 52% increase in user satisfaction. I collaborated with senior developers on the design and development of the “Green Ghana” mobile app, boosting brand visibility and driving a 46% increase in website traffic within the first month. Additionally, I supported the maintenance of websites and web applications by assisting with bug fixes and performance optimizations to enhance user experience."
+													: "At the Database and Applications Unit, I contributed to revamping the company’s website using modern design principles, enhancing accessibility across devices, and achieving a 52%..."}
+											</p>
+											<button
+												onClick={() => toggleExpanded(3)}
+												className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
+													isExpanded ? "static" : "absolute right-0 bottom-0"
+												}`}
+											>
+												{isExpanded ? "Show less" : "Read more"}
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						{/* separator */}
+						<div className="sm:flex group">
+							<div className="sm:w-1/4 w-full relative">
+								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
+									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
+										{" "}
+									</p>
+								</div>
+							</div>
+							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400">
+								<div className="relative">
+									{/* Details */}
+									<div className="">
+										<h3 className="lg:text-lg md:text-base text-sm font-bold">
+											{" "}
+										</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						{/* Experience 4 */}
+						<div className="sm:flex group">
+							<div className="sm:w-1/4 w-full relative">
+								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
+									<Clock className="text-gray-500 dark:text-gray-400 w-5 h-5 sm:w-6 sm:h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 sm:mt-1 md:mt-0 transition-all duration-30 group-hover:text-theme-color" />
+									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
+										Sept 2022 - Dec 2022
+									</p>
+								</div>
+							</div>
+							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400 hover:sm:border-theme-color group">
+								<div className="relative">
+									{/* Details */}
+									<div className="ml-5 p-5 shadow-sm hover:shadow-md bg-slate-100 dark:bg-neutral-800 rounded-xl">
+										<span className="absolute top-0 sm:top-6 lg:-left-[9px] md:-left-[7px] sm:-left-[4.5px] left-[5.5px] self-center justify-center flex items-center text-center mx-auto my-auto w-[3px] h-full sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-slate-100 dark:bg-neutral-800 sm:bg-neutral-400 sm:dark:bg-neutral-700 group-hover:bg-theme-color rounded-full shadow-md"></span>
+										<h3 className="lg:text-lg md:text-base text-sm font-bold">
+											Frontend Web Developer (Internship)
+										</h3>
+										<p className="xl:text-base sm:text-sm text-xs text-gray-500">
+											AITI-KACE
+										</p>
+										<p className="hidden sm:block lg:text-base sm:text-sm text-xs mt-2">
+											I gained foundational skills in HTML, CSS, and JavaScript,
+											which I applied to building and maintaining responsive,
+											user-centered and interactive websites. Successfully
+											completing 8 projects on time, I demonstrated attention to
+											detail and creativity while proactively seeking feedback
+											to enhance my skills and grow professionally.
+										</p>
+										<div className="block sm:hidden relative">
+											<p className="lg:text-base sm:text-sm text-xs mt-2">
+												{isExpanded[4]
+													? "I gained foundational skills in HTML, CSS, and JavaScript, which I applied to building and maintaining responsive, user-centered and interactive websites. Successfully completing 8 projects on time, I demonstrated attention to detail and creativity while proactively seeking feedback to enhance my skills and grow professionally."
+													: "I gained foundational skills in HTML, CSS, and JavaScript, which I applied to building and maintaining responsive, interactive, user-centered..."}
+											</p>
+											<button
+												onClick={() => toggleExpanded(4)}
+												className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
+													isExpanded ? "static" : "absolute right-0 bottom-0"
+												}`}
 											>
 												{isExpanded ? "Show less" : "Read more"}
 											</button>
@@ -536,94 +750,7 @@ const LandingPageMain = () => {
 				</div>
 			</section>
 			{/* Education */}
-			<section className="experience-section my-8 p-8">
-				<h2 className="text-4xl font-bold mb-6">Experience</h2>
-				<div className="space-y-8">
-					{/* <!-- Experience 1 --> */}
-					<div className="flex items-start relative group">
-						{/* <!-- Icon and Date --> */}
-						<div className="w-1/4 text-right pr-6">
-							<div className="flex justify-end items-center">
-								<div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-md">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										className="h-4 w-4"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-									>
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M16 7v-2a4 4 0 10-8 0v2M5 11h14M10 11v6m4-6v6"
-										/>
-									</svg>
-								</div>
-								<p className="ml-4 text-gray-500 dark:text-gray-300">
-									Jan 2023 - Present
-								</p>
-							</div>
-						</div>
-						{/* <!-- Details --> */}
-						<div className="w-3/4 pl-6 border-l border-gray-300 dark:border-gray-600 relative transition-all duration-300 group-hover:border-blue-500">
-							<div className="bg-slate-100 dark:bg-slate-700 p-4 rounded-lg shadow-md transition-transform duration-300 group-hover:scale-[1.02] group-hover:shadow-lg">
-								<h3 className="text-xl font-semibold">Frontend Developer</h3>
-								<p className="text-gray-500 dark:text-gray-300">
-									Tech Company XYZ
-								</p>
-								<p className="mt-2 text-gray-700 dark:text-gray-400">
-									Built scalable web applications, implemented features, and
-									optimized performance for user-centric interfaces.
-								</p>
-							</div>
-						</div>
-					</div>
-
-					{/* <!-- Experience 2 --> */}
-					<div className="flex items-start relative group">
-						{/* <!-- Icon and Date --> */}
-						<div className="w-1/4 text-right pr-6">
-							<div className="flex justify-end items-center">
-								<div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-md">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										className="h-4 w-4"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-									>
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M9 12h6m2 0a2 2 0 100-4H7a2 2 0 100 4zm5 4h1a2 2 0 110 4h-1a2 2 0 110-4zm-5 0h1a2 2 0 110 4H9a2 2 0 110-4z"
-										/>
-									</svg>
-								</div>
-								<p className="ml-4 text-gray-500 dark:text-gray-300">
-									Aug 2020 - Dec 2022
-								</p>
-							</div>
-						</div>
-						{/* <!-- Details --> */}
-						<div className="w-3/4 pl-6 border-l border-gray-300 dark:border-gray-600 relative transition-all duration-300 group-hover:border-green-500">
-							<div className="bg-slate-100 dark:bg-slate-700 p-4 rounded-lg shadow-md transition-transform duration-300 group-hover:scale-[1.02] group-hover:shadow-lg">
-								<h3 className="text-xl font-semibold">UI/UX Designer</h3>
-								<p className="text-gray-500 dark:text-gray-300">
-									Creative Agency ABC
-								</p>
-								<p className="mt-2 text-gray-700 dark:text-gray-400">
-									Designed intuitive user interfaces and conducted usability
-									testing to improve user satisfaction.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* Experience */}
+			{/* Projects */}
 			{/* My Stack/Tools */}
 			{/* Testimonials */}
 			{/* Contact */}
