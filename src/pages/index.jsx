@@ -1,5 +1,5 @@
 import { Link as ScrollLink } from "react-scroll";
-import logo from "../assets/images/RemedyOnlineLogo.png";
+import logo from "../assets/images/myLogoNoCrown.png";
 import { useTheme } from "../contexts/ThemeContext";
 import myProfilePic from "../assets/images/myProfile.png";
 import icms from "../assets/images/logos/icms.jpg";
@@ -52,21 +52,27 @@ const LandingPageMain = () => {
 			{/* Navbar... */}
 			<header
 				id="navbar-section"
-				className="fixed top-0 left-0 z-50 w-full flex justify-around items-center backdrop-blur-md border-b-[0.1px] border-slate-300 dark:border-slate-600 py-1"
+				className="fixed top-0 left-0 z-50 w-full flex md:justify-around items-center justify-between px-8 md:px-0 backdrop-blur-md border-b-[0.1px] border-slate-300 dark:border-slate-600 py-1"
 			>
 				<div className="flex justify-center gap-1">
-					<img src={logo} className="md:h-14 h-12 self-center" alt="logo" />
-					<div className="lg:text-base text-sm font-semibold self-center">
-						<p>
-							<span className="text-theme-color underline">R</span>emedy <br />
-							<span className="text-theme-color underline">O</span>nline
+					<img
+						src={logo}
+						className="p-1 lg:h-14 md:h-12 h-11 self-center"
+						alt="logo"
+					/>
+					{/* <div className="2xl:text-base md:text-sm text-xs font-semibold self-center ">
+						<p className="leading-tight">
+							<span className="text-theme-color underline">M</span>ichael <br />
+							<span className="text-theme-color underline">A</span>gyemang{" "}
+							<br />
+							<span className="text-theme-color underline">P</span>rempeh
 						</p>
-					</div>
+					</div> */}
 				</div>
 				<nav
 					className={`sm:static px-4 py-2 w-5/12 sm:w-auto bg-slate-100 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent flex flex-col sm:flex-row sm:items-center lg:text-base text-sm 2xl:gap-8 xl:gap-6 lg:gap-4 md:gap-2 gap-1 transition-all duration-700 shadow-md sm:shadow-none ${
 						isMenuOpen
-							? "block absolute right-0 top-14"
+							? "block absolute right-0 top-12"
 							: "sm:flex absolute right-0 -top-96"
 					}`}
 				>
@@ -104,13 +110,13 @@ const LandingPageMain = () => {
 				<div
 					className={`mt-5 sm:mt-0 flex sm:static items-center lg:gap-5 md:gap-4 gap-3 text-nowrap px-5 sm:px-0 py-2 w-5/12 sm:w-auto bg-slate-100 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent transition-all duration-700 shadow-md sm:shadow-none ${
 						isMenuOpen
-							? "flex sm:flex absolute right-0 top-60"
+							? "flex sm:flex absolute right-0 top-56"
 							: "sm:flex absolute right-0 -top-60"
 					}`}
 				>
 					<button
 						onClick={toggleTheme}
-						className="lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 shadow-xl sm:shadow-sm transition-transform duration-700 ease-in-out"
+						className="lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 shadow-xl sm:shadow-md transition-transform duration-700 ease-in-out"
 					>
 						{theme === "darkMode" ? (
 							<Sun className="h-5 w-5 text-gray-500 dark:text-slate-200" />
