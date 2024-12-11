@@ -1,6 +1,11 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { useTheme } from "../contexts/ThemeContext";
 import projectsData from "../constants/projects";
+import hallmark from "../constants/hallmark";
+import services from "../constants/services";
+import experiences from "../constants/experience";
 import logo from "../assets/images/myLogoNoCrown.png";
 import myProfilePic from "../assets/images/myProfile.png";
 import icms from "../assets/images/logos/icms.jpg";
@@ -8,9 +13,6 @@ import kuhis from "../assets/images/logos/kuhis-logo.jpg";
 import mest from "../assets/images/logos/mest-logo.png";
 import uenr from "../assets/images/logos/uenrLogo.png";
 import myPassportPic from "../assets/images/myPassportPic-noBG.png";
-// import myPassportPic from "../assets/images/logos/icms.jpg";
-// import myPassportPic from "../assets/images/logos/icms.jpg";
-// import myPassportPic from "../assets/images/logos/icms.jpg";
 import {
 	Award,
 	BookCheck,
@@ -32,14 +34,21 @@ import {
 	UserCheck,
 	Users2,
 } from "lucide-react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const LandingPageMain = () => {
 	const { theme, toggleTheme } = useTheme();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isExpanded, setIsExpanded] = useState({}); // using an object to track the expanded state of each experience, since using a boolean affects all states...
 	const [currentImageIndex, setCurrentImageIndex] = useState({}); // track images per the projectID...
+
+	const iconComponents = {
+		Award,
+		BookCheck,
+		BriefcaseBusiness,
+		Trophy,
+		UserCheck,
+		Users2,
+	};
 
 	const toggleMenu = () => {
 		setIsMenuOpen((prev) => !prev);
@@ -245,58 +254,21 @@ const LandingPageMain = () => {
 					My HallMark
 				</h2>
 				<div className="grid grid-cols-2 sm:grid-cols-3">
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
-						<BriefcaseBusiness className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12 transition-all duration-300" />
-						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
-							2+
-						</p>
-						<p className="lg:text-base sm:text-sm text-xs">
-							Years of Experience
-						</p>
-					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
-						<Trophy className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12  transition-all duration-300" />
-						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
-							14+
-						</p>
-						<p className="lg:text-base sm:text-sm text-xs">
-							Completed Projects
-						</p>
-					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
-						<UserCheck className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12  transition-all duration-300" />
-						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
-							100+
-						</p>
-						<p className="lg:text-base sm:text-sm text-xs">Satisfied Clients</p>
-					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
-						<BookCheck className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12  transition-all duration-300" />
-						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
-							7+
-						</p>
-						<p className="lg:text-base sm:text-sm text-xs">
-							Languages / Frameworks
-						</p>
-					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
-						<Award className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12  transition-all duration-300" />
-						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
-							11+
-						</p>
-						<p className="lg:text-base sm:text-sm text-xs">
-							Certifications Earned
-						</p>
-					</div>
-					<div className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 shadow-sm hover:shadow-md group">
-						<Users2 className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:rotate-12  transition-all duration-300" />
-						<p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl  text-theme-color font-bold font-JetBrainsMono">
-							2+
-						</p>
-						<p className="lg:text-base sm:text-sm text-xs">
-							Cross-Functional Team Collaborations
-						</p>
-					</div>
+					{hallmark.map((item) => {
+						const IconComponent = iconComponents[item.icon];
+						return (
+							<div
+								key={item.id}
+								className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 md:space-y-2 shadow-sm hover:shadow-md group"
+							>
+								<IconComponent className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 group-hover:rotate-12 transition-all duration-300" />
+								<p className="lg:text-2xl md:text-xl text-lg text-theme-color font-bold font-JetBrainsMono">
+									{item.numValue}
+								</p>
+								<p className="lg:text-base sm:text-sm text-xs">{item.anthem}</p>
+							</div>
+						);
+					})}
 				</div>
 			</section>
 			{/* Services */}
@@ -306,59 +278,40 @@ const LandingPageMain = () => {
 				</h2>
 				<div className="md:space-y-10 space-y-4 rounded-xl md:m-5 m-2">
 					<div className="grid sm:grid-cols-10 md:gap-10 gap-4">
-						<div className="sm:col-span-6 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit">
-							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
-								1
-							</span>
-							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base  text-theme-color font-bold font-JetBrainsMono">
-								Frontend Web Development👨‍💻
-							</h2>
-							<p className="lg:text-base sm:text-sm text-xs">
-								I build responsive and interactive websites using TailwindCSS
-								and modern frameworks like React, ensuring optimal performance
-								across devices.
-							</p>
-						</div>
-						<div className="sm:col-span-4 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit">
-							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
-								2
-							</span>
-							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base text-theme-color font-bold font-JetBrainsMono">
-								Graphic Design🖼️
-							</h2>
-							<p className="lg:text-base sm:text-sm text-xs">
-								I create visually appealing graphics, logos, and digital assets
-								that align with branding and marketing goals.
-							</p>
-						</div>
+						{services.slice(0, 2).map((service) => (
+							<div
+								key={service.id}
+								className={`${service.span} bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit`}
+							>
+								<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+									{service.id}
+								</span>
+								<h2 className="lg:text-2xl md:text-xl text-lg  text-theme-color font-bold font-JetBrainsMono">
+									{service.title}
+								</h2>
+								<p className="lg:text-base sm:text-sm text-xs">
+									{service.desc}
+								</p>
+							</div>
+						))}
 					</div>
 					<div className="grid sm:grid-cols-10 md:gap-10 gap-4">
-						<div className="sm:col-span-4 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit">
-							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
-								3
-							</span>
-							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base  text-theme-color font-bold font-JetBrainsMono">
-								IT Support Specialist🛠️
-							</h2>
-							<p className="lg:text-base sm:text-sm text-xs">
-								With a Computer Engineering background, I provide technical
-								support, troubleshoot hardware/software issues, and ensure
-								system efficiency.
-							</p>
-						</div>
-						<div className="sm:col-span-6 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit">
-							<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
-								4
-							</span>
-							<h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base  text-theme-color font-bold font-JetBrainsMono">
-								UI/UX Design🎨
-							</h2>
-							<p className="lg:text-base sm:text-sm text-xs">
-								I design intuitive and visually engaging user interfaces,
-								focusing on seamless user experiences for both web and mobile
-								applications.
-							</p>
-						</div>
+						{services.slice(2, 4).map((service) => (
+							<div
+								key={service.id}
+								className={`${service.span} bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit`}
+							>
+								<span className="py-1 px-2 border-2 border-slate-500 dark:border-slate-200 rounded-md xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+									{service.id}
+								</span>
+								<h2 className="lg:text-2xl md:text-xl text-lg  text-theme-color font-bold font-JetBrainsMono">
+									{service.title}
+								</h2>
+								<p className="lg:text-base sm:text-sm text-xs">
+									{service.desc}
+								</p>
+							</div>
+						))}
 					</div>
 				</div>
 			</section>
@@ -411,7 +364,7 @@ const LandingPageMain = () => {
 								<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 lg:text-base sm:text-sm text-xs">
 									View Portfolio
 								</button>
-								<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200 lg:text-base text-sm">
+								<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200 lg:text-base sm:text-sm text-xs">
 									Download CV
 								</button>
 							</div>
@@ -502,272 +455,81 @@ const LandingPageMain = () => {
 				</div>
 			</section>
 			{/* Experience */}
-			<section className="2xl:max-w-7xl mx-auto">
-				<div className="md:p-14 sm:p-8 p-6 sm:h-full h-fit">
-					<h2 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl mb-2 sm:mb-3 md:mb-4 xl:mb-5 text-theme-color font-bold font-JetBrainsMono ">
+			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
+				<div>
+					<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 						Experience
 					</h2>
-					<div className="flex flex-col gap-2 sm:gap-0">
-						{/* Experience 1 */}
-						<div className="sm:flex group">
-							<div className="sm:w-1/4 w-full relative">
-								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
-									<Clock className="text-gray-500 dark:text-gray-400 w-5 h-5 sm:w-6 sm:h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 sm:mt-1 md:mt-0 transition-all duration-30 group-hover:text-theme-color" />
-									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
-										Sept 2024 - Nov 2024
-									</p>
+					<div className="flex flex-col gap-2 sm:gap-0 md:m-5 m-2">
+						{/* Experience entry */}
+						{experiences.map((experience) => (
+							<div key={experience.id} className="sm:flex group">
+								<div className="sm:w-1/4 w-full relative">
+									<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
+										<Clock className="text-gray-500 dark:text-gray-400 w-5 h-5 sm:w-6 sm:h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 sm:mt-1 md:mt-0 transition-all duration-30 group-hover:text-theme-color" />
+										<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
+											{experience.timeSpan}
+										</p>
+									</div>
 								</div>
-							</div>
-							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400 hover:sm:border-theme-color group">
-								<div className="relative">
-									{/* Details */}
-									<div className="ml-5 p-5 shadow-sm hover:shadow-md bg-slate-100 dark:bg-neutral-800 rounded-xl">
-										<span className="absolute top-0 sm:top-6 lg:-left-[9px] md:-left-[7px] sm:-left-[4.5px] left-[5.5px] self-center justify-center flex items-center text-center mx-auto my-auto w-[3px] h-full sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-slate-100 dark:bg-neutral-800 sm:bg-neutral-400 sm:dark:bg-neutral-700 group-hover:bg-theme-color rounded-full shadow-md"></span>
-										<h3 className="lg:text-lg md:text-base text-sm font-bold">
-											Web Developer Trainee
-										</h3>
-										<p className="xl:text-base sm:text-sm text-xs text-gray-500">
-											MEST Africa/Generation
-										</p>
-										<p className="hidden sm:block lg:text-base sm:text-sm text-xs mt-2">
-											Specializing in frontend development, I gained hands-on
-											experience by building real-world projects such as a
-											Library Management System, an Advertising Website, and a
-											School Management System. Collaborating closely with
-											backend developers, I integrated APIs and endpoints to
-											ensure seamless functionality while honing my skills in
-											version control and UI/UX integration.
-										</p>
-										<div className="block sm:hidden relative">
-											<p className="lg:text-base sm:text-sm text-xs mt-2">
-												{isExpanded[1]
-													? "Specializing in frontend development, I gained hands-on experience by building real-world projects such as a Library Management System, an Advertising Website, and a School Management System. Collaborating closely with backend developers, I integrated APIs and endpoints to ensure seamless functionality while honing my skills in version control and UI/UX integration."
-													: "Specializing in frontend development, I gained hands-on experience by building real-world projects such as a Library Management System, an Advertising Website, and ..."}
+								<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400 hover:sm:border-theme-color group">
+									<div className="relative">
+										{/* Details */}
+										<div className="ml-5 p-5 shadow-sm hover:shadow-md bg-slate-100 dark:bg-neutral-800 rounded-xl">
+											<span className="absolute top-0 sm:top-6 lg:-left-[9px] md:-left-[7px] sm:-left-[4.5px] left-[5.5px] self-center justify-center flex items-center text-center mx-auto my-auto w-[3px] h-full sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-slate-100 dark:bg-neutral-800 sm:bg-neutral-400 sm:dark:bg-neutral-700 group-hover:bg-theme-color rounded-full shadow-md"></span>
+											<h3 className="lg:text-lg md:text-base text-sm font-bold group-hover:text-theme-color">
+												{experience.myRole}
+											</h3>
+											<p className="xl:text-base sm:text-sm text-xs text-gray-500">
+												{experience.institution}
 											</p>
-											<button
-												onClick={() => toggleExpanded(1)}
-												className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
-													isExpanded[1] ? "static" : "absolute right-0 bottom-0"
-												}`}
-											>
-												{isExpanded[1] ? "Show less" : "Read more"}
-											</button>
+											<p className="hidden sm:block lg:text-base sm:text-sm text-xs mt-2">
+												{experience.descFull}
+											</p>
+											<div className="block sm:hidden relative">
+												<p className="lg:text-base sm:text-sm text-xs mt-2">
+													{isExpanded[experience.id]
+														? `${experience.descFull}`
+														: `${experience.descBrief}`}
+												</p>
+												<button
+													onClick={() => toggleExpanded(experience.id)}
+													className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
+														isExpanded[experience.id]
+															? "static"
+															: "absolute right-0 bottom-0"
+													}`}
+												>
+													{isExpanded[experience.id]
+														? "Show less"
+														: "Read more"}
+												</button>
+											</div>
+										</div>
+									</div>
+									{/* separator */}
+									<div className="sm:flex">
+										<div className="sm:w-1/4 w-full relative">
+											<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
+												<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
+													{" "}
+												</p>
+											</div>
+										</div>
+										<div className="sm:w-3/4 w-full sm:border-none dark:border-neutral-700  border-neutral-400">
+											<div className="relative">
+												{/* Details */}
+												<div className="">
+													<h3 className="lg:text-lg md:text-base text-sm font-bold">
+														{" "}
+													</h3>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						{/* separator */}
-						<div className="sm:flex">
-							<div className="sm:w-1/4 w-full relative">
-								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
-									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
-										{" "}
-									</p>
-								</div>
-							</div>
-							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400">
-								<div className="relative">
-									{/* Details */}
-									<div className="">
-										<h3 className="lg:text-lg md:text-base text-sm font-bold">
-											{" "}
-										</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/* Experience 2 */}
-						<div className="sm:flex group">
-							<div className="sm:w-1/4 w-full relative">
-								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
-									<Clock className="text-gray-500 dark:text-gray-400 w-5 h-5 sm:w-6 sm:h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 sm:mt-1 md:mt-0 transition-all duration-30 group-hover:text-theme-color" />
-									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
-										March 2024 - Present
-									</p>
-								</div>
-							</div>
-							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400 hover:sm:border-theme-color group">
-								<div className="relative">
-									{/* Details */}
-									<div className="ml-5 p-5 shadow-sm hover:shadow-md bg-slate-100 dark:bg-neutral-800 rounded-xl">
-										<span className="absolute top-0 sm:top-6 lg:-left-[9px] md:-left-[7px] sm:-left-[4.5px] left-[5.5px] self-center justify-center flex items-center text-center mx-auto my-auto w-[3px] h-full sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-slate-100 dark:bg-neutral-800 sm:bg-neutral-400 sm:dark:bg-neutral-700 group-hover:bg-theme-color rounded-full shadow-md"></span>
-										<h3 className="lg:text-lg md:text-base text-sm font-bold">
-											UI/UX Designer (Voluntary)
-										</h3>
-										<p className="xl:text-base sm:text-sm text-xs text-gray-500">
-											Fleet Labs Ghana
-										</p>
-										<p className="hidden sm:block lg:text-base sm:text-sm text-xs mt-2">
-											Redesigned a client’s food ordering web app interface,
-											reducing their bounce rate by 60%, and implemented A/B
-											testing strategies for a subscription-based service,
-											achieving a 6% increase in conversion rates and improved
-											user retention. Additionally, conducted user research and
-											developed personas to guide a mobile app redesign,
-											resulting in a 30% boost in user satisfaction and a 15%
-											rise in downloads.
-										</p>
-										<div className="block sm:hidden relative">
-											<p className="lg:text-base sm:text-sm text-xs mt-2">
-												{isExpanded[2]
-													? "Redesigned a client’s food ordering web app interface, reducing their bounce rate by 60%, and implemented A/B testing strategies for a subscription-based service, achieving a 6% increase in conversion rates and improved user retention. Additionally, conducted user research and developed personas to guide a mobile app redesign, resulting in a 30% boost in user satisfaction and a 15% rise in downloads."
-													: "Redesigned a client’s food ordering web app interface, reducing their bounce rate by 60%, and implemented A/B testing strategies for a..."}
-											</p>
-											<button
-												onClick={() => toggleExpanded(2)}
-												className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
-													isExpanded[2] ? "static" : "absolute right-0 bottom-0"
-												}`}
-											>
-												{isExpanded[2] ? "Show less" : "Read more"}
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/* separator */}
-						<div className="sm:flex">
-							<div className="sm:w-1/4 w-full relative">
-								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
-									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
-										{" "}
-									</p>
-								</div>
-							</div>
-							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400">
-								<div className="relative">
-									{/* Details */}
-									<div className="">
-										<h3 className="lg:text-lg md:text-base text-sm font-bold">
-											{" "}
-										</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/* Experience 3 */}
-						<div className="sm:flex group">
-							<div className="sm:w-1/4 w-full relative">
-								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
-									<Clock className="text-gray-500 dark:text-gray-400 w-5 h-5 sm:w-6 sm:h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 sm:mt-1 md:mt-0 transition-all duration-30 group-hover:text-theme-color" />
-									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
-										Sept 2023 - Sept 2024
-									</p>
-								</div>
-							</div>
-							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400 hover:sm:border-theme-color group">
-								<div className="relative">
-									{/* Details */}
-									<div className="ml-5 p-5 shadow-sm hover:shadow-md bg-slate-100 dark:bg-neutral-800 rounded-xl">
-										<span className="absolute top-0 sm:top-6 lg:-left-[9px] md:-left-[7px] sm:-left-[4.5px] left-[5.5px] self-center justify-center flex items-center text-center mx-auto my-auto w-[3px] h-full sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-slate-100 dark:bg-neutral-800 sm:bg-neutral-400 sm:dark:bg-neutral-700 group-hover:bg-theme-color rounded-full shadow-md"></span>
-										<h3 className="lg:text-lg md:text-base text-sm font-bold">
-											IT Support Specialist (NSS)
-										</h3>
-										<p className="xl:text-base sm:text-sm text-xs text-gray-500">
-											Forestry Commission, HQ
-										</p>
-										<p className="hidden sm:block lg:text-base sm:text-sm text-xs mt-2">
-											At the Database and Applications Unit, I contributed to
-											revamping the company’s website using modern design
-											principles, enhancing accessibility across devices, and
-											achieving a 52% increase in user satisfaction. I
-											collaborated with senior developers on the design and
-											development of the “Green Ghana” mobile app, boosting
-											brand visibility and driving a 46% increase in website
-											traffic within the first month. Additionally, I supported
-											the maintenance of websites and web applications by
-											assisting with bug fixes and performance optimizations to
-											enhance user experience.
-										</p>
-										<div className="block sm:hidden relative">
-											<p className="lg:text-base sm:text-sm text-xs mt-2">
-												{isExpanded[3]
-													? "At the Database and Applications Unit, I contributed to revamping the company’s website using modern design principles, enhancing accessibility across devices, and achieving a 52% increase in user satisfaction. I collaborated with senior developers on the design and development of the “Green Ghana” mobile app, boosting brand visibility and driving a 46% increase in website traffic within the first month. Additionally, I supported the maintenance of websites and web applications by assisting with bug fixes and performance optimizations to enhance user experience."
-													: "At the Database and Applications Unit, I contributed to revamping the company’s website using modern design principles, enhancing accessibility across devices, and achieving a 52%..."}
-											</p>
-											<button
-												onClick={() => toggleExpanded(3)}
-												className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
-													isExpanded[3] ? "static" : "absolute right-0 bottom-0"
-												}`}
-											>
-												{isExpanded[3] ? "Show less" : "Read more"}
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/* separator */}
-						<div className="sm:flex">
-							<div className="sm:w-1/4 w-full relative">
-								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
-									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
-										{" "}
-									</p>
-								</div>
-							</div>
-							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400">
-								<div className="relative">
-									{/* Details */}
-									<div className="">
-										<h3 className="lg:text-lg md:text-base text-sm font-bold">
-											{" "}
-										</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/* Experience 4 */}
-						<div className="sm:flex group">
-							<div className="sm:w-1/4 w-full relative">
-								<div className=" sm:mt-2 sm:p-3 pb-2 flex gap-2 transition-transform sm:group-hover:scale-105">
-									<Clock className="text-gray-500 dark:text-gray-400 w-5 h-5 sm:w-6 sm:h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 sm:mt-1 md:mt-0 transition-all duration-30 group-hover:text-theme-color" />
-									<p className="lg:text-lg md:text-base sm:text-sm text-xs group-hover:text-theme-color self-center">
-										Sept 2022 - Dec 2022
-									</p>
-								</div>
-							</div>
-							<div className="sm:w-3/4 w-full sm:border-l dark:border-neutral-700  border-neutral-400 hover:sm:border-theme-color group">
-								<div className="relative">
-									{/* Details */}
-									<div className="ml-5 p-5 shadow-sm hover:shadow-md bg-slate-100 dark:bg-neutral-800 rounded-xl">
-										<span className="absolute top-0 sm:top-6 lg:-left-[9px] md:-left-[7px] sm:-left-[4.5px] left-[5.5px] self-center justify-center flex items-center text-center mx-auto my-auto w-[3px] h-full sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-slate-100 dark:bg-neutral-800 sm:bg-neutral-400 sm:dark:bg-neutral-700 group-hover:bg-theme-color rounded-full shadow-md"></span>
-										<h3 className="lg:text-lg md:text-base text-sm font-bold">
-											Frontend Web Developer (Internship)
-										</h3>
-										<p className="xl:text-base sm:text-sm text-xs text-gray-500">
-											AITI-KACE
-										</p>
-										<p className="hidden sm:block lg:text-base sm:text-sm text-xs mt-2">
-											I gained foundational skills in HTML, CSS, and JavaScript,
-											which I applied to building and maintaining responsive,
-											user-centered and interactive websites. Successfully
-											completing 8 projects on time, I demonstrated attention to
-											detail and creativity while proactively seeking feedback
-											to enhance my skills and grow professionally.
-										</p>
-										<div className="block sm:hidden relative">
-											<p className="lg:text-base sm:text-sm text-xs mt-2">
-												{isExpanded[4]
-													? "I gained foundational skills in HTML, CSS, and JavaScript, which I applied to building and maintaining responsive, user-centered and interactive websites. Successfully completing 8 projects on time, I demonstrated attention to detail and creativity while proactively seeking feedback to enhance my skills and grow professionally."
-													: "I gained foundational skills in HTML, CSS, and JavaScript, which I applied to building and maintaining responsive, interactive, user-centered..."}
-											</p>
-											<button
-												onClick={() => toggleExpanded(4)}
-												className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
-													isExpanded[4] ? "static" : "absolute right-0 bottom-0"
-												}`}
-											>
-												{isExpanded[4] ? "Show less" : "Read more"}
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						))}
 					</div>
 				</div>
 			</section>
@@ -776,7 +538,7 @@ const LandingPageMain = () => {
 				<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					Some Past Projects
 				</h2>
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-10 gap-4 md:p-5 p-2">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:gap-10 gap-4 md:p-5 p-2">
 					{projectsData.map((project) => (
 						<div
 							key={project.id}
@@ -786,14 +548,18 @@ const LandingPageMain = () => {
 								<div className="group">
 									<img
 										src={project.images[currentImageIndex[project.id] || 0]}
-										alt={project.title}
+										// alt={project.title + " snapshots"} // this is very valid... Thus, using Template Literal.
+										// alt={`${project.title} snapshots`} // this is also very valid... Thus, using string concatenation...
+										alt={`Snapshot ${currentImageIndex[project.id] + 1} of ${
+											project.title
+										} snapshots`}
 										className="w-full h-40 md:h-44 mx-auto px-3 pt-3 md:pb-1 pb-2"
 									/>
 									<button
 										onClick={() =>
 											handlePrevImage(project.id, project.images.length)
 										}
-										className="absolute top-full left-5 bg-white text-black bg-opacity-70 shadow-md rounded-full p-1 opacity-0 group-hover:opacity-100 md:group-hover:top-[185px] group-hover:top-[163px] transition-all duration-500 hover:bg-blue-200 hover:scale-110"
+										className="absolute sm:top-full left-5 bg-white text-black bg-opacity-70 shadow-md rounded-full p-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 md:group-hover:top-[185px] top-[163px] transition-all duration-500 hover:bg-blue-200 hover:scale-110"
 									>
 										<ChevronLeft />
 									</button>
@@ -801,7 +567,7 @@ const LandingPageMain = () => {
 										onClick={() =>
 											handleNextImage(project.id, project.images.length)
 										}
-										className="absolute top-full right-5 bg-white text-black bg-opacity-70 shadow-md rounded-full p-1  opacity-0 group-hover:opacity-100 md:group-hover:top-[185px] group-hover:top-[163px] transition-all duration-500 hover:bg-blue-400 hover:scale-110"
+										className="absolute sm:top-full right-5 bg-white text-black bg-opacity-70 shadow-md rounded-full p-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 md:group-hover:top-[185px] top-[163px] transition-all duration-500 hover:bg-blue-200 hover:scale-110"
 									>
 										<ChevronRight />
 									</button>
@@ -825,6 +591,7 @@ const LandingPageMain = () => {
 							</ul>
 							<Link
 								to={project.liveLink}
+								target={"_blank"}
 								className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 lg:text-base sm:text-sm text-xs block w-fit mx-auto md:mt-4 mt-2"
 							>
 								View Project
