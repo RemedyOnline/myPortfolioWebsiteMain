@@ -1,6 +1,7 @@
 import { Link as ScrollLink } from "react-scroll";
-import logo from "../assets/images/myLogoNoCrown.png";
 import { useTheme } from "../contexts/ThemeContext";
+import projectsData from "../constants/projects";
+import logo from "../assets/images/myLogoNoCrown.png";
 import myProfilePic from "../assets/images/myProfile.png";
 import icms from "../assets/images/logos/icms.jpg";
 import kuhis from "../assets/images/logos/kuhis-logo.jpg";
@@ -14,6 +15,8 @@ import {
 	Award,
 	BookCheck,
 	BriefcaseBusiness,
+	ChevronLeft,
+	ChevronRight,
 	ChevronUp,
 	Clock,
 	Codepen,
@@ -30,11 +33,13 @@ import {
 	Users2,
 } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const LandingPageMain = () => {
 	const { theme, toggleTheme } = useTheme();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isExpanded, setIsExpanded] = useState({}); // using an object to track the expanded state of each experience, since using a boolean affects all states...
+	const [currentImageIndex, setCurrentImageIndex] = useState({}); // track images per the projectID...
 
 	const toggleMenu = () => {
 		setIsMenuOpen((prev) => !prev);
@@ -44,6 +49,20 @@ const LandingPageMain = () => {
 		setIsExpanded((prevState) => ({
 			...prevState,
 			[id]: !prevState[id], // this toggles a particular experience by it's id...
+		}));
+	};
+
+	const handlePrevImage = (id, imagesLength) => {
+		setCurrentImageIndex((prev) => ({
+			...prev,
+			[id]: prev[id] === 0 ? imagesLength - 1 : (prev[id] || 0) - 1,
+		}));
+	};
+
+	const handleNextImage = (id, imagesLength) => {
+		setCurrentImageIndex((prev) => ({
+			...prev,
+			[id]: prev[id] === imagesLength - 1 ? 0 : (prev[id] || 0) + 1,
 		}));
 	};
 
@@ -752,8 +771,68 @@ const LandingPageMain = () => {
 					</div>
 				</div>
 			</section>
-			{/* Education */}
 			{/* Projects */}
+			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
+				<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
+					Some Past Projects
+				</h2>
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-10 gap-4 md:p-5 p-2">
+					{projectsData.map((project) => (
+						<div
+							key={project.id}
+							className="p-4 bg-slate-100 dark:bg-neutral-800 group mx-auto rounded-xl shadow-sm hover:shadow-md"
+						>
+							<div className="bg-monitorBG bg-top bg-cover md:w-80 w-72 h-64 md:h-72 mx-auto relative">
+								<div className="group">
+									<img
+										src={project.images[currentImageIndex[project.id] || 0]}
+										alt={project.title}
+										className="w-full h-40 md:h-44 mx-auto px-3 pt-3 md:pb-1 pb-2"
+									/>
+									<button
+										onClick={() =>
+											handlePrevImage(project.id, project.images.length)
+										}
+										className="absolute top-full left-5 bg-white text-black bg-opacity-70 shadow-md rounded-full p-1 opacity-0 group-hover:opacity-100 md:group-hover:top-[185px] group-hover:top-[163px] transition-all duration-500 hover:bg-blue-200 hover:scale-110"
+									>
+										<ChevronLeft />
+									</button>
+									<button
+										onClick={() =>
+											handleNextImage(project.id, project.images.length)
+										}
+										className="absolute top-full right-5 bg-white text-black bg-opacity-70 shadow-md rounded-full p-1  opacity-0 group-hover:opacity-100 md:group-hover:top-[185px] group-hover:top-[163px] transition-all duration-500 hover:bg-blue-400 hover:scale-110"
+									>
+										<ChevronRight />
+									</button>
+								</div>
+							</div>
+							<h3 className="sm:text-base text-sm font-bold md:mt-2 mt-1 text-center mx-auto">
+								{project.title}
+							</h3>
+							<p className="sm:text-sm text-xs md:mt-2 mt-1 mx-auto">
+								{project.desc}
+							</p>
+							<ul className="flex flex-wrap gap-2 md:mt-4 mt-2 mx-auto">
+								{project.tech.map((tech, index) => (
+									<li
+										key={index}
+										className="text-xs py-1 px-2 bg-blue-100 dark:bg-blue-950 rounded-full"
+									>
+										{tech}
+									</li>
+								))}
+							</ul>
+							<Link
+								to={project.liveLink}
+								className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 lg:text-base sm:text-sm text-xs block w-fit mx-auto md:mt-4 mt-2"
+							>
+								View Project
+							</Link>
+						</div>
+					))}
+				</div>
+			</section>
 			{/* My Stack/Tools */}
 			{/* Testimonials */}
 			{/* Contact */}

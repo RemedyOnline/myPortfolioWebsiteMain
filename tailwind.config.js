@@ -25,6 +25,7 @@ export default {
 			backgroundImage: {
 				lightModeBG: "url('./assets/images/lightModeBG.jpg')",
 				darkModeBG: "url('./assets/images/darkModeBG.jpg')",
+				monitorBG: "url('./assets/images/projects/monitorBG.png')",
 			},
 		},
 	},
