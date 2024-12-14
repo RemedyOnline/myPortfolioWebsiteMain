@@ -20,11 +20,7 @@ const projectsData = [
 		id: "2",
 		title: "Dwaso Dwaso",
 		desc: "An e-Commerce platform enabling users to shop globally from the comfort of their homes with a seamless online shopping experience.",
-		images: [
-			"src/assets/images/projects/eSukuu.png",
-			"src/assets/images/backgroundImg.jpg",
-			"src/assets/images/lightModeBG.jpg",
-		],
+		images: ["/projects/theEshop.png", "/projects/theEshop2.png"],
 		tech: ["React", "TailwindCSS", "JavaScript", "Recharts"],
 		liveLink: "https://dwasodwaso-e-commerce.netlify.app/",
 	},
