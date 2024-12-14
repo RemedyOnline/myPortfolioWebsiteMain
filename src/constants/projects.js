@@ -1,13 +1,18 @@
-import esukuu from "../assets/images/projects/esukuu.png";
-import darkModeBG from "../assets/images/darkModeBG.jpg";
-import lightModeBG from "../assets/images/lightModeBG.jpg";
+// import esukuu from "../assets/images/projects/esukuu.png";
+// import darkModeBG from "../assets/images/darkModeBG.jpg";
+// import lightModeBG from "../assets/images/lightModeBG.jpg";
 
 const projectsData = [
 	{
 		id: "1",
 		title: "eSukuu",
 		desc: "A comprehensive School Management System designed to streamline administrative tasks and enhance efficiency in managing school affairs.",
-		images: [esukuu, darkModeBG, lightModeBG],
+		// images: [esukuu, darkModeBG, lightModeBG],
+		images: [
+			"/assets/images/projects/eSukuu.png",
+			"/assets/images/backgroundImg.jpg",
+			"/assets/images/lightModeBG.jpg",
+		],
 		tech: ["React", "TailwindCSS", "JavaScript", "Recharts"],
 		liveLink: "https://schoolmgtwebapp.netlify.app/",
 	},
