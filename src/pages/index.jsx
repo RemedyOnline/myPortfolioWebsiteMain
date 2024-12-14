@@ -559,7 +559,7 @@ const LandingPageMain = () => {
 										onClick={() =>
 											handlePrevImage(project.id, project.images.length)
 										}
-										className="absolute sm:top-full left-5 bg-white text-black bg-opacity-70 shadow-md rounded-full p-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 md:group-hover:top-[185px] top-[163px] transition-all duration-500 hover:bg-blue-200 hover:scale-110"
+										className="absolute sm:top-full left-5 bg-white text-black bg-opacity-70 shadow-lg rounded-full p-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 md:group-hover:top-[185px] top-[163px] transition-all duration-500 hover:bg-blue-200 hover:scale-110"
 									>
 										<ChevronLeft />
 									</button>
@@ -567,7 +567,7 @@ const LandingPageMain = () => {
 										onClick={() =>
 											handleNextImage(project.id, project.images.length)
 										}
-										className="absolute sm:top-full right-5 bg-white text-black bg-opacity-70 shadow-md rounded-full p-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 md:group-hover:top-[185px] top-[163px] transition-all duration-500 hover:bg-blue-200 hover:scale-110"
+										className="absolute sm:top-full right-5 bg-white text-black bg-opacity-70 shadow-lg rounded-full p-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 md:group-hover:top-[185px] top-[163px] transition-all duration-500 hover:bg-blue-200 hover:scale-110"
 									>
 										<ChevronRight />
 									</button>
