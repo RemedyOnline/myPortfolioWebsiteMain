@@ -552,7 +552,7 @@ const LandingPageMain = () => {
 										// alt={`${project.title} snapshots`} // this is also very valid... Thus, using string concatenation...
 										alt={`Snapshot ${currentImageIndex[project.id] + 1} of ${
 											project.title
-										} snapshots`}
+										}...`}
 										className="w-full h-40 md:h-44 mx-auto px-3 pt-3 md:pb-1 pb-2"
 									/>
 									<button
