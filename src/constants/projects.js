@@ -29,7 +29,12 @@ const projectsData = [
 		id: "3",
 		title: "MEFF LIbrary Web-App",
 		desc: "An online library platform offering access to a variety of books and resources for students and avid readers.",
-		images: ["/projects/theEshop.png", "/projects/theEshop2.png"],
+		images: [
+			"/projects/library1.png",
+			"/projects/library2.png",
+			"/projects/library3.png",
+			"/projects/library4.png",
+		],
 		tech: ["React", "TailwindCSS", "JavaScript", "Recharts"],
 		liveLink: "https://team-meff.github.io/meff-library-app/",
 	},

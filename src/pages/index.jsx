@@ -6,12 +6,13 @@ import projectsData from "../constants/projects";
 import hallmark from "../constants/hallmark";
 import services from "../constants/services";
 import experiences from "../constants/experience";
+import toolsData from "../constants/tools";
 import logo from "../assets/images/myLogoNoCrown.png";
 import myProfilePic from "../assets/images/myProfile.png";
-import icms from "../assets/images/logos/icms.jpg";
-import kuhis from "../assets/images/logos/kuhis-logo.jpg";
-import mest from "../assets/images/logos/mest-logo.png";
-import uenr from "../assets/images/logos/uenrLogo.png";
+import icms from "/logos/icms.jpg";
+import kuhis from "/logos/kuhis-logo.jpg";
+import mest from "/logos/mest-logo.png";
+import uenr from "/logos/uenrLogo.png";
 import myPassportPic from "../assets/images/myPassportPic-noBG.png";
 import {
 	Award,
@@ -28,6 +29,7 @@ import {
 	Linkedin,
 	Menu,
 	Moon,
+	MoveUpRight,
 	Sun,
 	Trophy,
 	Twitter,
@@ -187,20 +189,20 @@ const LandingPageMain = () => {
 						</p>
 						<p className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
 							I&apos;m{" "}
-							<span className="text-theme-color font-JetBrainsMono">
+							<span className="text-theme-color font-bold font-JetBrainsMono">
 								&lt;Michael/&gt;
 							</span>
 						</p>
 						<p className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
 							A{" "}
-							<span className="text-theme-color font-semibold font-JetBrainsMono">
+							<span className="text-theme-color font-bold font-JetBrainsMono">
 								Frontend Developer👨‍💻
 							</span>
 						</p>
 						<p className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
 							&{" "}
-							<span className="text-theme-color font-semibold font-JetBrainsMono">
-								UX Designer🎨
+							<span className="text-theme-color font-bold font-JetBrainsMono">
+								Product Designer🎨
 							</span>
 						</p>
 					</div>
@@ -250,7 +252,7 @@ const LandingPageMain = () => {
 			</section>
 			{/* Hallmark */}
 			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
-				<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
+				<h2 className="md:p-5 p-3 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					My HallMark
 				</h2>
 				<div className="grid grid-cols-2 sm:grid-cols-3">
@@ -261,7 +263,7 @@ const LandingPageMain = () => {
 								key={item.id}
 								className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 md:space-y-2 shadow-sm hover:shadow-md group"
 							>
-								<IconComponent className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 group-hover:rotate-12 transition-all duration-300" />
+								<IconComponent className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 group-hover:rotate-45 transition-all duration-1000" />
 								<p className="lg:text-2xl md:text-xl text-lg text-theme-color font-bold font-JetBrainsMono">
 									{item.numValue}
 								</p>
@@ -494,7 +496,7 @@ const LandingPageMain = () => {
 												</p>
 												<button
 													onClick={() => toggleExpanded(experience.id)}
-													className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs ${
+													className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300 lg:text-base sm:text-sm text-xs bg-slate-100 dark:bg-neutral-800 px-1 font-semibold ${
 														isExpanded[experience.id]
 															? "static"
 															: "absolute right-0 bottom-0"
@@ -592,15 +594,41 @@ const LandingPageMain = () => {
 							<Link
 								to={project.liveLink}
 								target={"_blank"}
-								className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 lg:text-base sm:text-sm text-xs block w-fit mx-auto md:mt-4 mt-2"
+								className="md:px-4 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 lg:text-base sm:text-sm text-xs flex gap-2 w-fit mx-auto md:mt-4 mt-2"
 							>
 								View Project
+								<MoveUpRight size={20} className="" />
 							</Link>
 						</div>
 					))}
 				</div>
 			</section>
 			{/* My Stack/Tools */}
+			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
+				<h2 className="md:p-5 p-3  xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
+					Familiar Tools / Languages / Frameworks
+				</h2>
+				<div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 md:gap-10 gap-5 md:p-5 p-2">
+					{toolsData.map((tools) => (
+						<div
+							key={tools.id}
+							className="flex flex-col justify-center items-center shadow-sm hover:shadow-md bg-slate-100 dark:bg-neutral-800 rounded-full w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 space-y-0 md:space-y-2 group mx-auto"
+						>
+							<img
+								src={tools.img}
+								alt={tools.toolName}
+								className="h-12 sm:h-16 md:h-20 lg:h-24 flex flex-shrink"
+							/>
+							<h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold group-hover:text-theme-color">
+								{tools.toolName}
+							</h3>
+							<p className="text-sm sm:text-base md:text-lg lg:text-xl">
+								{tools.percentage}
+							</p>
+						</div>
+					))}
+				</div>
+			</section>
 			{/* Testimonials */}
 			{/* Contact */}
 		</section>
