@@ -612,7 +612,9 @@ const LandingPageMain = () => {
 					{toolsData.map((tools) => (
 						<div
 							key={tools.id}
-							className="flex flex-col justify-center items-center shadow-sm hover:shadow-md bg-slate-100 dark:bg-neutral-800 rounded-full w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 space-y-0 md:space-y-2 group mx-auto"
+							// bg-slate-100 dark:bg-neutral-800
+							className={`flex flex-col justify-center items-center shadow-sm hover:shadow-md rounded-full w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 space-y-0 md:space-y-2 group mx-auto ${tools.bgColor}`}
+							// style={{ backgroundColor: tools.bgColor }}
 						>
 							<img
 								src={tools.img}
