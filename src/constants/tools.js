@@ -1,32 +1,32 @@
-const tools = [
+export const tools = [
 	// Frontend Development Tools
 	{
 		id: "1",
 		img: "/logos/html-css.webp",
 		percentage: "98%",
 		toolName: "HTML & CSS",
-		bgColor: "bg-orange-100 dark:bg-orange-900", // Orange
+		bgColor: "bg-yellow-100 dark:bg-yellow-900", // yellow
 	},
 	{
 		id: "2",
 		img: "/logos/tailwind.png",
 		percentage: "82%",
 		toolName: "TailwindCSS",
-		bgColor: "bg-orange-100 dark:bg-orange-900",
+		bgColor: "bg-yellow-100 dark:bg-yellow-900",
 	},
 	{
 		id: "3",
 		img: "/logos/javascript.png",
 		percentage: "44%",
 		toolName: "JavaScript",
-		bgColor: "bg-orange-100 dark:bg-orange-900",
+		bgColor: "bg-yellow-100 dark:bg-yellow-900",
 	},
 	{
 		id: "4",
 		img: "/logos/react.webp",
 		percentage: "63%",
 		toolName: "React.js",
-		bgColor: "bg-orange-100 dark:bg-orange-900",
+		bgColor: "bg-yellow-100 dark:bg-yellow-900",
 	},
 
 	// Version Control & Collaboration Tools
@@ -59,37 +59,53 @@ const tools = [
 		bgColor: "bg-red-100 dark:bg-red-900",
 	},
 
-	// Design & Prototyping Tools
+	// Whiteboarding & Brainstorming Tools
 	{
 		id: "9",
+		img: "/logos/miro.png",
+		percentage: "65%",
+		toolName: "Miro",
+		bgColor: "bg-neutral-100 dark:bg-neutral-800", // lime
+	},
+	{
+		id: "10",
+		img: "/logos/miro.png",
+		percentage: "76%",
+		toolName: "Figjam",
+		bgColor: "bg-neutral-100 dark:bg-neutral-800", // lime
+	},
+
+	// Design & Prototyping Tools
+	{
+		id: "11",
 		img: "/logos/figma.png",
 		percentage: "88%",
 		toolName: "Figma",
 		bgColor: "bg-green-100 dark:bg-green-900", // Green
 	},
 	{
-		id: "10",
+		id: "12",
 		img: "/logos/adobeXd.png",
 		percentage: "82%",
 		toolName: "Adobe Xd",
 		bgColor: "bg-green-100 dark:bg-green-900",
 	},
 	{
-		id: "11",
+		id: "13",
 		img: "/logos/framer.png",
 		percentage: "63%",
 		toolName: "Framer",
 		bgColor: "bg-green-100 dark:bg-green-900",
 	},
 	{
-		id: "12",
+		id: "14",
 		img: "/logos/photoshop.png",
 		percentage: "79%",
 		toolName: "Photoshop",
 		bgColor: "bg-green-100 dark:bg-green-900",
 	},
 	{
-		id: "13",
+		id: "15",
 		img: "/logos/canva.png",
 		percentage: "76%",
 		toolName: "Canva",
@@ -98,51 +114,79 @@ const tools = [
 
 	// API Testing & Development Tools
 	{
-		id: "14",
+		id: "16",
 		img: "/logos/postman.png",
 		percentage: "73%",
 		toolName: "Postman",
-		bgColor: "bg-yellow-100 dark:bg-yellow-900", // Yellow
+		bgColor: "bg-orange-100 dark:bg-orange-900", // orange
 	},
 	{
-		id: "15",
+		id: "17",
 		img: "/logos/jest.png",
 		percentage: "74%",
 		toolName: "Jest",
-		bgColor: "bg-yellow-100 dark:bg-yellow-900",
+		bgColor: "bg-orange-100 dark:bg-orange-900",
 	},
 
 	// Website Builders
 	{
-		id: "16",
+		id: "18",
 		img: "/logos/wordpress.png",
 		percentage: "69%",
 		toolName: "Wordpress",
 		bgColor: "bg-cyan-100 dark:bg-cyan-900", // cyan
 	},
 	{
-		id: "17",
+		id: "19",
 		img: "/logos/webflow.svg",
 		percentage: "67%",
 		toolName: "Webflow",
 		bgColor: "bg-cyan-100 dark:bg-cyan-900",
 	},
 	{
-		id: "18",
+		id: "20",
 		img: "/logos/squarespace.png",
 		percentage: "68%",
 		toolName: "Squarespace",
 		bgColor: "bg-cyan-100 dark:bg-cyan-900",
 	},
-
-	// Whiteboarding & Brainstorming Tools
-	{
-		id: "19",
-		img: "/logos/miro.png",
-		percentage: "65%",
-		toolName: "Miro",
-		bgColor: "bg-emerald-100 dark:bg-emerald-900", // emerald
-	},
 ];
 
-export default tools;
+export const toolsLegend = [
+	{
+		id: "1",
+		bgColor: "bg-yellow-300 dark:bg-yellow-700",
+		textColor: "text-yellow-500",
+		title: "Frontend Development Tools",
+	},
+	{
+		id: "2",
+		bgColor: "bg-red-300 dark:bg-red-700",
+		textColor: "text-red-500",
+		title: "Version Control & Collaboration Tools",
+	},
+	{
+		id: "3",
+		bgColor: "bg-neutral-300 dark:bg-neutral-700",
+		textColor: "text-neutral-500",
+		title: "Whiteboarding & Brainstorming Tools",
+	},
+	{
+		id: "4",
+		bgColor: "bg-green-300 dark:bg-green-700",
+		textColor: "text-green-500",
+		title: "Design & Prototyping Tools",
+	},
+	{
+		id: "5",
+		bgColor: "bg-orange-300 dark:bg-orange-700",
+		textColor: "text-orange-500",
+		title: "API Testing & Development Tools",
+	},
+	{
+		id: "6",
+		bgColor: "bg-cyan-300 dark:bg-cyan-700",
+		textColor: "text-cyan-500",
+		title: "Website Builders",
+	},
+];

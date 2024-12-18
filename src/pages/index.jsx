@@ -6,7 +6,7 @@ import projectsData from "../constants/projects";
 import hallmark from "../constants/hallmark";
 import services from "../constants/services";
 import experiences from "../constants/experience";
-import toolsData from "../constants/tools";
+import { tools, toolsLegend } from "../constants/tools";
 import logo from "../assets/images/myLogoNoCrown.png";
 import myProfilePic from "../assets/images/myProfile.png";
 import icms from "/logos/icms.jpg";
@@ -25,6 +25,7 @@ import {
 	Codepen,
 	Facebook,
 	Github,
+	Info,
 	Instagram,
 	Linkedin,
 	Menu,
@@ -608,12 +609,37 @@ const LandingPageMain = () => {
 				<h2 className="md:p-5 p-3  xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					Familiar Tools / Languages / Frameworks
 				</h2>
+				<div className="flex flex-wrap justify-between gap-5 items-center border-2 border-neutral-200 dark:border-neutral-800 shadow-md p-4 rounded-xl sticky top-16 md:top-20 left-0 backdrop-blur-md">
+					<div className="flex flex-col items-center justify-center gap-2 text-theme-color">
+						<Info size={32} />
+						<span className="font-black text-sm sm:text-lg md:text-xl lg:text-2xl">
+							KEY:
+						</span>
+					</div>
+					<div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
+						{toolsLegend.map((toolLegend) => (
+							<div
+								key={toolLegend.id}
+								className="flex gap-2 items-center px-2 py-1 md:px-4 md:py-2 rounded-lg bg-slate-100 dark:bg-neutral-800"
+							>
+								<div
+									className={`w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 rounded-full self-center ${toolLegend.bgColor}`}
+								></div>
+								<span
+									className={`self-center text-xs lg:text-sm w-4/5 ${toolLegend.textColor}`}
+								>
+									{toolLegend.title}
+								</span>
+							</div>
+						))}
+					</div>
+				</div>
 				<div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 md:gap-10 gap-5 md:p-5 p-2">
-					{toolsData.map((tools) => (
+					{tools.map((tools) => (
 						<div
 							key={tools.id}
 							// bg-slate-100 dark:bg-neutral-800
-							className={`flex flex-col justify-center items-center shadow-sm hover:shadow-md rounded-full w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 space-y-0 md:space-y-2 group mx-auto ${tools.bgColor}`}
+							className={`flex flex-col justify-center items-center shadow-md hover:shadow-lg rounded-full w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 space-y-0 md:space-y-2 group mx-auto ${tools.bgColor}`}
 							// style={{ backgroundColor: tools.bgColor }}
 						>
 							<img
