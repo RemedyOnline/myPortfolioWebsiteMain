@@ -677,7 +677,7 @@ const LandingPageMain = () => {
 							together.
 						</p>
 						<div className="flex flex-col gap-2">
-							<div className="flex gap-3 p-2 border-[0.1px] border-slate-200 dark:border-slate-700">
+							<div className="flex gap-3 p-2 border-[0.1px] border-neutral-200 dark:border-neutral-700">
 								<Phone className="mt-1" />
 								<div className="">
 									<p className="text-slate-500 dark:text-slate-400">Phone</p>
@@ -689,7 +689,7 @@ const LandingPageMain = () => {
 									</a>
 								</div>
 							</div>
-							<div className="flex gap-3 p-2 border-[0.1px] border-slate-200 dark:border-slate-700">
+							<div className="flex gap-3 p-2 border-[0.1px] border-neutral-200 dark:border-neutral-700">
 								<Mail className="mt-1" />
 								<div className="">
 									<p className="text-slate-500 dark:text-slate-400">Email</p>
@@ -701,7 +701,7 @@ const LandingPageMain = () => {
 									</a>
 								</div>
 							</div>
-							<div className="flex gap-3 p-2 border-[0.1px] border-slate-200 dark:border-slate-700">
+							<div className="flex gap-3 p-2 border-[0.1px] border-neutral-200 dark:border-neutral-700">
 								<MapPin className="mt-1" />
 								<div className="">
 									<p className="text-slate-500 dark:text-slate-400">Address</p>
@@ -717,7 +717,7 @@ const LandingPageMain = () => {
 							</div>
 						</div>
 					</div>
-					<div className="flex flex-col gap-3 md:gap-5 lg:gap-7 p-5  bg-neutral-100 dark:bg-neutral-800 rounded-xl w-full shadow-sm hover:shadow-md">
+					<div className="flex flex-col gap-3 md:gap-5 lg:gap-7 p-5  bg-neutral-100 dark:bg-neutral-800 rounded-xl w-full shadow-sm hover:shadow-md md:justify-between">
 						<h3 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl text-theme-color font-bold font-JetBrainsMono">
 							Send me a message.
 						</h3>
@@ -750,9 +750,81 @@ const LandingPageMain = () => {
 								<a href="#">Send Message</a>
 							</button>
 						</form>
+						<form className="flex flex-col space-y-4 justify-center">
+							<label
+								htmlFor="userName"
+								className="block relative rounded-md border shadow-sm focus-within:ring-1 focus-within:ring-theme-color border-slate-200 dark:border-slate-700"
+							>
+								<input
+									type="text"
+									id="name"
+									placeholder="Enter your name..."
+									className="w-full h-full bg-transparent rounded-md border-none focus:border-transparent focus:outline-none focus:ring-0"
+									required
+								/>
+							</label>
+							<label
+								htmlFor="userMail"
+								className="block relative rounded-md border shadow-sm focus-within:ring-1 focus-within:ring-theme-color border-slate-200 dark:border-slate-700"
+							>
+								<input
+									type="email"
+									id="email"
+									placeholder="Enter your email..."
+									className="w-full h-full bg-transparent rounded-md border-none focus:border-transparent focus:outline-none focus:ring-0"
+									required
+								/>
+							</label>
+							<label
+								htmlFor="message"
+								className="block relative rounded-md border shadow-sm focus-within:ring-1 focus-within:ring-theme-color border-slate-200 dark:border-slate-700"
+							>
+								<textarea
+									name="message"
+									id="message"
+									placeholder="Enter your message..."
+									className="w-full h-full bg-transparent rounded-md border-none focus:border-transparent focus:outline-none focus:ring-0"
+								></textarea>
+							</label>
+							<button className="md:px-5 px-2 py-2 lg:text-base text-sm bg-theme-color text-slate-100 rounded-md sm:shadow-sm self-end">
+								<a href="#">Send Message</a>
+							</button>
+						</form>
 					</div>
 				</div>
 			</section>
+			<section>
+				<p>
+					Made with <span>💓</span>
+				</p>
+				<p>
+					&copy; <span>2024</span>
+				</p>
+				<p>A #RemedyOnlineGh Coorperation</p>
+				<p>All Rights Reserved!</p>
+			</section>
+			{/*
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+*/}
+
+			<label
+				htmlFor="Username"
+				className="relative block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+			>
+				<input
+					type="text"
+					id="Username"
+					className="peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0"
+					placeholder="Username"
+				/>
+
+				<span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">
+					Username
+				</span>
+			</label>
 		</section>
 	);
 };
