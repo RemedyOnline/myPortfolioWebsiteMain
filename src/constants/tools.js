@@ -35,28 +35,28 @@ export const tools = [
 		img: "/logos/git-github.png",
 		percentage: "84%",
 		toolName: "Git & Github",
-		bgColor: "bg-red-100 dark:bg-red-900", // red
+		bgColor: "bg-green-100 dark:bg-green-900", // green
 	},
 	{
 		id: "6",
 		img: "/logos/discord.png",
 		percentage: "70%",
 		toolName: "Discord",
-		bgColor: "bg-red-100 dark:bg-red-900",
+		bgColor: "bg-green-100 dark:bg-green-900",
 	},
 	{
 		id: "7",
 		img: "/logos/slack.png",
 		percentage: "63%",
 		toolName: "Slack",
-		bgColor: "bg-red-100 dark:bg-red-900",
+		bgColor: "bg-green-100 dark:bg-green-900",
 	},
 	{
 		id: "8",
 		img: "/logos/asana.png",
 		percentage: "71%",
 		toolName: "Asana",
-		bgColor: "bg-red-100 dark:bg-red-900",
+		bgColor: "bg-green-100 dark:bg-green-900",
 	},
 
 	// Whiteboarding & Brainstorming Tools
@@ -69,7 +69,7 @@ export const tools = [
 	},
 	{
 		id: "10",
-		img: "/logos/miro.png",
+		img: "/logos/figjam.png",
 		percentage: "76%",
 		toolName: "Figjam",
 		bgColor: "bg-neutral-100 dark:bg-neutral-800", // lime
@@ -81,35 +81,35 @@ export const tools = [
 		img: "/logos/figma.png",
 		percentage: "88%",
 		toolName: "Figma",
-		bgColor: "bg-green-100 dark:bg-green-900", // Green
+		bgColor: "bg-red-100 dark:bg-red-900", // red
 	},
 	{
 		id: "12",
 		img: "/logos/adobeXd.png",
 		percentage: "82%",
 		toolName: "Adobe Xd",
-		bgColor: "bg-green-100 dark:bg-green-900",
+		bgColor: "bg-red-100 dark:bg-red-900",
 	},
 	{
 		id: "13",
 		img: "/logos/framer.png",
 		percentage: "63%",
 		toolName: "Framer",
-		bgColor: "bg-green-100 dark:bg-green-900",
+		bgColor: "bg-red-100 dark:bg-red-900",
 	},
 	{
 		id: "14",
 		img: "/logos/photoshop.png",
 		percentage: "79%",
 		toolName: "Photoshop",
-		bgColor: "bg-green-100 dark:bg-green-900",
+		bgColor: "bg-red-100 dark:bg-red-900",
 	},
 	{
 		id: "15",
 		img: "/logos/canva.png",
 		percentage: "76%",
 		toolName: "Canva",
-		bgColor: "bg-green-100 dark:bg-green-900",
+		bgColor: "bg-red-100 dark:bg-red-900",
 	},
 
 	// API Testing & Development Tools
@@ -161,8 +161,8 @@ export const toolsLegend = [
 	},
 	{
 		id: "2",
-		bgColor: "bg-red-300 dark:bg-red-700",
-		textColor: "text-red-500",
+		bgColor: "bg-green-300 dark:bg-green-700",
+		textColor: "text-green-500",
 		title: "Version Control & Collaboration Tools",
 	},
 	{
@@ -173,8 +173,8 @@ export const toolsLegend = [
 	},
 	{
 		id: "4",
-		bgColor: "bg-green-300 dark:bg-green-700",
-		textColor: "text-green-500",
+		bgColor: "bg-red-300 dark:bg-red-700",
+		textColor: "text-red-500",
 		title: "Design & Prototyping Tools",
 	},
 	{

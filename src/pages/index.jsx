@@ -545,7 +545,7 @@ const LandingPageMain = () => {
 					{projectsData.map((project) => (
 						<div
 							key={project.id}
-							className="p-4 bg-slate-100 dark:bg-neutral-800 group mx-auto rounded-xl shadow-sm hover:shadow-md"
+							className="p-4 bg-slate-100 dark:bg-neutral-800 group mx-auto rounded-xl shadow-sm hover:shadow-md flex flex-col justify-between"
 						>
 							<div className="bg-monitorBG bg-top bg-cover md:w-80 w-72 h-64 md:h-72 mx-auto relative">
 								<div className="group">
@@ -609,8 +609,8 @@ const LandingPageMain = () => {
 				<h2 className="md:p-5 p-3  xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					Familiar Tools / Languages / Frameworks
 				</h2>
-				<div className="flex flex-wrap justify-between gap-5 items-center border-2 border-neutral-200 dark:border-neutral-800 shadow-md p-4 rounded-xl sticky top-16 md:top-20 left-0 backdrop-blur-md">
-					<div className="flex flex-col items-center justify-center gap-2 text-theme-color">
+				<div className="flex flex-wrap justify-between gap-5 items-start border-2 border-neutral-200 dark:border-neutral-800 shadow-md p-4 rounded-xl sticky top-16 md:top-20 left-0 backdrop-blur-md">
+					<div className="flex items-center justify-center gap-2 md:gap-3 text-theme-color">
 						<Info size={32} />
 						<span className="font-black text-sm sm:text-lg md:text-xl lg:text-2xl">
 							KEY:
@@ -620,7 +620,7 @@ const LandingPageMain = () => {
 						{toolsLegend.map((toolLegend) => (
 							<div
 								key={toolLegend.id}
-								className="flex gap-2 items-center px-2 py-1 md:px-4 md:py-2 rounded-lg bg-slate-100 dark:bg-neutral-800"
+								className="flex gap-2 items-center px-2 py-1 md:px-4 md:py-2 rounded-lg bg-slate-50 dark:bg-neutral-800 shadow-sm"
 							>
 								<div
 									className={`w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 rounded-full self-center ${toolLegend.bgColor}`}
@@ -634,18 +634,18 @@ const LandingPageMain = () => {
 						))}
 					</div>
 				</div>
-				<div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 md:gap-10 gap-5 md:p-5 p-2">
+				<div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 md:gap-10 gap-5 md:p-5 p-2">
 					{tools.map((tools) => (
 						<div
 							key={tools.id}
 							// bg-slate-100 dark:bg-neutral-800
-							className={`flex flex-col justify-center items-center shadow-md hover:shadow-lg rounded-full w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 space-y-0 md:space-y-2 group mx-auto ${tools.bgColor}`}
+							className={`flex flex-col justify-center items-center shadow-md hover:shadow-lg rounded-full w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 space-y-0 md:space-y-2 group mx-auto ${tools.bgColor}`}
 							// style={{ backgroundColor: tools.bgColor }}
 						>
 							<img
 								src={tools.img}
 								alt={tools.toolName}
-								className="h-12 sm:h-16 md:h-20 lg:h-24 flex flex-shrink"
+								className="h-12 sm:h-14 md:h-16 lg:h-20 flex mb-1"
 							/>
 							<h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold group-hover:text-theme-color">
 								{tools.toolName}
