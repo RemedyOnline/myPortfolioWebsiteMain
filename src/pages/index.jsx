@@ -28,9 +28,12 @@ import {
 	Info,
 	Instagram,
 	Linkedin,
+	Mail,
+	MapPin,
 	Menu,
 	Moon,
 	MoveUpRight,
+	Phone,
 	Sun,
 	Trophy,
 	Twitter,
@@ -60,7 +63,7 @@ const LandingPageMain = () => {
 	const toggleExpanded = (id) => {
 		setIsExpanded((prevState) => ({
 			...prevState,
-			[id]: !prevState[id], // this toggles a particular experience by it's id...
+			[id]: !prevState[id], // this toggles a particular experience by it&apos;s id...
 		}));
 	};
 
@@ -147,7 +150,7 @@ const LandingPageMain = () => {
 				>
 					<button
 						onClick={toggleTheme}
-						className="lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 shadow-xl sm:shadow-md transition-transform duration-700 ease-in-out"
+						className="lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg shadow-sm hover:shadow-md hover:bg-slate-300 dark:hover:bg-slate-600 shadow-xl sm:shadow-md transition-transform duration-700 ease-in-out"
 					>
 						{theme === "darkMode" ? (
 							<Sun className="h-5 w-5 text-gray-500 dark:text-slate-200" />
@@ -659,6 +662,97 @@ const LandingPageMain = () => {
 			</section>
 			{/* Testimonials */}
 			{/* Contact */}
+			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
+				<h2 className="md:p-5 p-3 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
+					Contact Me
+				</h2>
+				<div className="grid md:grid-cols-2 gap-5">
+					<div className="flex flex-col w-full gap-3 md:gap-5 lg:gap-7 p-5 bg-neutral-100 dark:bg-neutral-800 rounded-lg shadow-sm hover:shadow-md">
+						<h3 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl text-theme-color font-bold font-JetBrainsMono">
+							Let&apos;s talk about your project!
+						</h3>
+						<p className="text-sm md:text-base lg:text-lg">
+							Whether it&apos;s a creative project or a freelance gig, I&apos;m
+							ready to make it happen—let&apos;s build something remarkable
+							together.
+						</p>
+						<div className="flex flex-col gap-2">
+							<div className="flex gap-3 p-2 border-[0.1px] border-slate-200 dark:border-slate-700">
+								<Phone className="mt-1" />
+								<div className="">
+									<p className="text-slate-500 dark:text-slate-400">Phone</p>
+									<a
+										className="text-sm md:text-base lg:text-lg hover:underline"
+										href="tel: +233555975976"
+									>
+										+233 555 975 976
+									</a>
+								</div>
+							</div>
+							<div className="flex gap-3 p-2 border-[0.1px] border-slate-200 dark:border-slate-700">
+								<Mail className="mt-1" />
+								<div className="">
+									<p className="text-slate-500 dark:text-slate-400">Email</p>
+									<a
+										className="text-sm md:text-base lg:text-lg  hover:underline"
+										href="mailto:agyemangmichael555@gmail.com"
+									>
+										agyemangmichael555@gmail.com
+									</a>
+								</div>
+							</div>
+							<div className="flex gap-3 p-2 border-[0.1px] border-slate-200 dark:border-slate-700">
+								<MapPin className="mt-1" />
+								<div className="">
+									<p className="text-slate-500 dark:text-slate-400">Address</p>
+									<a
+										className="text-sm md:text-base lg:text-lg  hover:underline"
+										href="https://maps.app.goo.gl/euywUBrFsdxPfyqU9"
+										target="_blank"
+									>
+										Crown Prince Academy (Annex), <br />
+										Lapax, Accra - Ghana
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="flex flex-col gap-3 md:gap-5 lg:gap-7 p-5  bg-neutral-100 dark:bg-neutral-800 rounded-xl w-full shadow-sm hover:shadow-md">
+						<h3 className="xl:text-4xl lg:text-3xl md:text-2xl text-xl text-theme-color font-bold font-JetBrainsMono">
+							Send me a message.
+						</h3>
+						<p className="text-sm md:text-base lg:text-lg">
+							Feel free to Contact me by submitting the form below and I will
+							get back to you as soon as possible..🫡
+						</p>
+						<form className="flex flex-col space-y-4 justify-center items-end">
+							<input
+								type="text"
+								id="name"
+								placeholder="Enter your name..."
+								className="w-full px-3 py-3 rounded-md bg-slate-200 dark:bg-neutral-700 text-sm md:text-base lg:text-lg"
+								required
+							/>
+							<input
+								type="email"
+								id="email"
+								placeholder="Enter your email..."
+								className="w-full px-3 py-3 rounded-md bg-slate-200 dark:bg-neutral-700 text-sm md:text-base lg:text-lg"
+								required
+							/>
+							<textarea
+								name="message"
+								id="message"
+								placeholder="Enter your message..."
+								className="w-full px-3 py-3 rounded-md bg-slate-200 dark:bg-neutral-700 text-sm md:text-base lg:text-lg"
+							></textarea>
+							<button className="md:px-5 px-2 py-2 lg:text-base text-sm bg-theme-color text-slate-100 rounded-md sm:shadow-sm">
+								<a href="#">Send Message</a>
+							</button>
+						</form>
+					</div>
+				</div>
+			</section>
 		</section>
 	);
 };

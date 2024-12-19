@@ -65,14 +65,14 @@ export const tools = [
 		img: "/logos/miro.png",
 		percentage: "65%",
 		toolName: "Miro",
-		bgColor: "bg-neutral-100 dark:bg-neutral-800", // lime
+		bgColor: "bg-red-100 dark:bg-red-900", // lime
 	},
 	{
 		id: "10",
 		img: "/logos/figjam.png",
 		percentage: "76%",
 		toolName: "Figjam",
-		bgColor: "bg-neutral-100 dark:bg-neutral-800", // lime
+		bgColor: "bg-red-100 dark:bg-red-900", // lime
 	},
 
 	// Design & Prototyping Tools
@@ -81,35 +81,35 @@ export const tools = [
 		img: "/logos/figma.png",
 		percentage: "88%",
 		toolName: "Figma",
-		bgColor: "bg-red-100 dark:bg-red-900", // red
+		bgColor: "bg-neutral-100 dark:bg-neutral-800", // neutral
 	},
 	{
 		id: "12",
 		img: "/logos/adobeXd.png",
 		percentage: "82%",
 		toolName: "Adobe Xd",
-		bgColor: "bg-red-100 dark:bg-red-900",
+		bgColor: "bg-neutral-100 dark:bg-neutral-800",
 	},
 	{
 		id: "13",
 		img: "/logos/framer.png",
 		percentage: "63%",
 		toolName: "Framer",
-		bgColor: "bg-red-100 dark:bg-red-900",
+		bgColor: "bg-neutral-100 dark:bg-neutral-800",
 	},
 	{
 		id: "14",
 		img: "/logos/photoshop.png",
 		percentage: "79%",
 		toolName: "Photoshop",
-		bgColor: "bg-red-100 dark:bg-red-900",
+		bgColor: "bg-neutral-100 dark:bg-neutral-800",
 	},
 	{
 		id: "15",
 		img: "/logos/canva.png",
 		percentage: "76%",
 		toolName: "Canva",
-		bgColor: "bg-red-100 dark:bg-red-900",
+		bgColor: "bg-neutral-100 dark:bg-neutral-800",
 	},
 
 	// API Testing & Development Tools
@@ -167,14 +167,14 @@ export const toolsLegend = [
 	},
 	{
 		id: "3",
-		bgColor: "bg-neutral-300 dark:bg-neutral-700",
-		textColor: "text-neutral-500",
+		bgColor: "bg-red-300 dark:bg-red-700",
+		textColor: "text-red-500",
 		title: "Whiteboarding & Brainstorming Tools",
 	},
 	{
 		id: "4",
-		bgColor: "bg-red-300 dark:bg-red-700",
-		textColor: "text-red-500",
+		bgColor: "bg-neutral-300 dark:bg-neutral-700",
+		textColor: "text-neutral-500",
 		title: "Design & Prototyping Tools",
 	},
 	{
