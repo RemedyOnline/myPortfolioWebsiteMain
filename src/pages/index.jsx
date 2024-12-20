@@ -10,11 +10,13 @@ import testimonials from "../constants/testimonials";
 import { tools, toolsLegend } from "../constants/tools";
 import logo from "../assets/images/myLogoNoCrown.png";
 import myProfilePic from "../assets/images/myProfile.png";
+import graduationStraight from "/satisfiedClients/mestGraduation2.jpg";
+import graduationPicFold from "/satisfiedClients/mestGraduation3.jpg";
+import graduationPicSpeak from "/satisfiedClients/mestGraduation4.jpg";
 import icms from "/logos/icms.jpg";
 import kuhis from "/logos/kuhis-logo.jpg";
 import mest from "/logos/mest-logo.png";
 import uenr from "/logos/uenrLogo.png";
-import myPassportPic from "../assets/images/myPassportPic-noBG.png";
 import {
 	Award,
 	BookCheck,
@@ -104,7 +106,7 @@ const LandingPageMain = () => {
 			{/* Navbar... */}
 			<header
 				id="navbar-section"
-				className="fixed top-0 left-0 z-50 w-full flex md:justify-around items-center justify-between px-8 md:px-0 backdrop-blur-md border-b-[0.1px] border-slate-300 dark:border-slate-600 py-1"
+				className="fixed top-3 md:top-5 left-1/2 -translate-x-1/2 transform z-50 w-11/12 flex md:justify-around items-center justify-between px-8 md:px-0 backdrop-blur-md border rounded-lg border-slate-300 dark:border-slate-700 py-1"
 			>
 				<div className="flex justify-center gap-1">
 					<img
@@ -360,26 +362,26 @@ const LandingPageMain = () => {
 				<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					About Me
 				</h2>
-				<div className="md:space-y-10 space-y-4 rounded-xl md:m-5 m-2">
-					<div className="grid lg:grid-cols-10 md:gap-10 gap-4">
-						<div className="flex justify-between md:col-span-3 bg-slate-100 w-full dark:bg-neutral-800 md:p-8 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit sm:gap-3">
+				<div className="md:space-y-5 space-y-4 rounded-xl md:m-5 m-2">
+					<div className="grid lg:grid-cols-10 md:gap-5 gap-4">
+						<div className="flex justify-around lg:col-span-3 md:bg-slate-100 w-full dark:bg-neutral-800 md:p-8 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit sm:gap-3">
 							<img
-								src={myPassportPic}
+								src={graduationPicFold}
 								alt="myPicture"
-								className="md:col-span-5 bg-red-200 dark:bg-neutral-800 md:p-8 p-5 rounded-xl "
+								className="md:col-span-5 rounded-xl sm:w-48 lg:w-full"
 							/>
 							<img
-								src={myPassportPic}
+								src={graduationStraight}
 								alt="myPicture"
-								className="hidden sm:block lg:hidden bg-blue-200 dark:bg-neutral-800 md:p-8 p-5 rounded-xl "
+								className="hidden sm:block lg:hidden rounded-xl sm:w-48"
 							/>
 							<img
-								src={myPassportPic}
+								src={graduationPicSpeak}
 								alt="myPicture"
-								className="hidden sm:block md:hidden bg-green-200 dark:bg-neutral-800 md:p-8 p-5 rounded-xl "
+								className="hidden sm:block lg:hidden rounded-xl sm:w-48"
 							/>
 						</div>
-						<div className="sm:col-span-7 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 rounded-xl sm:h-full h-fit shadow-sm hover:shadow-md">
+						<div className="lg:col-span-7 bg-slate-100 dark:bg-neutral-800 md:p-8 p-5 md:space-y-5 space-y-2 rounded-xl sm:h-full h-fit shadow-sm hover:shadow-md">
 							<h2 className="lg:text-2xl md:text-xl sm:text-lg text-base  font-bold font-JetBrainsMono">
 								I&apos;m{" "}
 								<span className="text-theme-color">
@@ -652,7 +654,7 @@ const LandingPageMain = () => {
 				<h2 className="md:p-5 p-3  xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					Technologies I Work With
 				</h2>
-				<div className="flex flex-wrap justify-between gap-5 items-start border border-neutral-200 dark:border-neutral-800 shadow-md p-4 rounded-xl sticky top-16 md:top-20 left-0 backdrop-blur-md">
+				<div className="flex flex-wrap justify-between gap-2 md:gap-5 items-start shadow-md p-2 md:p-4 sticky top-[72px] md:top-24 left-0 backdrop-blur-md border rounded-lg border-slate-300 dark:border-slate-700 z-40">
 					<div className="flex items-center justify-center gap-2 md:gap-3 text-theme-color">
 						<Info size={32} />
 						<span className="font-black text-sm sm:text-lg md:text-xl lg:text-2xl">
@@ -663,7 +665,7 @@ const LandingPageMain = () => {
 						{toolsLegend.map((toolLegend) => (
 							<div
 								key={toolLegend.id}
-								className="flex gap-2 items-center px-2 py-1 md:px-4 md:py-2 rounded-lg bg-slate-50 dark:bg-neutral-800 shadow-sm"
+								className="flex gap-2 items-center px-2 py-1 md:px-4 md:py-2 rounded-lg bg-slate-50 dark:bg-neutral-800 shadow-md"
 							>
 								<div
 									className={`w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 rounded-full self-center ${toolLegend.bgColor}`}
@@ -714,9 +716,9 @@ const LandingPageMain = () => {
 								// width: "400px",
 							}}
 						>
-							<div className="bg-black opacity-80 h-full w-full p-5 text-neutral-100 flex flex-col justify-between items-end">
-								<p>{`⭐`.repeat(testimony.rating)}</p>
-								<p className="text-end w-2/3 text-xs md:text-sm">
+							<div className="bg-white dark:bg-black opacity-80 dark:opacity-70 h-full w-full p-5  dark:text-neutral-100 text-black flex flex-col justify-between items-end">
+								<p className="text-sm">{`⭐`.repeat(testimony.rating)}</p>
+								<p className="text-end w-2/3 text-xs xl:text-sm">
 									<span className="text-3xl text-theme-color font-bold font-PlusJakartaSans mr-1 b">
 										&quot;
 									</span>
@@ -794,7 +796,7 @@ const LandingPageMain = () => {
 							Feel free to Contact me by submitting the form below and I will
 							get back to you as soon as possible..🫡
 						</p>
-						<form className="flex flex-col space-y-4 justify-center text-xs sm:text-sm">
+						<form className="flex flex-col space-y-4 justify-center text-sm">
 							<label
 								htmlFor="userName"
 								className="block relative rounded-md border-2 shadow-sm focus-within:ring-1 focus-within:ring-theme-color border-neutral-200 dark:border-neutral-700"
