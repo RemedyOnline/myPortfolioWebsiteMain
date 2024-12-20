@@ -2,19 +2,19 @@ const services = [
 	{
 		id: "1",
 		title: "Frontend Web Development👨‍💻",
-		desc: "I build responsive and interactive websites using TailwindCSS and modern frameworks like React, ensuring optimal performance across devices.",
+		desc: "With expertise in TailwindCSS and React, I specialize in developing responsive websites that deliver seamless interactions and exceptional performance. From crafting pixel-perfect interfaces to optimizing for speed and accessibility, I ensure every project adapts flawlessly across devices.",
 		span: "sm:col-span-6",
 	},
 	{
 		id: "2",
 		title: "Graphic Design🖼️",
-		desc: "I create visually appealing graphics, logos, and digital assets that align with branding and marketing goals.",
+		desc: "Transforming ideas into visually captivating designs, I create graphics, logos, and digital assets that perfectly align with your brand identity and marketing objectives, leaving a lasting impression.",
 		span: "sm:col-span-4",
 	},
 	{
 		id: "3",
 		title: "IT Support & Technical Troubleshooting 🛠️",
-		desc: "With a Computer Engineering background, I provide technical support, troubleshoot hardware/software issues, and ensure system efficiency.",
+		desc: "Leveraging my Computer Engineering expertise, I offer reliable IT support, resolve hardware and software issues, and optimize system performance to ensure seamless operations.",
 		span: "sm:col-span-4",
 	},
 	{

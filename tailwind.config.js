@@ -27,6 +27,21 @@ export default {
 				darkModeBG: "url('./assets/images/darkModeBG.jpg')",
 				monitorBG: "url('./assets/images/projects/monitorBG.png')",
 			},
+			keyframes: {
+				pulseEffect: {
+					"0%, 100%": {
+						transform: "scale(1)",
+						opacity: 1,
+					},
+					"50%": {
+						transform: "scale(1.2)",
+						opacity: 0.8,
+					},
+				},
+			},
+			animation: {
+				pulseEffect: "pulseEffect 2s infinite",
+			},
 		},
 	},
 	plugins: [],

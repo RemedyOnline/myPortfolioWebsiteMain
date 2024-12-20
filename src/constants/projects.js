@@ -6,7 +6,7 @@ const projectsData = [
 	{
 		id: "1",
 		title: "eSukuu",
-		desc: "A comprehensive School Management System designed to streamline administrative tasks and enhance efficiency in managing school affairs.",
+		desc: "This is a comprehensive School Management System designed to streamline administrative tasks and enhance efficiency in managing school affairs.",
 		images: [
 			"/projects/eSukuu.png",
 			"/projects/eSukuu2.png",
@@ -15,6 +15,7 @@ const projectsData = [
 			"/projects/eSukuu5.png",
 		],
 		tech: ["React", "TailwindCSS", "JavaScript", "Recharts"],
+		githubLink: "https://github.com/Team-Skemishis/School-App-Frontend",
 		liveLink: "https://schoolmgtwebapp.netlify.app/",
 	},
 	{
@@ -23,6 +24,7 @@ const projectsData = [
 		desc: "An e-Commerce platform enabling users to shop globally from the comfort of their homes with a seamless online shopping experience.",
 		images: ["/projects/theEshop.png", "/projects/theEshop2.png"],
 		tech: ["React", "TailwindCSS", "JavaScript", "Recharts"],
+		githubLink: "https://dwasodwaso-e-commerce.netlify.app/",
 		liveLink: "https://dwasodwaso-e-commerce.netlify.app/",
 	},
 	{
@@ -36,6 +38,7 @@ const projectsData = [
 			"/projects/library4.png",
 		],
 		tech: ["React", "TailwindCSS", "JavaScript", "Recharts"],
+		githubLink: "https://team-meff.github.io/meff-library-app/",
 		liveLink: "https://team-meff.github.io/meff-library-app/",
 	},
 	{
@@ -48,6 +51,7 @@ const projectsData = [
 			"/projects/pennyPal3.png",
 		],
 		tech: ["HTML", "CSS", "Rest API"],
+		githubLink: "https://mypennypal.netlify.app/",
 		liveLink: "https://mypennypal.netlify.app/",
 	},
 	{
@@ -60,6 +64,7 @@ const projectsData = [
 			"/projects/remOnline3.png",
 		],
 		tech: ["HTML", "CSS", "Rest API"],
+		githubLink: "https://remedyonlinegh.netlify.app/",
 		liveLink: "https://remedyonlinegh.netlify.app/",
 	},
 	{
@@ -72,6 +77,7 @@ const projectsData = [
 			"/projects/realEstate3.png",
 		],
 		tech: ["HTML", "CSS", ""],
+		githubLink: "https://realestatelandingpagewebsite.netlify.app/",
 		liveLink: "https://realestatelandingpagewebsite.netlify.app/",
 	},
 	{
@@ -85,6 +91,7 @@ const projectsData = [
 			"/projects/portfolioWebsiteExperience.png",
 		],
 		tech: ["HTML", "CSS", ""],
+		githubLink: "https://agyemangprempehmike.netlify.app/",
 		liveLink: "https://agyemangprempehmike.netlify.app/",
 	},
 ];
