@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { useTheme } from "../contexts/ThemeContext";
+import emailjs from "@emailjs/browser";
 import projectsData from "../constants/projects";
 import hallmark from "../constants/hallmark";
 import services from "../constants/services";
@@ -47,6 +48,10 @@ import {
 const LandingPageMain = () => {
 	const { theme, toggleTheme } = useTheme();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const form = useRef();
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [successFeedback, setSuccessFeedback] = useState("");
+	const [failureFeedback, setFailureFeedback] = useState("");
 	const [isExpanded, setIsExpanded] = useState({}); // using an object to track the expanded state of each experience, since using a boolean affects all states...
 	const [currentImageIndex, setCurrentImageIndex] = useState({}); // track images per the projectID...
 	const [iconSize, setIconSize] = useState(16); // setting default size to 16 for mobile screens...
@@ -85,6 +90,32 @@ const LandingPageMain = () => {
 		}));
 	};
 
+	const sendEmail = async (e) => {
+		e.preventDefault();
+		setIsSubmitting(true);
+
+		try {
+			await emailjs.sendForm(
+				"service_zjmslxj",
+				"template_2g1hfz4",
+				form.current,
+				"LCrDScquVg1RPMliD"
+			);
+
+			// clearing form after successful submission...
+			form.current.reset();
+			setSuccessFeedback("Message sent Successfully!");
+			// alert("Message sent Successfully!");
+			console.log("Message sent Successfully!");
+		} catch (error) {
+			console.error("Error sending email:", error);
+			setFailureFeedback("Failed to send message. Please try again.");
+			// alert("Failed to send message. Please try again.");
+		} finally {
+			setIsSubmitting(false);
+		}
+	};
+
 	useEffect(() => {
 		const updateIconSize = () => {
 			const width = window.innerWidth;
@@ -101,12 +132,23 @@ const LandingPageMain = () => {
 		return () => window.removeEventListener("resize", updateIconSize); // cleanup...
 	}, []);
 
+	useEffect(() => {
+		if (successFeedback || failureFeedback) {
+			const timer = setTimeout(() => {
+				setSuccessFeedback("");
+				setFailureFeedback("");
+			}, 4000);
+
+			return () => clearTimeout(timer);
+		}
+	}, [successFeedback, failureFeedback]);
+
 	return (
 		<section className="bg-slate-200 dark:bg-neutral-900 text-slate-800 dark:text-slate-200">
 			{/* Navbar... */}
 			<header
 				id="navbar-section"
-				className="fixed top-3 md:top-5 left-1/2 -translate-x-1/2 transform z-50 w-11/12 flex md:justify-around items-center justify-between px-8 md:px-0 backdrop-blur-md border rounded-lg border-slate-300 dark:border-slate-700 py-1"
+				className="fixed top-3 md:top-5 left-1/2 -translate-x-1/2 transform z-50 w-11/12 flex md:justify-around items-center justify-between px-8 md:px-0 backdrop-blur-md border-2 rounded-xl shadow-sm border-slate-300 dark:border-slate-700 py-1"
 			>
 				<div className="flex justify-center gap-1">
 					<img
@@ -364,7 +406,7 @@ const LandingPageMain = () => {
 				</h2>
 				<div className="md:space-y-5 space-y-4 rounded-xl md:m-5 m-2">
 					<div className="grid lg:grid-cols-10 md:gap-5 gap-4">
-						<div className="flex justify-around lg:col-span-3 md:bg-slate-100 w-full dark:bg-neutral-800 md:p-8 shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit sm:gap-3">
+						<div className="flex justify-around lg:col-span-3 md:bg-slate-100 w-full dark:bg-neutral-800 md:p-8 shadow-md md:shadow-sm hover:shadow-md rounded-xl sm:h-full h-fit sm:gap-3">
 							<img
 								src={graduationPicFold}
 								alt="myPicture"
@@ -654,7 +696,7 @@ const LandingPageMain = () => {
 				<h2 className="md:p-5 p-3  xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					Technologies I Work With
 				</h2>
-				<div className="flex flex-wrap justify-between gap-2 md:gap-5 items-start shadow-md p-2 md:p-4 sticky top-[72px] md:top-24 left-0 backdrop-blur-md border rounded-lg border-slate-300 dark:border-slate-700 z-40">
+				<div className="flex flex-wrap justify-between gap-2 md:gap-5 items-start shadow-sm p-2 md:p-4 sticky top-[72px] md:top-24 left-0 backdrop-blur-md border-2 rounded-xl border-slate-300 dark:border-slate-700 z-40">
 					<div className="flex items-center justify-center gap-2 md:gap-3 text-theme-color">
 						<Info size={32} />
 						<span className="font-black text-sm sm:text-lg md:text-xl lg:text-2xl">
@@ -738,7 +780,7 @@ const LandingPageMain = () => {
 					Contact Me
 				</h2>
 				<div className="grid md:grid-cols-2 md:gap-10 gap-4 md:p-5 p-2">
-					<div className="flex flex-col w-full gap-3 md:gap-5 lg:gap-7 p-5 bg-neutral-100 dark:bg-neutral-800 rounded-lg shadow-sm hover:shadow-md">
+					<div className="flex flex-col w-full gap-3 p-5 bg-neutral-100 dark:bg-neutral-800 rounded-lg shadow-sm hover:shadow-md">
 						<h3 className="lg:text-2xl text-xl text-theme-color font-bold font-JetBrainsMono">
 							Let&apos;s talk about your project!
 						</h3>
@@ -748,36 +790,54 @@ const LandingPageMain = () => {
 							together.
 						</p>
 						<div className="flex flex-col gap-2 text-sm md:text-base lg:text-lg">
-							<div className="flex gap-3 p-2 border-[0.1px] border-neutral-200 dark:border-neutral-700">
+							<div className="flex gap-3 pl-2 py-2 border-[0.1px] border-neutral-200 dark:border-neutral-700 group">
+								<Clock className="mt-1 text-theme-color" />
+								<div className="">
+									<p className="text-theme-color text-xs sm:text-sm">
+										Availability
+									</p>
+									<div className="flex justify-start items-start gap-3 sm:gap-5">
+										<p className="group-hover:underline text-xs sm:text-sm text-neutral-400 dark:text-neutral-600 line-through">
+											Monday-Friday: 9AM – 6PM <br />
+											Saturday: 10 AM – 2 PM <br />
+											Sunday: Closed
+										</p>
+										<span className="group-hover:underline text-xs sm:text-sm">
+											*Available 24/7💯
+										</span>
+									</div>
+								</div>
+							</div>
+							<div className="flex gap-3 p-2 border-[0.1px] border-neutral-200 dark:border-neutral-700 group">
 								<Phone className="mt-1 text-theme-color" />
 								<div className="">
 									<p className="text-theme-color text-xs sm:text-sm">Phone</p>
 									<a
-										className="hover:underline text-xs sm:text-sm"
+										className="group-hover:underline text-xs sm:text-sm"
 										href="tel: +233555975976"
 									>
 										+233 555 975 976
 									</a>
 								</div>
 							</div>
-							<div className="flex gap-3 p-2 border-[0.1px] border-neutral-200 dark:border-neutral-700">
+							<div className="flex gap-3 p-2 border-[0.1px] border-neutral-200 dark:border-neutral-700 group">
 								<Mail className="mt-1 text-theme-color" />
 								<div className="">
 									<p className="text-theme-color text-xs sm:text-sm">Email</p>
 									<a
-										className="hover:underline text-xs sm:text-sm"
+										className="group-hover:underline text-xs sm:text-sm"
 										href="mailto:agyemangmichael555@gmail.com"
 									>
 										agyemangmichael555@gmail.com
 									</a>
 								</div>
 							</div>
-							<div className="flex gap-3 p-2 border-[0.1px] border-neutral-200 dark:border-neutral-700">
+							<div className="flex gap-3 p-2 border-[0.1px] border-neutral-200 dark:border-neutral-700 group">
 								<MapPin className="mt-1 text-theme-color" />
 								<div className="">
 									<p className="text-theme-color text-xs sm:text-sm">Address</p>
 									<a
-										className="hover:underline text-xs sm:text-sm"
+										className="group-hover:underline text-xs sm:text-sm"
 										href="https://maps.app.goo.gl/euywUBrFsdxPfyqU9"
 										target="_blank"
 									>
@@ -788,43 +848,78 @@ const LandingPageMain = () => {
 							</div>
 						</div>
 					</div>
-					<div className="flex flex-col gap-3 md:gap-5 lg:gap-7 p-5  bg-neutral-100 dark:bg-neutral-800 rounded-xl w-full shadow-sm hover:shadow-md md:justify-between">
+					<div className="flex flex-col gap-3 p-5  bg-neutral-100 dark:bg-neutral-800 rounded-xl w-full shadow-sm hover:shadow-md md:justify-between">
 						<h3 className="lg:text-2xl text-xl text-theme-color font-bold font-JetBrainsMono">
 							Send me a message.
 						</h3>
+						{successFeedback && (
+							<p className="text-xs sm:text-sm text-green-700 text-center py-1 rounded-md bg-green-200">
+								{successFeedback}
+							</p>
+						)}
+						{failureFeedback && (
+							<p className="text-xs sm:text-sm text-red-700 text-center py-1 rounded-md bg-red-200">
+								{failureFeedback}
+							</p>
+						)}
 						<p className="text-xs sm:text-sm">
 							Feel free to Contact me by submitting the form below and I will
 							get back to you as soon as possible..🫡
 						</p>
-						<form className="flex flex-col space-y-4 justify-center text-sm">
+						<form
+							ref={form}
+							onSubmit={sendEmail}
+							className="flex flex-col space-y-4 md:space-y-5 justify-center text-base"
+						>
 							<label
-								htmlFor="userName"
+								htmlFor="name"
 								className="block relative rounded-md border-2 shadow-sm focus-within:ring-1 focus-within:ring-theme-color border-neutral-200 dark:border-neutral-700"
 							>
 								<input
 									type="text"
 									id="name"
-									placeholder="Enter your name..."
+									name="from_name"
+									// value={name}
+									placeholder="Enter your Name..."
 									className="w-full h-full px-2 py-2 md:px-3 md:py-3 placeholder-transparent peer bg-transparent rounded-md border-none focus:border-transparent focus:outline-none focus:ring-0"
 									required
 								/>
 								<span className="pointer-events-none absolute start-2 md:start-4 top-0 -translate-y-1/2 bg-neutral-100 dark:bg-neutral-800 px-1 text-xs sm:text-sm transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs sm:peer-placeholder-shown:text-sm peer-focus:top-0">
-									Enter your name...
+									Enter your Name...
 								</span>
 							</label>
 							<label
-								htmlFor="userMail"
+								htmlFor="email"
 								className="block relative rounded-md border-2 shadow-sm focus-within:ring-1 focus-within:ring-theme-color border-neutral-200 dark:border-neutral-700"
 							>
 								<input
 									type="email"
 									id="email"
-									placeholder="Enter your email..."
+									name="from_email"
+									// value={email}
+									placeholder="Enter your Email..."
+									required
+									className="w-full h-full px-2 py-2 md:px-3 md:py-3 placeholder-transparent peer bg-transparent rounded-md border-none focus:border-transparent focus:outline-none focus:ring-0"
+								/>
+								<span className="pointer-events-none absolute start-2 md:start-4 top-0 -translate-y-1/2 bg-neutral-100 dark:bg-neutral-800 px-1 text-xs sm:text-sm transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs sm:peer-placeholder-shown:text-sm peer-focus:top-0">
+									Enter your Email...
+								</span>
+							</label>
+							<label
+								htmlFor="subject"
+								className="block relative rounded-md border-2 shadow-sm focus-within:ring-1 focus-within:ring-theme-color border-neutral-200 dark:border-neutral-700"
+							>
+								<input
+									type="text"
+									id="subject"
+									name="subject"
+									// value={subject}
+									placeholder="Enter the Subject..."
 									className="w-full h-full px-2 py-2 md:px-3 md:py-3 placeholder-transparent peer bg-transparent rounded-md border-none focus:border-transparent focus:outline-none focus:ring-0"
 									required
 								/>
 								<span className="pointer-events-none absolute start-2 md:start-4 top-0 -translate-y-1/2 bg-neutral-100 dark:bg-neutral-800 px-1 text-xs sm:text-sm transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs sm:peer-placeholder-shown:text-sm peer-focus:top-0">
-									Enter your email...
+									Enter the Subject...
 								</span>
 							</label>
 							<label
@@ -834,15 +929,21 @@ const LandingPageMain = () => {
 								<textarea
 									name="message"
 									id="message"
-									placeholder="Enter your message..."
+									// value={message}
+									placeholder="Enter your Message..."
 									className="w-full h-full px-2 py-2 md:px-3 md:py-3 placeholder-transparent peer bg-transparent rounded-md border-none focus:border-transparent focus:outline-none focus:ring-0"
+									required
 								></textarea>
-								<span className="pointer-events-none absolute start-2 md:start-4 top-0 -translate-y-1/2 bg-neutral-100 dark:bg-neutral-800 px-1 text-xs sm:text-sm transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs sm:peer-placeholder-shown:text-sm peer-focus:top-0">
-									Enter your message...
+								<span className="pointer-events-none absolute start-2 md:start-4 top-0 -translate-y-1/2 bg-neutral-100 dark:bg-neutral-800 px-1 text-xs sm:text-sm transition-all peer-placeholder-shown:top-1/4 peer-placeholder-shown:text-xs sm:peer-placeholder-shown:text-sm peer-focus:top-0">
+									Enter your Message...
 								</span>
 							</label>
-							<button className="md:px-5 px-2 py-2 text-xs sm:text-sm bg-theme-color text-slate-100 rounded-md sm:shadow-sm self-end">
-								Send Message
+							<button
+								type="submit"
+								disabled={isSubmitting}
+								className="md:px-5 px-2 py-2 text-xs sm:text-sm bg-theme-color text-slate-100 rounded-md sm:shadow-sm self-end"
+							>
+								{isSubmitting ? "Sending..." : "Send Message"}
 							</button>
 						</form>
 					</div>

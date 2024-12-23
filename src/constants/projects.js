@@ -24,7 +24,7 @@ const projectsData = [
 		desc: "An e-Commerce platform enabling users to shop globally from the comfort of their homes with a seamless online shopping experience.",
 		images: ["/projects/theEshop.png", "/projects/theEshop2.png"],
 		tech: ["React", "TailwindCSS", "JavaScript", "Recharts"],
-		githubLink: "https://dwasodwaso-e-commerce.netlify.app/",
+		githubLink: "https://github.com/TEAM-MEFF/Advertisement-Project-App",
 		liveLink: "https://dwasodwaso-e-commerce.netlify.app/",
 	},
 	{
@@ -38,8 +38,8 @@ const projectsData = [
 			"/projects/library4.png",
 		],
 		tech: ["React", "TailwindCSS", "JavaScript", "Recharts"],
-		githubLink: "https://team-meff.github.io/meff-library-app/",
-		liveLink: "https://team-meff.github.io/meff-library-app/",
+		githubLink: "https://github.com/TEAM-MEFF/meff-library-app",
+		liveLink: "https://thelibraryapp.netlify.app/",
 	},
 	{
 		id: "4",
@@ -51,7 +51,7 @@ const projectsData = [
 			"/projects/pennyPal3.png",
 		],
 		tech: ["HTML", "CSS", "Rest API"],
-		githubLink: "https://mypennypal.netlify.app/",
+		githubLink: "https://github.com/RemedyOnline/currencyConverter",
 		liveLink: "https://mypennypal.netlify.app/",
 	},
 	{
@@ -63,8 +63,8 @@ const projectsData = [
 			"/projects/remOnline2.png",
 			"/projects/remOnline3.png",
 		],
-		tech: ["HTML", "CSS", "Rest API"],
-		githubLink: "https://remedyonlinegh.netlify.app/",
+		tech: ["HTML", "CSS"],
+		githubLink: "https://github.com/RemedyOnline/RemedyOnlineStudies",
 		liveLink: "https://remedyonlinegh.netlify.app/",
 	},
 	{
@@ -76,8 +76,8 @@ const projectsData = [
 			"/projects/realEstate2.png",
 			"/projects/realEstate3.png",
 		],
-		tech: ["HTML", "CSS", ""],
-		githubLink: "https://realestatelandingpagewebsite.netlify.app/",
+		tech: ["HTML", "CSS"],
+		githubLink: "https://github.com/RemedyOnline/RealEstateProject",
 		liveLink: "https://realestatelandingpagewebsite.netlify.app/",
 	},
 	{
@@ -90,8 +90,8 @@ const projectsData = [
 			"/projects/portfolioWebsiteServices.png",
 			"/projects/portfolioWebsiteExperience.png",
 		],
-		tech: ["HTML", "CSS", ""],
-		githubLink: "https://agyemangprempehmike.netlify.app/",
+		tech: ["HTML", "TailwindCSS", "ReactJS", "EmailJS"],
+		githubLink: "https://github.com/RemedyOnline/myPortfolioWebsiteMain",
 		liveLink: "https://agyemangprempehmike.netlify.app/",
 	},
 ];
