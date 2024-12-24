@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 const ThemeContext = createContext();
 
@@ -8,11 +9,8 @@ export const ThemeProvider = ({ children }) => {
 		const savedTheme = localStorage.getItem("theme");
 		if (savedTheme) return savedTheme;
 
-		// detecting the user's system theme preference on the first load...
-		const systemPrefersDark = window.matchMedia(
-			"(Prefers-color-scheme: dark)"
-		).matches;
-		return systemPrefersDark ? "darkMode" : "lightMode";
+		// Instead of checking system preference, default to darkMode
+		return "lightMode";
 	});
 
 	const toggleTheme = () => {
@@ -34,6 +32,10 @@ export const ThemeProvider = ({ children }) => {
 			{children}
 		</ThemeContext.Provider>
 	);
+};
+
+ThemeProvider.propTypes = {
+	children: PropTypes.node.isRequired,
 };
 
 export const useTheme = () => {
