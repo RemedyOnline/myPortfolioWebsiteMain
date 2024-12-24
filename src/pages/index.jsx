@@ -747,7 +747,7 @@ const LandingPageMain = () => {
 				<h2 className="md:p-5 p-3 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					What Clients Say
 				</h2>
-				<div className="grid sm:grid-cols-2 gap-5 md:p-5 p-2">
+				<div className="grid lg:grid-cols-2 gap-5 md:p-5 p-2">
 					{testimonials.map((testimony) => (
 						<div
 							key={testimony.id}
@@ -762,8 +762,8 @@ const LandingPageMain = () => {
 
 							<div className="bg-white dark:bg-black opacity-70 dark:opacity-70 h-full w-full p-5  dark:text-neutral-100 text-black flex flex-col justify-between items-end">
 								<p className="text-sm">{`⭐`.repeat(testimony.rating)}</p>
-								<p className="text-end w-2/3 text-xs xl:text-sm">
-									<span className="text-3xl text-theme-color font-bold font-PlusJakartaSans mr-1 b">
+								<p className="text-end w-2/3 text-xs sm:text-sm">
+									<span className="text-3xl text-theme-color font-bold font-PlusJakartaSans mr-1">
 										&quot;
 									</span>
 									{testimony.comment}
@@ -794,11 +794,11 @@ const LandingPageMain = () => {
 						<div className="flex flex-col gap-2 text-sm md:text-base lg:text-lg">
 							<div className="flex gap-3 pl-2 py-2 border-[0.1px] border-neutral-200 dark:border-neutral-700 group">
 								<Clock className="mt-1 text-theme-color" />
-								<div className="">
+								<div className="w-full">
 									<p className="text-theme-color text-xs sm:text-sm">
 										Availability
 									</p>
-									<div className="flex justify-start items-start gap-3 sm:gap-5">
+									<div className="flex justify-between">
 										<p className="group-hover:underline text-xs sm:text-sm text-neutral-400 dark:text-neutral-600 line-through">
 											Monday-Friday: 9AM – 6PM <br />
 											Saturday: 10 AM – 2 PM <br />
@@ -812,7 +812,7 @@ const LandingPageMain = () => {
 							</div>
 							<div className="flex gap-3 p-2 border-[0.1px] border-neutral-200 dark:border-neutral-700 group">
 								<Phone className="mt-1 text-theme-color" />
-								<div className="">
+								<div className="w-full">
 									<p className="text-theme-color text-xs sm:text-sm">Phone</p>
 									<a
 										className="group-hover:underline text-xs sm:text-sm"
@@ -824,7 +824,7 @@ const LandingPageMain = () => {
 							</div>
 							<div className="flex gap-3 p-2 border-[0.1px] border-neutral-200 dark:border-neutral-700 group">
 								<Mail className="mt-1 text-theme-color" />
-								<div className="">
+								<div className="w-full">
 									<p className="text-theme-color text-xs sm:text-sm">Email</p>
 									<a
 										className="group-hover:underline text-xs sm:text-sm"
@@ -836,7 +836,7 @@ const LandingPageMain = () => {
 							</div>
 							<div className="flex gap-3 p-2 border-[0.1px] border-neutral-200 dark:border-neutral-700 group">
 								<MapPin className="mt-1 text-theme-color" />
-								<div className="">
+								<div className="w-full">
 									<p className="text-theme-color text-xs sm:text-sm">Address</p>
 									<a
 										className="group-hover:underline text-xs sm:text-sm"
