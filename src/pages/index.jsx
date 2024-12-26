@@ -167,30 +167,48 @@ const LandingPageMain = () => {
 				>
 					<ScrollLink
 						to="home"
+						smooth={true}
+						duration={2000}
 						className="px-2 py-2 rounded-xl hover:cursor-pointer hover:underline"
 					>
 						Home
 					</ScrollLink>
 					<ScrollLink
-						to="home"
+						to="services"
+						smooth={true}
+						duration={2000}
 						className=" px-2 py-2 rounded-xl hover:cursor-pointer hover:underline"
 					>
 						Services
 					</ScrollLink>
 					<ScrollLink
-						to="home"
+						to="about"
+						smooth={true}
+						duration={2000}
 						className=" px-2 py-2 rounded-xl hover:cursor-pointer hover:underline"
 					>
 						About
 					</ScrollLink>
 					<ScrollLink
-						to="home"
+						to="experience"
+						smooth={true}
+						duration={2000}
 						className=" px-2 py-2 rounded-xl hover:cursor-pointer hover:underline"
 					>
 						Experience
 					</ScrollLink>
 					<ScrollLink
-						to="home"
+						to="projects"
+						smooth={true}
+						duration={2000}
+						className=" px-2 py-2 rounded-xl hover:cursor-pointer hover:underline"
+					>
+						Projects
+					</ScrollLink>
+					<ScrollLink
+						to="contact"
+						smooth={true}
+						duration={2000}
 						className=" px-2 py-2 rounded-xl hover:cursor-pointer hover:underline"
 					>
 						Contact
@@ -236,7 +254,7 @@ const LandingPageMain = () => {
 			</header>
 			{/* Hero section */}
 			<section
-				id="hero-section"
+				id="home"
 				className={`h-screen bg-cover bg-center overflow-hidden grid gap-5 md:gap-0 md:flex md:justify-center md:items-center py-20 px-6 sm:px-10 bg-lightModeBG dark:bg-darkModeBG ${
 					theme === "darkMode" ? "darkModeBG" : "lightModeBG"
 				} `}
@@ -359,8 +377,11 @@ const LandingPageMain = () => {
 				</div>
 			</section>
 			{/* Services */}
-			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
-				<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
+			<section
+				className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4"
+				id="services"
+			>
+				<h2 className="md:p-5 p-3 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					My Services
 				</h2>
 				<div className="md:space-y-5 space-y-4 rounded-xl md:m-5 m-2">
@@ -403,8 +424,8 @@ const LandingPageMain = () => {
 				</div>
 			</section>
 			{/* About Me */}
-			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
-				<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
+			<section id="about" className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
+				<h2 className="md:p-5 p-3 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					About Me
 				</h2>
 				<div className="md:space-y-5 space-y-4 rounded-xl md:m-5 m-2">
@@ -542,9 +563,12 @@ const LandingPageMain = () => {
 				</div>
 			</section>
 			{/* Experience */}
-			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
+			<section
+				id="experience"
+				className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4"
+			>
 				<div>
-					<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
+					<h2 className="md:p-5 p-3 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 						Experience
 					</h2>
 					<div className="flex flex-col gap-2 sm:gap-0 md:m-5 m-2">
@@ -621,8 +645,11 @@ const LandingPageMain = () => {
 				</div>
 			</section>
 			{/* Projects */}
-			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
-				<h2 className="md:p-5 p-3 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
+			<section
+				id="projects"
+				className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4"
+			>
+				<h2 className="md:p-5 p-3 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					A Glimpse Into My Work
 				</h2>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:gap-10 gap-4 md:p-5 p-2">
@@ -698,7 +725,7 @@ const LandingPageMain = () => {
 			</section>
 			{/* My Stack/Tools */}
 			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
-				<h2 className="md:p-5 p-3  xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
+				<h2 className="md:p-5 p-3 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					Technologies I Work With
 				</h2>
 				<div className="flex flex-wrap justify-between gap-2 md:gap-5 items-start shadow-sm p-2 md:p-4 sticky top-[72px] md:top-24 left-0 backdrop-blur-md border-2 rounded-xl border-slate-300 dark:border-slate-700 z-40">
@@ -782,7 +809,10 @@ const LandingPageMain = () => {
 				</div>
 			</section>
 			{/* Contact */}
-			<section className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4">
+			<section
+				id="contact"
+				className="2xl:max-w-7xl mx-auto md:p-10 sm:p-6 p-4"
+			>
 				<h2 className="md:p-5 p-3 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-Caprasimo text-theme-color">
 					Contact Me
 				</h2>
