@@ -18,6 +18,7 @@ import icms from "/logos/icms.jpg";
 import kuhis from "/logos/kuhis-logo.jpg";
 import mest from "/logos/mest-logo.png";
 import uenr from "/logos/uenrLogo.png";
+import myCV from "/Michael_Agyemang_Prempeh-UiUxDevCV-Dec.pdf";
 import {
 	Award,
 	BookCheck,
@@ -274,9 +275,11 @@ const LandingPageMain = () => {
 							<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-100 lg:text-base text-sm">
 								View Portfolio
 							</button>
-							<button className="md:px-5 px-2 py-2 border border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200 lg:text-base text-sm">
-								Download CV
-							</button>
+							<a href={myCV} download={myCV}>
+								<button className="md:px-5 px-2 py-2 border border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200 lg:text-base text-sm">
+									Download CV
+								</button>
+							</a>
 						</div>
 						<div className="flex sm:space-x-5 space-x-2">
 							<Link
@@ -287,7 +290,7 @@ const LandingPageMain = () => {
 								<Linkedin />
 							</Link>
 							<Link
-								to={"https://linkedin.com/in/agyemangmichael233"}
+								to={"https://github.com/RemedyOnline"}
 								target={"_blank"}
 								className="p-2 shadow-md bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600"
 							>
@@ -345,7 +348,7 @@ const LandingPageMain = () => {
 								key={item.id}
 								className="md:p-5 md:m-5 m-2 p-2 bg-slate-100 dark:bg-neutral-800 rounded-xl text-center flex flex-col text-wrap space-y-1 md:space-y-2 shadow-sm hover:shadow-md group"
 							>
-								<IconComponent className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 group-hover:rotate-45 transition-all duration-1000" />
+								<IconComponent className="self-center text-slate-600 dark:text-slate-300 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 group-hover:rotate-45 transition-all duration-500" />
 								<p className="lg:text-2xl md:text-xl text-lg text-theme-color font-bold font-JetBrainsMono">
 									{item.numValue}
 								</p>
@@ -448,9 +451,11 @@ const LandingPageMain = () => {
 								<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200">
 									View Portfolio
 								</button>
-								<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200">
-									Download CV
-								</button>
+								<a href={myCV} download={myCV}>
+									<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200">
+										Download CV
+									</button>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -787,9 +792,9 @@ const LandingPageMain = () => {
 							Let&apos;s talk about your project!
 						</h3>
 						<p className="text-xs sm:text-sm">
-							Whether it&apos;s a creative project or a freelance gig, I&apos;m
-							ready to make it happen—let&apos;s build something remarkable
-							together.
+							Whether it&apos;s a creative project, a freelance gig, or a
+							full-time role, I&apos;m ready to make it happen—let&apos;s build
+							something remarkable together.
 						</p>
 						<div className="flex flex-col gap-2 text-sm md:text-base lg:text-lg">
 							<div className="flex gap-3 pl-2 py-2 border-[0.1px] border-neutral-200 dark:border-neutral-700 group">
@@ -798,8 +803,8 @@ const LandingPageMain = () => {
 									<p className="text-theme-color text-xs sm:text-sm">
 										Availability
 									</p>
-									<div className="flex justify-between">
-										<p className="group-hover:underline text-xs sm:text-sm text-neutral-400 dark:text-neutral-600 line-through">
+									<div className="flex justify-between lg:justify-start lg:gap-5">
+										<p className="text-xs sm:text-sm text-neutral-400 dark:text-neutral-600 line-through">
 											Monday-Friday: 9AM – 6PM <br />
 											Saturday: 10 AM – 2 PM <br />
 											Sunday: Closed
@@ -854,16 +859,6 @@ const LandingPageMain = () => {
 						<h3 className="lg:text-2xl text-xl text-theme-color font-bold font-JetBrainsMono">
 							Send me a message.
 						</h3>
-						{successFeedback && (
-							<p className="text-xs sm:text-sm text-green-700 text-center py-1 rounded-md bg-green-200">
-								{successFeedback}
-							</p>
-						)}
-						{failureFeedback && (
-							<p className="text-xs sm:text-sm text-red-700 text-center py-1 rounded-md bg-red-200">
-								{failureFeedback}
-							</p>
-						)}
 						<p className="text-xs sm:text-sm">
 							Feel free to Contact me by submitting the form below and I will
 							get back to you as soon as possible..🫡
@@ -940,6 +935,16 @@ const LandingPageMain = () => {
 									Enter your Message...
 								</span>
 							</label>
+							{successFeedback && (
+								<p className="text-xs sm:text-sm text-green-700 text-center py-1 rounded-md bg-green-200">
+									{successFeedback}
+								</p>
+							)}
+							{failureFeedback && (
+								<p className="text-xs sm:text-sm text-red-700 text-center py-1 rounded-md bg-red-200">
+									{failureFeedback}
+								</p>
+							)}
 							<button
 								type="submit"
 								disabled={isSubmitting}
@@ -969,7 +974,7 @@ const LandingPageMain = () => {
 								<Linkedin />
 							</Link>
 							<Link
-								to={"https://linkedin.com/in/agyemangmichael233"}
+								to={"https://github.com/RemedyOnline"}
 								target={"_blank"}
 								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 hover:animate-pulse"
 							>

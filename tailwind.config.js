@@ -34,13 +34,13 @@ export default {
 						opacity: 1,
 					},
 					"50%": {
-						transform: "scale(1.2)",
+						transform: "scale(1.4)",
 						opacity: 0.8,
 					},
 				},
 			},
 			animation: {
-				pulseEffect: "pulseEffect 2s infinite",
+				pulseEffect: "pulseEffect 1s infinite",
 			},
 		},
 	},

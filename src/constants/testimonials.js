@@ -4,12 +4,12 @@ const testimonials = [
 		img: "satisfiedClients/client1.jpg",
 		rating: "4",
 		comment:
-			"Working with this developer was a great experience! He delivered our library management system on time. The final product exceeded our expectations.",
+			"Working with this developer was a great experience! He delivered our library management system on time. The final product exceeded my expectations.",
 		clientName: "Samuel K. Asamoah",
 	},
 	{
 		id: "2",
-		img: "satisfiedClients/client4.jpg",
+		img: "satisfiedClients/client6.jpg",
 		rating: "5",
 		comment:
 			"The final product works well for our needs. While there were some delays during development, he was transparent about the timeline and kept us updated.",
