@@ -18,6 +18,8 @@ import icms from "/logos/icms.jpg";
 import kuhis from "/logos/kuhis-logo.jpg";
 import mest from "/logos/mest-logo.png";
 import uenr from "/logos/uenrLogo.png";
+import behanceBlack from "/behanceBlack.svg";
+import behanceWhite2 from "/behanceWhite2.png";
 import myCV from "/Michael_Agyemang_Prempeh-UiUxDevCV-Dec.pdf";
 import {
 	Award,
@@ -149,17 +151,22 @@ const LandingPageMain = () => {
 			{/* Navbar... */}
 			<header
 				id="navbar-section"
-				className="fixed top-3 md:top-5 left-1/2 -translate-x-1/2 transform z-50 w-11/12 flex md:justify-around items-center justify-between px-8 md:px-0 backdrop-blur-md border-2 rounded-xl shadow-sm border-slate-300 dark:border-slate-700 py-1"
+				className="fixed top-3 md:top-5 left-1/2 -translate-x-1/2 transform z-50 w-11/12 flex md:justify-around items-center justify-between px-3 md:px-0 backdrop-blur-md border-2 rounded-xl shadow-sm border-slate-300 dark:border-slate-700 py-1"
 			>
-				<div className="flex justify-center gap-1">
+				<ScrollLink
+					to="home"
+					smooth={true}
+					duration={2000}
+					className="flex justify-center gap-1"
+				>
 					<img
 						src={logo}
 						className="p-1 lg:h-14 md:h-12 h-11 self-center"
 						alt="logo"
 					/>
-				</div>
+				</ScrollLink>
 				<nav
-					className={`sm:static px-4 py-2 w-5/12 sm:w-auto bg-slate-100 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent flex flex-col sm:flex-row sm:items-center lg:text-base text-sm 2xl:gap-8 xl:gap-6 lg:gap-4 gap-2 transition-all duration-700 shadow-md sm:shadow-none ${
+					className={`sm:static px-4 py-3 sm:py-2 w-5/12 sm:w-auto bg-slate-100 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent flex flex-col sm:flex-row sm:items-center lg:text-base text-sm 2xl:gap-8 xl:gap-6 lg:gap-4 gap-2 transition-all duration-700 shadow-md sm:shadow-none ${
 						isMenuOpen
 							? "block absolute right-0 top-12"
 							: "sm:flex absolute right-0 -top-96"
@@ -215,15 +222,13 @@ const LandingPageMain = () => {
 					</ScrollLink>
 				</nav>
 				<div
-					className={`mt-5 sm:mt-0 flex sm:static items-center lg:gap-5 md:gap-4 gap-3 text-nowrap px-5 sm:px-0 py-2 w-5/12 sm:w-auto bg-slate-100 dark:bg-neutral-900 sm:bg-transparent dark:sm:bg-transparent transition-all duration-700 shadow-md sm:shadow-none ${
-						isMenuOpen
-							? "flex sm:flex absolute right-0 top-72"
-							: "sm:flex absolute right-0 -top-60"
-					}`}
+					className={`sm:mt-0 flex sm:static items-center lg:gap-5 md:gap-4 gap-3 text-nowrap sm:px-0 sm:w-auto sm:bg-transparent dark:sm:bg-transparent transition-all duration-700 shadow-none `}
 				>
 					<button
 						onClick={toggleTheme}
-						className="lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg shadow-sm hover:shadow-md hover:bg-slate-300 dark:hover:bg-slate-600 sm:shadow-md transition-transform duration-700 ease-in-out"
+						className={`lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg shadow-sm hover:shadow-md hover:bg-slate-800 dark:hover:bg-slate-600 sm:shadow-md transition-transform duration-500 ease-in-out ${
+							theme === "lightMode" ? "rotate-0" : "rotate-180"
+						}`}
 					>
 						{theme === "darkMode" ? (
 							<Sun className="h-5 w-5 text-gray-500 dark:text-slate-200" />
@@ -231,26 +236,31 @@ const LandingPageMain = () => {
 							<Moon className="h-5 w-5 text-gray-500 dark:text-slate-200" />
 						)}
 					</button>
-					<button className="md:px-5 px-2 py-2 lg:text-base text-xs sm:text-sm bg-theme-color text-slate-100 rounded-md sm:shadow-sm">
+					<ScrollLink
+						to="contact"
+						smooth={true}
+						duration={2000}
+						className="md:px-5 px-2 py-2 lg:text-base text-sm bg-theme-color text-slate-100 hover:bg-blue-400 hover:cursor-pointer rounded-lg shadow-sm"
+					>
 						Hire Me!
+					</ScrollLink>
+					<button
+						onClick={toggleMenu}
+						className="lg:p-3 p-2 bg-slate-100 dark:bg-slate-700 rounded-lg sm:hidden hover:bg-slate-300 dark:hover:bg-slate-600 shadow-sm"
+					>
+						<div
+							className={`transition-transform duration-200 ease-in-out ${
+								isMenuOpen ? "rotate-0" : "rotate-180"
+							}`}
+						>
+							{isMenuOpen ? (
+								<ChevronUp className="h-5 w-5 md:h-6 md:w-6 text-gray-500 dark:text-slate-200" />
+							) : (
+								<Menu className="h-5 w-5 md:h-6 md:w-6 text-gray-500 dark:text-slate-200" />
+							)}
+						</div>
 					</button>
 				</div>
-				<button
-					onClick={toggleMenu}
-					className="lg:p-3 p-2 bg-slate-100 dark:bg-slate-700 rounded-lg sm:hidden hover:bg-slate-300 dark:hover:bg-slate-600 shadow-sm"
-				>
-					<div
-						className={`transition-transform duration-200 ease-in-out ${
-							isMenuOpen ? "rotate-0" : "rotate-180"
-						}`}
-					>
-						{isMenuOpen ? (
-							<ChevronUp className="h-5 w-5 md:h-6 md:w-6 text-gray-500 dark:text-slate-200" />
-						) : (
-							<Menu className="h-5 w-5 md:h-6 md:w-6 text-gray-500 dark:text-slate-200" />
-						)}
-					</div>
-				</button>
 			</header>
 			{/* Hero section */}
 			<section
@@ -315,7 +325,17 @@ const LandingPageMain = () => {
 								<Github />
 							</Link>
 							<Link
-								to={"https://linkedin.com/in/agyemangmichael233"}
+								to={"https://www.behance.net/agyemangmichael233"}
+								target={"_blank"}
+							>
+								<img
+									src={theme === "darkMode" ? behanceWhite2 : behanceBlack}
+									alt="behanceLogo"
+									className="p-1 shadow-md bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 h-10 w-10"
+								/>
+							</Link>
+							<Link
+								to={"https://codepen.io/Michael-Agyemang-Prempeh"}
 								target={"_blank"}
 								className="p-2 shadow-md bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600"
 							>
@@ -469,9 +489,14 @@ const LandingPageMain = () => {
 								impactful digital solutions.
 							</p>
 							<div className=" sm:text-sm text-xs flex md:space-x-5 space-x-2 pt-2">
-								<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200">
+								<ScrollLink
+									to="projects"
+									smooth={true}
+									duration={2000}
+									className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200"
+								>
 									View Portfolio
-								</button>
+								</ScrollLink>
 								<a href={myCV} download={myCV}>
 									<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200">
 										Download CV
@@ -687,7 +712,7 @@ const LandingPageMain = () => {
 									</button>
 								</div>
 							</div>
-							<h3 className="sm:text-sm text-xs font-semibold mx-auto text-center md:mt-2 mt-1">
+							<h3 className="sm:text-base text-sm font-semibold mx-auto text-center md:mt-2 mt-1">
 								{project.title}
 							</h3>
 							<p className="sm:text-sm text-xs md:mt-2 mt-1">{project.desc}</p>
@@ -1011,7 +1036,17 @@ const LandingPageMain = () => {
 								<Github />
 							</Link>
 							<Link
-								to={"https://linkedin.com/in/agyemangmichael233"}
+								to={"https://www.behance.net/agyemangmichael233"}
+								target={"_blank"}
+							>
+								<img
+									src={theme === "darkMode" ? behanceWhite2 : behanceBlack}
+									alt="behanceLogo"
+									className="p-1 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 h-10 w-10"
+								/>
+							</Link>
+							<Link
+								to={"https://codepen.io/Michael-Agyemang-Prempeh"}
 								target={"_blank"}
 								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 hover:animate-pulse"
 							>
