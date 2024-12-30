@@ -226,7 +226,7 @@ const LandingPageMain = () => {
 				>
 					<button
 						onClick={toggleTheme}
-						className={`lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg shadow-sm hover:shadow-md hover:bg-slate-800 dark:hover:bg-slate-600 sm:shadow-md transition-transform duration-500 ease-in-out ${
+						className={`lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg shadow-sm hover:shadow-md hover:bg-slate-200 dark:hover:bg-slate-600 sm:shadow-md transition-transform duration-500 ease-in-out ${
 							theme === "lightMode" ? "rotate-0" : "rotate-180"
 						}`}
 					>
@@ -246,7 +246,7 @@ const LandingPageMain = () => {
 					</ScrollLink>
 					<button
 						onClick={toggleMenu}
-						className="lg:p-3 p-2 bg-slate-100 dark:bg-slate-700 rounded-lg sm:hidden hover:bg-slate-300 dark:hover:bg-slate-600 shadow-sm"
+						className="lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg sm:hidden hover:bg-slate-200 dark:hover:bg-slate-600 shadow-sm"
 					>
 						<div
 							className={`transition-transform duration-200 ease-in-out ${
