@@ -25,9 +25,9 @@ const experiences = [
 		myRole: "IT Support Specialist (NSS)",
 		institution: "Forestry Commission, HQ",
 		descFull:
-			"At the Database and Applications Unit, I contributed to revamping the company’s website using modern design principles, enhancing accessibility across devices, and achieving a 52% increase in user satisfaction. I collaborated with senior developers on the design and development of the “Green Ghana” mobile app, boosting brand visibility and driving a 46% increase in website traffic within the first month. Additionally, I supported the maintenance of websites and web applications by assisting with bug fixes and performance optimizations to enhance user experience.",
+			"During my National Service at the Forestry Commission HQ, I provided technical support across departments by troubleshooting and repairing computers, printers, and office equipment to ensure seamless IT operations. I played a key role in maintaining stable internet connectivity, enhancing productivity and communication across the organization. I also offered hands-on IT support to staff, resolving hardware and software issues to minimize downtime and improve user satisfaction. Additionally, I handled the setup and maintenance of audio-visual systems, including projectors and sound equipment, for conferences and stakeholder meetings.",
 		descBrief:
-			"At the Database and Applications Unit, I contributed to revamping the company’s website using modern design principles, enhancing accessibility across devices, ...",
+			"During my National Service at the Forestry Commission HQ, I provided technical support across departments by troubleshooting and repairing computers, ...",
 	},
 	{
 		id: "4",

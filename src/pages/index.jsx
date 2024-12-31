@@ -630,10 +630,10 @@ const LandingPageMain = () => {
 												</p>
 												<button
 													onClick={() => toggleExpanded(experience.id)}
-													className={`text-theme-color underline hover:text-slate-400 hover:font-medium transition-all duration-300  sm:text-sm text-xs bg-slate-100 dark:bg-neutral-800 px-1 font-semibold ${
+													className={`text-theme-color underline transition-all duration-300  sm:text-sm text-xs bg-slate-100 dark:bg-neutral-800  font-semibold ${
 														isExpanded[experience.id]
 															? "static"
-															: "absolute right-0 bottom-0"
+															: "absolute right-0 bottom-0 px-1"
 													}`}
 												>
 													{isExpanded[experience.id]
