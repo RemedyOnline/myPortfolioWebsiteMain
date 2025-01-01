@@ -248,7 +248,7 @@ const LandingPageMain = () => {
 						to="contact"
 						smooth={true}
 						duration={2000}
-						className="md:px-5 px-2 py-2 lg:text-base text-sm bg-theme-color text-slate-100 hover:bg-blue-400 hover:cursor-pointer rounded-lg shadow-sm md:shadow-md"
+						className="lg:px-5 px-2 py-2 lg:text-base text-sm bg-theme-color text-slate-100 hover:bg-blue-400 hover:cursor-pointer rounded-lg shadow-sm md:shadow-md"
 					>
 						Hire Me!
 					</ScrollLink>
@@ -307,12 +307,17 @@ const LandingPageMain = () => {
 						create something fantastic together.
 					</p>
 					<div className="text-nowrap flex flex-col md:space-y-5 space-y-3">
-						<div className="sm:text-base text-sm flex md:space-x-5 space-x-2">
-							<button className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-100 lg:text-base text-sm">
+						<div className="flex md:space-x-5 space-x-2">
+							<ScrollLink
+								to="projects"
+								smooth={true}
+								duration={2000}
+								className="lg:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-100 lg:text-base text-sm"
+							>
 								View Portfolio
-							</button>
+							</ScrollLink>
 							<a href={myCV} download={myCV}>
-								<button className="md:px-5 px-2 py-2 border border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200 lg:text-base text-sm">
+								<button className="lg:px-5 px-2 py-2 border border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200 lg:text-base text-sm">
 									Download CV
 								</button>
 							</a>
@@ -339,7 +344,7 @@ const LandingPageMain = () => {
 								<img
 									src={theme === "darkMode" ? behanceWhite2 : behanceBlack}
 									alt="behanceLogo"
-									className="p-1 shadow-md bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 h-10 w-10"
+									className="p-1 shadow-md bg-white dark:bg-slate-700 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 h-10 w-10 static"
 								/>
 							</Link>
 							<Link
