@@ -2,13 +2,13 @@ const hallmark = [
 	{
 		id: "1",
 		icon: "BriefcaseBusiness",
-		numValue: "2+",
-		anthem: "Years of Experience",
+		numValue: "13+",
+		anthem: "Months of Experience",
 	},
 	{
 		id: "2",
 		icon: "Trophy",
-		numValue: "14+",
+		numValue: "22+",
 		anthem: "Completed Projects",
 	},
 	{

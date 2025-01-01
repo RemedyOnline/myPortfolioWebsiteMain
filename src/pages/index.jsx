@@ -226,27 +226,35 @@ const LandingPageMain = () => {
 				>
 					<button
 						onClick={toggleTheme}
-						className={`lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg shadow-sm hover:shadow-md hover:bg-slate-200 dark:hover:bg-slate-600 sm:shadow-md transition-transform duration-500 ease-in-out ${
-							theme === "lightMode" ? "rotate-0" : "rotate-180"
-						}`}
+						className={
+							"lg:p-2.5 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg shadow-sm hover:shadow-md hover:bg-slate-100 hover:sm:bg-slate-200 dark:hover:bg-slate-600 sm:shadow-md transition-transform duration-500 ease-in-out"
+						}
 					>
-						{theme === "darkMode" ? (
-							<Sun className="h-5 w-5 text-gray-500 dark:text-slate-200" />
-						) : (
-							<Moon className="h-5 w-5 text-gray-500 dark:text-slate-200" />
-						)}
+						<div
+							className={`transition-transform  ease-in-out ${
+								theme === "lightMode"
+									? "rotate-0 duration-1000"
+									: "rotate-180 duration-1000"
+							}`}
+						>
+							{theme === "darkMode" ? (
+								<Sun className="h-5 w-5 text-gray-500 dark:text-slate-200" />
+							) : (
+								<Moon className="h-5 w-5 text-gray-500 dark:text-slate-200" />
+							)}
+						</div>
 					</button>
 					<ScrollLink
 						to="contact"
 						smooth={true}
 						duration={2000}
-						className="md:px-5 px-2 py-2 lg:text-base text-sm bg-theme-color text-slate-100 hover:bg-blue-400 hover:cursor-pointer rounded-lg shadow-sm"
+						className="md:px-5 px-2 py-2 lg:text-base text-sm bg-theme-color text-slate-100 hover:bg-blue-400 hover:cursor-pointer rounded-lg shadow-sm md:shadow-md"
 					>
 						Hire Me!
 					</ScrollLink>
 					<button
 						onClick={toggleMenu}
-						className="lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg sm:hidden hover:bg-slate-200 dark:hover:bg-slate-600 shadow-sm"
+						className="lg:p-3 p-2 bg-white sm:bg-slate-100 dark:bg-slate-700 rounded-lg sm:hidden hover:bg-slate-100 hover:sm:bg-slate-200 dark:hover:bg-slate-600 shadow-sm"
 					>
 						<div
 							className={`transition-transform duration-200 ease-in-out ${
