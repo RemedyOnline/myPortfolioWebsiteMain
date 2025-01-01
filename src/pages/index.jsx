@@ -312,12 +312,12 @@ const LandingPageMain = () => {
 								to="projects"
 								smooth={true}
 								duration={2000}
-								className="lg:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-100 lg:text-base text-sm"
+								className="lg:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-100 lg:text-base text-sm cursor-pointer"
 							>
 								View Portfolio
 							</ScrollLink>
 							<a href={myCV} download={myCV}>
-								<button className="lg:px-5 px-2 py-2 border border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200 lg:text-base text-sm">
+								<button className="lg:px-5 px-2 py-2 border border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200 lg:text-base text-sm cursor-pointer">
 									Download CV
 								</button>
 							</a>
@@ -501,17 +501,17 @@ const LandingPageMain = () => {
 								collaborating effectively with teams to deliver innovative and
 								impactful digital solutions.
 							</p>
-							<div className=" sm:text-sm text-xs flex md:space-x-5 space-x-2 pt-2">
+							<div className="flex md:space-x-5 space-x-2">
 								<ScrollLink
 									to="projects"
 									smooth={true}
 									duration={2000}
-									className="md:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200"
+									className="lg:px-5 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-100 lg:text-base text-sm cursor-pointer"
 								>
 									View Portfolio
 								</ScrollLink>
 								<a href={myCV} download={myCV}>
-									<button className="md:px-5 px-2 py-2 border-[1px] border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200">
+									<button className="lg:px-5 px-2 py-2 border border-theme-color dark:border-slate-200 rounded-md hover:bg-blue-400 text-theme-color hover:text-white dark:text-slate-200 lg:text-base text-sm cursor-pointer">
 										Download CV
 									</button>
 								</a>
@@ -739,11 +739,11 @@ const LandingPageMain = () => {
 									</li>
 								))}
 							</ul>
-							<div className="flex gap-2 mx-auto md:mt-4 mt-2">
+							<div className="flex gap-2 mx-auto md:mt-4 mt-2 items-center">
 								<Link
 									to={project.githubLink}
 									target={"_blank"}
-									className="md:px-4 px-2 py-2 bg-[#010409] rounded-md hover:bg-gray-900 text-slate-200 sm:text-sm text-xs flex gap-1 w-fit"
+									className="md:px-4 px-2 py-2 bg-[#010409] rounded-md hover:bg-gray-900 text-slate-200 sm:text-sm text-xs flex gap-1 w-fit h-fit"
 								>
 									Github Link
 									<Github size={iconSize} />
@@ -751,7 +751,7 @@ const LandingPageMain = () => {
 								<Link
 									to={project.liveLink}
 									target={"_blank"}
-									className="md:px-4 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 sm:text-sm text-xs flex gap-1 w-fit"
+									className="md:px-4 px-2 py-2 bg-theme-color rounded-md hover:bg-blue-400 text-slate-200 sm:text-sm text-xs flex gap-1 w-fit h-fit"
 								>
 									Preview Live
 									<MoveUpRight size={iconSize} />
@@ -1037,14 +1037,14 @@ const LandingPageMain = () => {
 							<Link
 								to={"https://linkedin.com/in/agyemangmichael233"}
 								target={"_blank"}
-								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 hover:animate-pulse"
+								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-neutral-700"
 							>
 								<Linkedin />
 							</Link>
 							<Link
 								to={"https://github.com/RemedyOnline"}
 								target={"_blank"}
-								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 hover:animate-pulse"
+								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-neutral-700"
 							>
 								<Github />
 							</Link>
@@ -1055,34 +1055,34 @@ const LandingPageMain = () => {
 								<img
 									src={theme === "darkMode" ? behanceWhite2 : behanceBlack}
 									alt="behanceLogo"
-									className="p-1 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 h-10 w-10"
+									className="p-1 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-neutral-700 h-10 w-10"
 								/>
 							</Link>
 							<Link
 								to={"https://codepen.io/Michael-Agyemang-Prempeh"}
 								target={"_blank"}
-								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 hover:animate-pulse"
+								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-neutral-700"
 							>
 								<Codepen />
 							</Link>
 							<Link
 								to={"https://linkedin.com/in/agyemangmichael233"}
 								target={"_blank"}
-								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 hover:animate-pulse"
+								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-neutral-700"
 							>
 								<Instagram />
 							</Link>
 							<Link
 								to={"https://linkedin.com/in/agyemangmichael233"}
 								target={"_blank"}
-								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 hover:animate-pulse"
+								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-neutral-700"
 							>
 								<Twitter />
 							</Link>
 							<Link
 								to={"https://linkedin.com/in/agyemangmichael233"}
 								target={"_blank"}
-								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 hover:animate-pulse"
+								className="p-2 shadow-md bg-neutral-100 dark:bg-neutral-800 text-gray-500 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-neutral-700"
 							>
 								<Facebook />
 							</Link>
