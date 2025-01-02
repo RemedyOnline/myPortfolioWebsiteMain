@@ -301,7 +301,7 @@ const LandingPageMain = () => {
 							</span>
 						</p>
 					</div>
-					<p className="lg:text-base sm:text-sm text-xs">
+					<p className="lg:text-base text-sm">
 						I craft seamless, user-focused digital experiences, transforming
 						complex challenges into impactful solutions. <br /> Let&apos;s
 						create something fantastic together.
