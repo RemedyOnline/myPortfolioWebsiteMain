@@ -233,14 +233,14 @@ const LandingPageMain = () => {
 						<div
 							className={`transition-transform  ease-in-out ${
 								theme === "lightMode"
-									? "rotate-0 duration-1000"
-									: "rotate-180 duration-1000"
+									? "rotate-180 duration-1000"
+									: "rotate-0 duration-1000"
 							}`}
 						>
 							{theme === "darkMode" ? (
-								<Sun className="h-5 w-5 text-gray-500 dark:text-slate-200" />
-							) : (
 								<Moon className="h-5 w-5 text-gray-500 dark:text-slate-200" />
+							) : (
+								<Sun className="h-5 w-5 text-gray-500 dark:text-slate-200" />
 							)}
 						</div>
 					</button>
@@ -917,7 +917,7 @@ const LandingPageMain = () => {
 										target="_blank"
 									>
 										Crown Prince Academy (Annex), <br />
-										Lapax, Accra - Ghana
+										Lapaz, Accra - Ghana
 									</a>
 								</div>
 							</div>
