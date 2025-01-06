@@ -43,6 +43,20 @@ const projectsData = [
 	},
 	{
 		id: "4",
+		title: "MovieVerse",
+		desc: "A movie discovery platform allowing users to search and bookmark their favorite movies for easy access and review.",
+		images: [
+			"/projects/movieverse1.png",
+			"/projects/movieverse2.png",
+			"/projects/movieverse4.jpg",
+			"/projects/movieverse5.jpg",
+		],
+		tech: ["HTML", "CSS", "OMDb API"],
+		githubLink: "https://github.com/RemedyOnline/omdbMovieTopUp",
+		liveLink: "https://movieverse-delta.vercel.app/",
+	},
+	{
+		id: "5",
 		title: "Penny Pal",
 		desc: "A financial management tool designed to help users manage their expenses, savings, and financial goals effectively.",
 		images: [
@@ -55,7 +69,7 @@ const projectsData = [
 		liveLink: "https://mypennypal.netlify.app/",
 	},
 	{
-		id: "5",
+		id: "6",
 		title: "RemedyOnlineGH",
 		desc: "An eLearning platform offering accessible educational resources and online courses to students across various disciplines.",
 		images: [
@@ -68,7 +82,7 @@ const projectsData = [
 		liveLink: "https://remedyonlinegh.netlify.app/",
 	},
 	{
-		id: "6",
+		id: "7",
 		title: "Efie ne Fie",
 		desc: "A real estate platform showcasing properties for rent and sale, tailored to meet the needs of potential homeowners and real estate investors.",
 		images: [
@@ -81,7 +95,7 @@ const projectsData = [
 		liveLink: "https://realestatelandingpagewebsite.netlify.app/",
 	},
 	{
-		id: "7",
+		id: "8",
 		title: "My Portfolio Website",
 		desc: "A professional portfolio website showcasing my skills, projects, and career achievements as a web developer.",
 		images: [
