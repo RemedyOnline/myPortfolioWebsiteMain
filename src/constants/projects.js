@@ -48,8 +48,8 @@ const projectsData = [
 		images: [
 			"/projects/movieverse1.png",
 			"/projects/movieverse2.png",
-			"/projects/movieverse4.jpg",
-			"/projects/movieverse5.jpg",
+			"/projects/movieverse3.png",
+			"/projects/movieverse4.png",
 		],
 		tech: ["HTML", "CSS", "OMDb API"],
 		githubLink: "https://github.com/RemedyOnline/omdbMovieTopUp",
