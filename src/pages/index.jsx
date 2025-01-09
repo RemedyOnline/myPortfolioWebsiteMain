@@ -828,7 +828,7 @@ const LandingPageMain = () => {
 								// width: "400px",
 							}}
 						>
-							<div className="absolute inset-0 bg-gradient-to-l from-white dark:from-black via-white/50 dark:via-black/50 to-transparent"></div>
+							<div className="absolute inset-0 bg-gradient-to-l from-white dark:from-black via-white/20 dark:via-black/50 to-transparent"></div>
 
 							<div className="bg-white dark:bg-black opacity-70 dark:opacity-70 h-full w-full p-5  dark:text-neutral-100 text-black flex flex-col justify-between items-end">
 								<p className="text-sm">{`⭐`.repeat(testimony.rating)}</p>
