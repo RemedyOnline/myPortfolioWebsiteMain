@@ -161,7 +161,7 @@ const LandingPageMain = () => {
 				>
 					<img
 						src={logo}
-						className="p-1 lg:h-14 md:h-12 h-11 self-center"
+						className="p-1 lg:h-14 md:h-12 h-11 self-center hover:cursor-pointer"
 						alt="logo"
 					/>
 				</ScrollLink>
