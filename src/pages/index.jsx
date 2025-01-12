@@ -18,8 +18,6 @@ import icms from "/logos/icms.jpg";
 import kuhis from "/logos/kuhis-logo.jpg";
 import mest from "/logos/mest-logo.png";
 import uenr from "/logos/uenrLogo.png";
-import behanceBlack from "/behanceBlack.svg";
-import behanceWhite2 from "/behanceWhite2.png";
 import myCV from "/Michael_Agyemang_Prempeh-UiUxDevCV-Dec.pdf";
 import {
   Award,
@@ -341,11 +339,24 @@ const LandingPageMain = () => {
                 to={"https://www.behance.net/agyemangmichael233"}
                 target={"_blank"}
               >
-                <img
-                  src={theme === "darkMode" ? behanceWhite2 : behanceBlack}
-                  alt="behanceLogo"
-                  className="static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
-                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-behance static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 18v-12h4.5a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-4.5" />
+                  <path d="M3 12l4.5 0" />
+                  <path d="M14 13h7a3.5 3.5 0 0 0 -7 0v2a3.5 3.5 0 0 0 6.64 1" />
+                  <path d="M16 6l3 0" />
+                </svg>
               </Link>
               <Link
                 to={"https://codepen.io/Michael-Agyemang-Prempeh"}
@@ -949,7 +960,7 @@ const LandingPageMain = () => {
                   className="peer h-full w-full rounded-md border-none bg-transparent px-2 py-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 md:px-3 md:py-3"
                   required
                 />
-                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
+                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
                   Enter your Name...
                 </span>
               </label>
@@ -966,7 +977,7 @@ const LandingPageMain = () => {
                   required
                   className="peer h-full w-full rounded-md border-none bg-transparent px-2 py-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 md:px-3 md:py-3"
                 />
-                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
+                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
                   Enter your Email...
                 </span>
               </label>
@@ -983,7 +994,7 @@ const LandingPageMain = () => {
                   className="peer h-full w-full rounded-md border-none bg-transparent px-2 py-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 md:px-3 md:py-3"
                   required
                 />
-                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
+                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
                   Enter the Subject...
                 </span>
               </label>
@@ -999,7 +1010,7 @@ const LandingPageMain = () => {
                   className="peer h-full w-full rounded-md border-none bg-transparent px-2 py-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 md:px-3 md:py-3"
                   required
                 ></textarea>
-                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all peer-placeholder-shown:top-1/4 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
+                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 peer-placeholder-shown:top-1/4 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
                   Enter your Message...
                 </span>
               </label>
@@ -1052,11 +1063,24 @@ const LandingPageMain = () => {
                 to={"https://www.behance.net/agyemangmichael233"}
                 target={"_blank"}
               >
-                <img
-                  src={theme === "darkMode" ? behanceWhite2 : behanceBlack}
-                  alt="behanceLogo"
-                  className="h-10 w-10 rounded-lg bg-neutral-100 p-1 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
-                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-behance static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 18v-12h4.5a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-4.5" />
+                  <path d="M3 12l4.5 0" />
+                  <path d="M14 13h7a3.5 3.5 0 0 0 -7 0v2a3.5 3.5 0 0 0 6.64 1" />
+                  <path d="M16 6l3 0" />
+                </svg>
               </Link>
               <Link
                 to={"https://codepen.io/Michael-Agyemang-Prempeh"}
