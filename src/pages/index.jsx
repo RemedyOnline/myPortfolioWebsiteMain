@@ -138,7 +138,7 @@ const LandingPageMain = () => {
       const timer = setTimeout(() => {
         setSuccessFeedback("");
         setFailureFeedback("");
-      }, 4000);
+      }, 10000);
 
       return () => clearTimeout(timer);
     }
@@ -1015,12 +1015,12 @@ const LandingPageMain = () => {
                 </span>
               </label>
               {successFeedback && (
-                <p className="rounded-md bg-green-200 py-1 text-center text-xs text-green-700 sm:text-sm">
+                <p className="animate-pulse rounded-md bg-green-200 py-1 text-center text-xs text-green-700 sm:text-sm md:py-2 lg:text-base">
                   {successFeedback}
                 </p>
               )}
               {failureFeedback && (
-                <p className="rounded-md bg-red-200 py-1 text-center text-xs text-red-700 sm:text-sm">
+                <p className="animate-pulse rounded-md bg-red-200 py-1 text-center text-xs text-red-700 sm:text-sm md:py-2 lg:text-base">
                   {failureFeedback}
                 </p>
               )}
