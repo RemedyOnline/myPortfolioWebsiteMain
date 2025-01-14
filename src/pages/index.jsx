@@ -1015,12 +1015,12 @@ const LandingPageMain = () => {
                 </span>
               </label>
               {successFeedback && (
-                <p className="animate-pulse rounded-md bg-green-200 py-1 text-center text-xs text-green-700 sm:text-sm md:py-2 lg:text-base">
+                <p className="animate-pulse rounded-md bg-green-200 py-1 text-center text-xs text-green-700 sm:text-sm md:py-2">
                   {successFeedback}
                 </p>
               )}
               {failureFeedback && (
-                <p className="animate-pulse rounded-md bg-red-200 py-1 text-center text-xs text-red-700 sm:text-sm md:py-2 lg:text-base">
+                <p className="animate-pulse rounded-md bg-red-200 py-1 text-center text-xs text-red-700 sm:text-sm md:py-2">
                   {failureFeedback}
                 </p>
               )}
