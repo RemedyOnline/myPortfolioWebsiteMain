@@ -1036,7 +1036,7 @@ const LandingPageMain = () => {
         </div>
       </section>
       {/* Footer */}
-      <section className="mx-auto px-4 text-xs sm:px-6 sm:text-sm md:px-10 2xl:max-w-7xl">
+      <footer className="mx-auto px-4 text-xs sm:px-6 sm:text-sm md:px-10 2xl:max-w-7xl">
         <div className="gap-4 space-y-5 px-2 md:gap-10 md:px-5">
           <div className="flex flex-col space-y-2 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
             <div className="flex gap-5">
@@ -1134,7 +1134,7 @@ const LandingPageMain = () => {
             </div>
           </div>
         </div>
-      </section>
+      </footer>
     </section>
   );
 };
