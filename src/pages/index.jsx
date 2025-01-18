@@ -305,7 +305,7 @@ const LandingPageMain = () => {
             create something fantastic together.
           </p>
           <div className="flex flex-col space-y-3 text-nowrap md:space-y-5">
-            <div className="flex space-x-2 md:space-x-5">
+            <div className="flex space-x-2 md:space-x-4">
               <ScrollLink
                 to="projects"
                 smooth={true}
@@ -315,12 +315,12 @@ const LandingPageMain = () => {
                 View Portfolio
               </ScrollLink>
               <a href={myCV} download={myCV}>
-                <button className="cursor-pointer rounded-md border border-theme-color px-2 py-2 text-sm text-theme-color hover:bg-blue-400 hover:text-white dark:border-slate-200 dark:text-slate-200 lg:px-5 lg:text-base">
+                <button className="cursor-pointer rounded-md border border-theme-color px-2 py-2 text-sm text-theme-color hover:border-blue-400 hover:bg-blue-400 hover:text-white dark:border-slate-200 dark:text-slate-200 lg:px-5 lg:text-base">
                   Download CV
                 </button>
               </a>
             </div>
-            <div className="flex space-x-2 sm:space-x-5">
+            <div className="flex space-x-2 sm:space-x-4">
               <Link
                 to={"https://linkedin.com/in/agyemangmichael233"}
                 target={"_blank"}
@@ -522,7 +522,7 @@ const LandingPageMain = () => {
                   View Portfolio
                 </ScrollLink>
                 <a href={myCV} download={myCV}>
-                  <button className="cursor-pointer rounded-md border border-theme-color px-2 py-2 text-sm text-theme-color hover:bg-blue-400 hover:text-white dark:border-slate-200 dark:text-slate-200 lg:px-5 lg:text-base">
+                  <button className="cursor-pointer rounded-md border border-theme-color px-2 py-2 text-sm text-theme-color hover:border-blue-400 hover:bg-blue-400 hover:text-white dark:border-slate-200 dark:text-slate-200 lg:px-5 lg:text-base">
                     Download CV
                   </button>
                 </a>
@@ -949,7 +949,7 @@ const LandingPageMain = () => {
             >
               <label
                 htmlFor="name"
-                className="relative block rounded-md border-2 border-neutral-200 shadow-sm focus-within:ring-1 focus-within:ring-theme-color dark:border-neutral-700"
+                className="group relative block rounded-md shadow-sm ring-2 ring-neutral-200 focus-within:ring-2 focus-within:ring-theme-color dark:ring-neutral-700 dark:focus-within:ring-theme-color"
               >
                 <input
                   type="text"
@@ -960,13 +960,13 @@ const LandingPageMain = () => {
                   className="peer h-full w-full rounded-md border-none bg-transparent px-2 py-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 md:px-3 md:py-3"
                   required
                 />
-                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
+                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 group-focus-within:text-theme-color peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
                   Enter your Name...
                 </span>
               </label>
               <label
                 htmlFor="email"
-                className="relative block rounded-md border-2 border-neutral-200 shadow-sm focus-within:ring-1 focus-within:ring-theme-color dark:border-neutral-700"
+                className="group relative block rounded-md shadow-sm ring-2 ring-neutral-200 focus-within:ring-2 focus-within:ring-theme-color dark:ring-neutral-700 dark:focus-within:ring-theme-color"
               >
                 <input
                   type="email"
@@ -977,13 +977,13 @@ const LandingPageMain = () => {
                   required
                   className="peer h-full w-full rounded-md border-none bg-transparent px-2 py-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 md:px-3 md:py-3"
                 />
-                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
+                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 group-focus-within:text-theme-color peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
                   Enter your Email...
                 </span>
               </label>
               <label
                 htmlFor="subject"
-                className="relative block rounded-md border-2 border-neutral-200 shadow-sm focus-within:ring-1 focus-within:ring-theme-color dark:border-neutral-700"
+                className="group relative block rounded-md shadow-sm ring-2 ring-neutral-200 focus-within:ring-2 focus-within:ring-theme-color dark:ring-neutral-700 dark:focus-within:ring-theme-color"
               >
                 <input
                   type="text"
@@ -994,13 +994,13 @@ const LandingPageMain = () => {
                   className="peer h-full w-full rounded-md border-none bg-transparent px-2 py-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 md:px-3 md:py-3"
                   required
                 />
-                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
+                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 group-focus-within:text-theme-color peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
                   Enter the Subject...
                 </span>
               </label>
               <label
                 htmlFor="message"
-                className="relative block rounded-md border-2 border-neutral-200 shadow-sm focus-within:ring-1 focus-within:ring-theme-color dark:border-neutral-700"
+                className="group relative block rounded-md shadow-sm ring-2 ring-neutral-200 focus-within:ring-2 focus-within:ring-theme-color dark:ring-neutral-700 dark:focus-within:ring-theme-color"
               >
                 <textarea
                   name="message"
@@ -1010,7 +1010,7 @@ const LandingPageMain = () => {
                   className="peer h-full w-full rounded-md border-none bg-transparent px-2 py-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 md:px-3 md:py-3"
                   required
                 ></textarea>
-                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 peer-placeholder-shown:top-1/4 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
+                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 group-focus-within:text-theme-color peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
                   Enter your Message...
                 </span>
               </label>
@@ -1114,10 +1114,13 @@ const LandingPageMain = () => {
           </div>
           <hr className="border-t border-theme-color" />
           <div className="flex justify-between pb-5 sm:pb-7 md:pb-10">
-            <div className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-5">
+            <div className="flex gap-2">
               <p>All Rights Reserved!</p>
               <p className="font-semibold">
-                &copy; <span className="font-JetBrainsMono">2024</span>
+                &copy;{" "}
+                <span className="font-JetBrainsMono text-theme-color">
+                  2025
+                </span>
               </p>
             </div>
             <div className="">
