@@ -1032,7 +1032,7 @@ const LandingPageMain = () => {
                 {isSubmitting ? (
                   <div className="flex cursor-wait items-center gap-2">
                     <div className="h-3 w-3 animate-spin rounded-full border-2 border-slate-100 border-t-transparent"></div>
-                    <p>Sendingg...</p>
+                    <p>Sending...</p>
                   </div>
                 ) : (
                   <span>Send Message</span>
