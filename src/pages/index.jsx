@@ -1029,7 +1029,14 @@ const LandingPageMain = () => {
                 disabled={isSubmitting}
                 className="self-end rounded-md bg-theme-color px-2 py-2 text-xs text-slate-100 sm:text-sm sm:shadow-sm md:px-5"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? (
+                  <div className="flex cursor-wait items-center gap-2">
+                    <div className="h-3 w-3 animate-spin rounded-full border-2 border-slate-100 border-t-transparent"></div>
+                    <p>Sending...</p>
+                  </div>
+                ) : (
+                  <span>Send Message</span>
+                )}
               </button>
             </form>
           </div>
@@ -1073,7 +1080,7 @@ const LandingPageMain = () => {
                   strokeWidth="1.7"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-behance static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-behance static h-10 w-10 rounded-lg bg-neutral-100 p-1 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M3 18v-12h4.5a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-4.5" />
