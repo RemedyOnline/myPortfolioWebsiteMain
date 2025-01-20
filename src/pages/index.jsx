@@ -358,6 +358,24 @@ const LandingPageMain = () => {
                   <path d="M16 6l3 0" />
                 </svg>
               </Link>
+              <Link to={"http://wa.me/233555975976"} target={"_blank"}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                  <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                </svg>
+              </Link>
               <Link
                 to={"https://codepen.io/Michael-Agyemang-Prempeh"}
                 target={"_blank"}
@@ -372,7 +390,7 @@ const LandingPageMain = () => {
               >
                 <Instagram />
               </Link>
-              <Link
+              {/* <Link
                 to={"https://linkedin.com/in/agyemangmichael233"}
                 target={"_blank"}
                 className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
@@ -385,7 +403,7 @@ const LandingPageMain = () => {
                 className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
               >
                 <Facebook />
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
@@ -1087,6 +1105,24 @@ const LandingPageMain = () => {
                   <path d="M3 12l4.5 0" />
                   <path d="M14 13h7a3.5 3.5 0 0 0 -7 0v2a3.5 3.5 0 0 0 6.64 1" />
                   <path d="M16 6l3 0" />
+                </svg>
+              </Link>
+              <Link to={"http://wa.me/233555975976"} target={"_blank"}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp static h-10 w-10 rounded-lg bg-neutral-100 p-1 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                  <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
                 </svg>
               </Link>
               <Link
