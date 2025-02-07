@@ -98,6 +98,19 @@ const projectsData = [
   },
   {
     id: "8",
+    title: "Web3 Ghana",
+    desc: "A real estate platform showcasing properties for rent and sale, tailored to meet the needs of potential homeowners and real estate investors.",
+    images: [
+      "/projects/realEstate.png",
+      "/projects/realEstate2.png",
+      "/projects/realEstate3.png",
+    ],
+    tech: ["HTML", "CSS", "JavaScript"],
+    // githubLink: "https://github.com/RemedyOnline/RealEstateProject",
+    liveLink: "http://web3ghana.kesug.com/",
+  },
+  {
+    id: "8",
     title: "My Portfolio Website😉",
     desc: "A professional portfolio website showcasing my skills, projects, and career achievements as a web developer.",
     images: [
