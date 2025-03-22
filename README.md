@@ -1,8 +1,45 @@
-# React + Vite
+# 🚀 My Portfolio Website  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website! This project showcases my skills, projects, and experience as a Frontend Web Developer👨‍💻 / Wordpress Developer🏗️ / UX Designer🎨
 
-Currently, two official plugins are available:
+## 🌍 Live Demo  
+[🔗 View Portfolio] https://agyemangprempehmike.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Built With  
+- **React** + **Vite** ⚡ (Fast and optimized development)  
+- **TailwindCSS** 🎨 (Utility-first styling)  
+- **JavaScript** 🏗️ (Dynamic interactivity)
+- **ReactScroll** (For smooth scrolliing)
+- **ContextAPI**
+
+## 📂 Project Structure  
+
+/src
+├── components/ # Reusable UI components
+├── pages/ # Portfolio sections (About, Projects, Contact, etc.)
+├── assets/ # Images, icons, and other assets
+├── styles/ # Global styles (if needed)
+├── App.jsx # Root component
+└── main.jsx # Entry point
+
+## ✨ Features
+
+✅ Modern and responsive UI
+✅ Interactive project showcase
+✅ Dark mode optimization
+✅ Functional Contact form
+
+## 📌 To-Do List
+
+- Improve accessibility
+- Add animations for better UX
+- Implement backend for contact form
+
+📸 Screenshots
+
+🤝 Connect With Me
+🔗 LinkedIn: https://linkedin.com/in/agyemangmichael233
+🐦 Github: https://github.com/RemedyOnline
+🎨 Behance: https://www.behance.net/agyemangmichael233
+📧 Email: agyemangmichael555@gmail.com
+
