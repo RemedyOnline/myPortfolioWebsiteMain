@@ -10,21 +10,21 @@ export const tools = [
   {
     id: "2",
     img: "/logos/tailwind.png",
-    percentage: "82%",
+    percentage: "87%",
     toolName: "TailwindCSS",
     bgColor: "bg-yellow-100 dark:bg-yellow-900",
   },
   {
     id: "3",
     img: "/logos/javascript.png",
-    percentage: "61%",
+    percentage: "64%",
     toolName: "JavaScript",
     bgColor: "bg-yellow-100 dark:bg-yellow-900",
   },
   {
     id: "4",
     img: "/logos/react.webp",
-    percentage: "63%",
+    percentage: "73%",
     toolName: "React.js",
     bgColor: "bg-yellow-100 dark:bg-yellow-900",
   },
@@ -33,7 +33,7 @@ export const tools = [
   {
     id: "5",
     img: "/logos/git-github.png",
-    percentage: "84%",
+    percentage: "89%",
     toolName: "Git & Github",
     bgColor: "bg-green-100 dark:bg-green-900", // green
   },
@@ -47,14 +47,14 @@ export const tools = [
   {
     id: "7",
     img: "/logos/slack.png",
-    percentage: "63%",
+    percentage: "76%",
     toolName: "Slack",
     bgColor: "bg-green-100 dark:bg-green-900",
   },
   {
     id: "8",
     img: "/logos/asana.png",
-    percentage: "71%",
+    percentage: "74%",
     toolName: "Asana",
     bgColor: "bg-green-100 dark:bg-green-900",
   },
@@ -63,7 +63,7 @@ export const tools = [
   {
     id: "9",
     img: "/logos/miro.png",
-    percentage: "65%",
+    percentage: "75%",
     toolName: "Miro",
     bgColor: "bg-red-100 dark:bg-red-900", // lime
   },
@@ -86,28 +86,28 @@ export const tools = [
   {
     id: "12",
     img: "/logos/adobeXd.png",
-    percentage: "82%",
+    percentage: "86%",
     toolName: "Adobe Xd",
     bgColor: "bg-neutral-100 dark:bg-neutral-800",
   },
   {
     id: "13",
     img: "/logos/framer.png",
-    percentage: "63%",
+    percentage: "66%",
     toolName: "Framer",
     bgColor: "bg-neutral-100 dark:bg-neutral-800",
   },
   {
     id: "14",
     img: "/logos/photoshop.png",
-    percentage: "79%",
+    percentage: "72%",
     toolName: "Photoshop",
     bgColor: "bg-neutral-100 dark:bg-neutral-800",
   },
   {
     id: "15",
     img: "/logos/canva.png",
-    percentage: "76%",
+    percentage: "86%",
     toolName: "Canva",
     bgColor: "bg-neutral-100 dark:bg-neutral-800",
   },
@@ -116,7 +116,7 @@ export const tools = [
   {
     id: "16",
     img: "/logos/postman.png",
-    percentage: "73%",
+    percentage: "79%",
     toolName: "Postman",
     bgColor: "bg-orange-100 dark:bg-orange-900", // orange
   },
@@ -139,14 +139,14 @@ export const tools = [
   {
     id: "19",
     img: "/logos/webflow.svg",
-    percentage: "67%",
+    percentage: "74%",
     toolName: "Webflow",
     bgColor: "bg-cyan-100 dark:bg-cyan-900",
   },
   {
     id: "20",
     img: "/logos/squarespace.png",
-    percentage: "68%",
+    percentage: "77%",
     toolName: "Squarespace",
     bgColor: "bg-cyan-100 dark:bg-cyan-900",
   },
