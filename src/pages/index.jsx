@@ -834,7 +834,7 @@ const LandingPageMain = () => {
               <h3 className="text-xs font-semibold group-hover:text-theme-color sm:text-sm">
                 {tools.toolName}
               </h3>
-              <p className="text-xs text-gray-500 sm:text-sm">
+              <p className="text-xs text-gray-500 dark:text-gray-200 sm:text-sm">
                 {tools.percentage}
               </p>
             </div>
