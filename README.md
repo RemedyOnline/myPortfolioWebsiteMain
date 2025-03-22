@@ -1,33 +1,33 @@
-# 🚀 My Portfolio Website  
+# 🚀 MY PORTFOLIO WEBSITE
 
 Welcome to my personal portfolio website! This project showcases my skills, projects, and experience as a Frontend Web Developer👨‍💻 / Wordpress Developer🏗️ / UX Designer🎨
 
-## 🌍 Live Demo  
+## 🌍 LIVE DEMO
 [🔗 View Portfolio] https://agyemangprempehmike.netlify.app/
 
-## 🛠️ Built With  
-- **React** + **Vite** ⚡ (Fast and optimized development)  
-- **TailwindCSS** 🎨 (Utility-first styling)  
+## 🛠️ BUILT WITH
+- **React** + **Vite** ⚡ (Fast and optimized development)
+- **TailwindCSS** 🎨 (Utility-first styling)
 - **JavaScript** 🏗️ (Dynamic interactivity)
 - **ReactScroll** (For smooth scrolliing)
 - **ContextAPI**
 
-## 📂 Project Structure  
+## 📂 PROJECT STRUCTURE
 
-/src
-├── components/ # Reusable UI components
-├── pages/ # Portfolio sections (About, Projects, Contact, etc.)
-├── assets/ # Images, icons, and other assets
-├── styles/ # Global styles (if needed)
-├── App.jsx # Root component
-└── main.jsx # Entry point
+- /src
+- ├── components/ # Reusable UI components
+- ├── pages/ # Portfolio sections (About, Projects, Contact, etc.)
+- ├── assets/ # Images, icons, and other assets
+- ├── styles/ # Global styles (if needed)
+- ├── App.jsx # Root component
+- └── main.jsx # Entry point
 
-## ✨ Features
+## ✨ FEATURES
 
-✅ Modern and responsive UI
-✅ Interactive project showcase
-✅ Dark mode optimization
-✅ Functional Contact form
+- ✅ Modern and responsive UI
+- ✅ Interactive project showcase
+- ✅ Dark mode optimization
+- ✅ Functional Contact form
 
 
 ## 📸 SCREENSHOTS
