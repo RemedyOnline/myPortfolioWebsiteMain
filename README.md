@@ -29,17 +29,13 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 ✅ Dark mode optimization
 ✅ Functional Contact form
 
-## 📌 To-Do List
 
-- Improve accessibility
-- Add animations for better UX
-- Implement backend for contact form
+## 📸 SCREENSHOTS
 
-📸 Screenshots
+## 🤝 CONNECT WITH ME
 
-🤝 Connect With Me
-🔗 LinkedIn: https://linkedin.com/in/agyemangmichael233
-🐦 Github: https://github.com/RemedyOnline
-🎨 Behance: https://www.behance.net/agyemangmichael233
-📧 Email: agyemangmichael555@gmail.com
+- 🔗 LinkedIn: https://linkedin.com/in/agyemangmichael233
+- 🐦 Github: https://github.com/RemedyOnline
+- 🎨 Behance: https://www.behance.net/agyemangmichael233
+- 📧 Email: agyemangmichael555@gmail.com
 
