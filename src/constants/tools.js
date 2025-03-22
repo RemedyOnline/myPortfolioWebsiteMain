@@ -17,7 +17,7 @@ export const tools = [
   {
     id: "3",
     img: "/logos/javascript.png",
-    percentage: "44%",
+    percentage: "61%",
     toolName: "JavaScript",
     bgColor: "bg-yellow-100 dark:bg-yellow-900",
   },
