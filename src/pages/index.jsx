@@ -149,7 +149,7 @@ const LandingPageMain = () => {
       {/* Navbar... */}
       <header
         id="navbar-section"
-        className="fixed left-1/2 top-3 z-50 flex w-11/12 -translate-x-1/2 transform items-center justify-between rounded-xl border-2 border-slate-300 px-3 py-1 shadow-sm backdrop-blur-md dark:border-slate-700 md:top-5 md:justify-around md:px-0"
+        className="fixed left-1/2 top-3 z-50 flex w-11/12 -translate-x-1/2 transform items-center justify-between rounded-xl border-2 border-slate-300 px-3 py-1 shadow-sm backdrop-blur-md dark:border-slate-700 md:top-5 md:justify-around md:px-0 2xl:max-w-7xl"
       >
         <ScrollLink
           to="home"
@@ -271,7 +271,7 @@ const LandingPageMain = () => {
       {/* Hero section */}
       <section
         id="home"
-        className={`grid h-screen gap-5 overflow-hidden bg-lightModeBG bg-cover bg-center px-6 py-20 dark:bg-darkModeBG sm:px-10 md:flex md:items-center md:justify-center md:gap-0 ${
+        className={`grid h-screen gap-5 overflow-hidden bg-lightModeBG bg-cover bg-center px-6 py-20 dark:bg-darkModeBG sm:px-10 md:flex md:items-center md:justify-center md:gap-0 2xl:max-w-7xl ${
           theme === "darkMode" ? "darkModeBG" : "lightModeBG"
         } `}
       >
