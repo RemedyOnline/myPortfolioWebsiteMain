@@ -315,7 +315,7 @@ const LandingPageMain = () => {
                 View Portfolio
               </ScrollLink>
               <a href={myCV} download={myCV}>
-                <button className="cursor-pointer rounded-md border border-theme-color px-2 py-2 text-sm text-theme-color hover:border-blue-400 hover:bg-blue-400 hover:text-white dark:border-slate-200 dark:text-slate-200 lg:px-5 lg:text-base">
+                <button className="cursor-pointer rounded-md border border-theme-color px-2 py-2 text-sm text-theme-color hover:border-blue-400 hover:bg-blue-400 hover:text-white dark:border-slate-200 dark:text-slate-200 dark:hover:border-blue-400 lg:px-5 lg:text-base">
                   Download CV
                 </button>
               </a>
@@ -540,7 +540,7 @@ const LandingPageMain = () => {
                   View Portfolio
                 </ScrollLink>
                 <a href={myCV} download={myCV}>
-                  <button className="cursor-pointer rounded-md border border-theme-color px-2 py-2 text-sm text-theme-color hover:border-blue-400 hover:bg-blue-400 hover:text-white dark:border-slate-200 dark:text-slate-200 lg:px-5 lg:text-base">
+                  <button className="cursor-pointer rounded-md border border-theme-color px-2 py-2 text-sm text-theme-color hover:border-blue-400 hover:bg-blue-400 hover:text-white dark:border-slate-200 dark:text-slate-200 dark:hover:border-blue-400 lg:px-5 lg:text-base">
                     Download CV
                   </button>
                 </a>
