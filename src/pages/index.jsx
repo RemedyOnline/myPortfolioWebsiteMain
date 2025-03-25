@@ -271,7 +271,7 @@ const LandingPageMain = () => {
       {/* Hero section */}
       <section
         id="home"
-        className={`grid h-screen gap-5 overflow-hidden bg-lightModeBG bg-cover bg-center px-6 py-20 dark:bg-darkModeBG sm:px-10 md:flex md:items-center md:justify-center md:gap-0 2xl:max-w-7xl ${
+        className={`grid h-screen gap-5 overflow-hidden bg-lightModeBG bg-cover bg-center px-6 py-20 dark:bg-darkModeBG sm:px-10 md:flex md:items-center md:justify-center md:gap-0 ${
           theme === "darkMode" ? "darkModeBG" : "lightModeBG"
         } `}
       >
