@@ -159,7 +159,7 @@ const LandingPageMain = () => {
         >
           <img
             src={logo}
-            className="h-11 w-full self-center p-1 hover:cursor-pointer md:h-12 lg:h-14"
+            className="h-11 self-center p-1 hover:cursor-pointer md:h-12 lg:h-14"
             alt="logo"
           />
         </ScrollLink>
@@ -363,15 +363,17 @@ const LandingPageMain = () => {
                 target={"_blank"}
               >
                 <svg
+                  width="52"
+                  height="52"
+                  viewBox="0 0 52 52"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  x="0px"
-                  y="0px"
-                  width="100"
-                  height="100"
-                  viewBox="0 0 50 50"
-                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                  className="static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
                 >
-                  <path d="M15 12A13 13 0 1015 38 13 13 0 1015 12zM35.5 13c-3.59 0-6.5 5.373-6.5 12 0 1.243.102 2.441.292 3.568.253 1.503.662 2.879 1.192 4.065.265.593.56 1.138.881 1.627.642.978 1.388 1.733 2.202 2.201C34.178 36.811 34.827 37 35.5 37s1.322-.189 1.933-.539c.814-.468 1.56-1.223 2.202-2.201.321-.489.616-1.034.881-1.627.53-1.185.939-2.562 1.192-4.065C41.898 27.441 42 26.243 42 25 42 18.373 39.09 13 35.5 13zM45.5 14c-.259 0-.509.173-.743.495-.157.214-.307.494-.448.833-.071.169-.14.353-.206.551-.133.395-.257.846-.37 1.343-.226.995-.409 2.181-.536 3.497-.063.658-.112 1.349-.146 2.065C43.017 23.499 43 24.241 43 25s.017 1.501.051 2.217c.033.716.082 1.407.146 2.065.127 1.316.31 2.501.536 3.497.113.498.237.948.37 1.343.066.198.135.382.206.551.142.339.292.619.448.833C44.991 35.827 45.241 36 45.5 36c1.381 0 2.5-4.925 2.5-11S46.881 14 45.5 14z"></path>
+                  <path
+                    d="M29.331 25.9998C29.331 34.0769 22.7651 40.625 14.6653 40.625C6.56549 40.625 0 34.0789 0 25.9998C0 17.9207 6.56598 11.375 14.6653 11.375C22.7646 11.375 29.331 17.9226 29.331 25.9998ZM45.4196 25.9998C45.4196 33.6034 42.1363 39.7668 38.0867 39.7668C34.037 39.7668 30.7538 33.6014 30.7538 25.9998C30.7538 18.3981 34.037 12.2327 38.0867 12.2327C42.1363 12.2327 45.4196 18.3981 45.4196 25.9998ZM52 25.9998C52 32.8122 50.8452 38.3344 49.4209 38.3344C47.9967 38.3344 46.8418 32.8103 46.8418 25.9998C46.8418 19.1892 47.9967 13.6651 49.4214 13.6651C50.8462 13.6651 52 19.1878 52 25.9998Z"
+                    fill="currentColor"
+                  ></path>
                 </svg>
               </Link>
               <Link to={"http://wa.me/233555975976"} target={"_blank"}>
@@ -1128,15 +1130,17 @@ const LandingPageMain = () => {
                 target={"_blank"}
               >
                 <svg
+                  width="52"
+                  height="52"
+                  viewBox="0 0 52 52"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  x="0px"
-                  y="0px"
-                  width="100"
-                  height="100"
-                  viewBox="0 0 50 50"
-                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                  className="static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-100 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
                 >
-                  <path d="M15 12A13 13 0 1015 38 13 13 0 1015 12zM35.5 13c-3.59 0-6.5 5.373-6.5 12 0 1.243.102 2.441.292 3.568.253 1.503.662 2.879 1.192 4.065.265.593.56 1.138.881 1.627.642.978 1.388 1.733 2.202 2.201C34.178 36.811 34.827 37 35.5 37s1.322-.189 1.933-.539c.814-.468 1.56-1.223 2.202-2.201.321-.489.616-1.034.881-1.627.53-1.185.939-2.562 1.192-4.065C41.898 27.441 42 26.243 42 25 42 18.373 39.09 13 35.5 13zM45.5 14c-.259 0-.509.173-.743.495-.157.214-.307.494-.448.833-.071.169-.14.353-.206.551-.133.395-.257.846-.37 1.343-.226.995-.409 2.181-.536 3.497-.063.658-.112 1.349-.146 2.065C43.017 23.499 43 24.241 43 25s.017 1.501.051 2.217c.033.716.082 1.407.146 2.065.127 1.316.31 2.501.536 3.497.113.498.237.948.37 1.343.066.198.135.382.206.551.142.339.292.619.448.833C44.991 35.827 45.241 36 45.5 36c1.381 0 2.5-4.925 2.5-11S46.881 14 45.5 14z"></path>
+                  <path
+                    d="M29.331 25.9998C29.331 34.0769 22.7651 40.625 14.6653 40.625C6.56549 40.625 0 34.0789 0 25.9998C0 17.9207 6.56598 11.375 14.6653 11.375C22.7646 11.375 29.331 17.9226 29.331 25.9998ZM45.4196 25.9998C45.4196 33.6034 42.1363 39.7668 38.0867 39.7668C34.037 39.7668 30.7538 33.6014 30.7538 25.9998C30.7538 18.3981 34.037 12.2327 38.0867 12.2327C42.1363 12.2327 45.4196 18.3981 45.4196 25.9998ZM52 25.9998C52 32.8122 50.8452 38.3344 49.4209 38.3344C47.9967 38.3344 46.8418 32.8103 46.8418 25.9998C46.8418 19.1892 47.9967 13.6651 49.4214 13.6651C50.8462 13.6651 52 19.1878 52 25.9998Z"
+                    fill="currentColor"
+                  ></path>
                 </svg>
               </Link>
               <Link to={"http://wa.me/233555975976"} target={"_blank"}>
@@ -1171,20 +1175,20 @@ const LandingPageMain = () => {
               >
                 <Instagram />
               </Link>
-              <Link
+              {/* <Link
                 to={"https://linkedin.com/in/agyemangmichael233"}
                 target={"_blank"}
                 className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-100 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
               >
                 <Twitter />
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 to={"https://linkedin.com/in/agyemangmichael233"}
                 target={"_blank"}
                 className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-100 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
               >
                 <Facebook />
-              </Link>
+              </Link> */}
             </div>
           </div>
           <hr className="border-t border-theme-color" />
