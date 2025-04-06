@@ -17,7 +17,7 @@ export const tools = [
   {
     id: "3",
     img: "/logos/javascript.png",
-    percentage: "64%",
+    percentage: "69%",
     toolName: "JavaScript",
     bgColor: "bg-yellow-100 dark:bg-yellow-900",
   },
@@ -28,31 +28,52 @@ export const tools = [
     toolName: "React.js",
     bgColor: "bg-yellow-100 dark:bg-yellow-900",
   },
+  {
+    id: "5",
+    img: "/logos/typescriptLogo.png",
+    percentage: "31%",
+    toolName: "TypeScript",
+    bgColor: "bg-yellow-100 dark:bg-yellow-900",
+  },
+  {
+    id: "6",
+    img: "/logos/angularLogo.png",
+    percentage: "33%",
+    toolName: "Angular",
+    bgColor: "bg-yellow-100 dark:bg-yellow-900",
+  },
 
   // Version Control & Collaboration Tools
   {
-    id: "5",
+    id: "7",
+    img: "/logos/awsLogo.png",
+    percentage: "71%",
+    toolName: "AWS Cloud",
+    bgColor: "bg-green-100 dark:bg-green-900", // green
+  },
+  {
+    id: "8",
     img: "/logos/git-github.png",
     percentage: "89%",
     toolName: "Git & Github",
     bgColor: "bg-green-100 dark:bg-green-900", // green
   },
   {
-    id: "6",
+    id: "9",
     img: "/logos/discord.png",
     percentage: "70%",
     toolName: "Discord",
     bgColor: "bg-green-100 dark:bg-green-900",
   },
   {
-    id: "7",
+    id: "10",
     img: "/logos/slack.png",
     percentage: "76%",
     toolName: "Slack",
     bgColor: "bg-green-100 dark:bg-green-900",
   },
   {
-    id: "8",
+    id: "11",
     img: "/logos/asana.png",
     percentage: "74%",
     toolName: "Asana",
@@ -61,14 +82,14 @@ export const tools = [
 
   // Whiteboarding & Brainstorming Tools
   {
-    id: "9",
+    id: "12",
     img: "/logos/miro.png",
     percentage: "75%",
     toolName: "Miro",
     bgColor: "bg-red-100 dark:bg-red-900", // lime
   },
   {
-    id: "10",
+    id: "13",
     img: "/logos/figjam.png",
     percentage: "76%",
     toolName: "Figjam",
@@ -77,35 +98,35 @@ export const tools = [
 
   // Design & Prototyping Tools
   {
-    id: "11",
+    id: "14",
     img: "/logos/figma.png",
     percentage: "88%",
     toolName: "Figma",
     bgColor: "bg-neutral-100 dark:bg-neutral-800", // neutral
   },
   {
-    id: "12",
+    id: "15",
     img: "/logos/adobeXd.png",
     percentage: "86%",
     toolName: "Adobe Xd",
     bgColor: "bg-neutral-100 dark:bg-neutral-800",
   },
   {
-    id: "13",
+    id: "16",
     img: "/logos/framer.png",
     percentage: "66%",
     toolName: "Framer",
     bgColor: "bg-neutral-100 dark:bg-neutral-800",
   },
   {
-    id: "14",
+    id: "17",
     img: "/logos/photoshop.png",
     percentage: "72%",
     toolName: "Photoshop",
     bgColor: "bg-neutral-100 dark:bg-neutral-800",
   },
   {
-    id: "15",
+    id: "18",
     img: "/logos/canva.png",
     percentage: "86%",
     toolName: "Canva",
@@ -114,39 +135,39 @@ export const tools = [
 
   // API Testing & Development Tools
   {
-    id: "16",
+    id: "19",
     img: "/logos/postman.png",
-    percentage: "79%",
+    percentage: "70%",
     toolName: "Postman",
     bgColor: "bg-orange-100 dark:bg-orange-900", // orange
   },
   {
-    id: "17",
+    id: "20",
     img: "/logos/jest.png",
-    percentage: "74%",
+    percentage: "61%",
     toolName: "Jest",
     bgColor: "bg-orange-100 dark:bg-orange-900",
   },
 
   // Website Builders
   {
-    id: "18",
+    id: "21",
     img: "/logos/wordpress.png",
     percentage: "84%",
     toolName: "Wordpress",
     bgColor: "bg-cyan-100 dark:bg-cyan-900", // cyan
   },
   {
-    id: "19",
+    id: "22",
     img: "/logos/webflow.svg",
     percentage: "74%",
     toolName: "Webflow",
     bgColor: "bg-cyan-100 dark:bg-cyan-900",
   },
   {
-    id: "20",
+    id: "23",
     img: "/logos/squarespace.png",
-    percentage: "77%",
+    percentage: "72%",
     toolName: "Squarespace",
     bgColor: "bg-cyan-100 dark:bg-cyan-900",
   },

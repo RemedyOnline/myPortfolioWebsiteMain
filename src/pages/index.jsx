@@ -18,7 +18,7 @@ import icms from "/logos/icms.jpg";
 import kuhis from "/logos/kuhis-logo.jpg";
 import mest from "/logos/mest-logo.png";
 import uenr from "/logos/uenrLogo.png";
-import myCV from "/Michael_Agyemang_Prempeh-UiUxDevCV-Dec.pdf";
+import myCV from "/Michael-Agyemang-Prempeh-CV-Apr25.pdf";
 import {
   Award,
   BookCheck,
@@ -978,7 +978,7 @@ const LandingPageMain = () => {
                   className="peer h-full w-full rounded-md border-none bg-transparent px-2 py-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 md:px-3 md:py-3"
                   required
                 />
-                <span className="pointer-events-none text-neutral-400 dark:text-neutral-600 absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 group-focus-within:text-theme-color peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
+                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs text-neutral-400 transition-all duration-300 group-focus-within:text-theme-color peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 dark:text-neutral-600 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
                   Enter your Name...
                 </span>
               </label>
@@ -995,7 +995,7 @@ const LandingPageMain = () => {
                   required
                   className="peer h-full w-full rounded-md border-none bg-transparent px-2 py-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 md:px-3 md:py-3"
                 />
-                <span className="pointer-events-none text-neutral-400 dark:text-neutral-600 absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 group-focus-within:text-theme-color peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
+                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs text-neutral-400 transition-all duration-300 group-focus-within:text-theme-color peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 dark:text-neutral-600 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
                   Enter your Email...
                 </span>
               </label>
@@ -1012,7 +1012,7 @@ const LandingPageMain = () => {
                   className="peer h-full w-full rounded-md border-none bg-transparent px-2 py-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 md:px-3 md:py-3"
                   required
                 />
-                <span className="pointer-events-none text-neutral-400 dark:text-neutral-600 absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 group-focus-within:text-theme-color peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
+                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs text-neutral-400 transition-all duration-300 group-focus-within:text-theme-color peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 dark:text-neutral-600 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
                   Enter the Subject...
                 </span>
               </label>
@@ -1028,7 +1028,7 @@ const LandingPageMain = () => {
                   className="peer h-full w-full rounded-md border-none bg-transparent px-2 py-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 md:px-3 md:py-3"
                   required
                 ></textarea>
-                <span className="pointer-events-none text-neutral-400 dark:text-neutral-600 absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs transition-all duration-300 group-focus-within:text-theme-color peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
+                <span className="pointer-events-none absolute start-2 top-0 -translate-y-1/2 bg-neutral-100 px-1 text-xs text-neutral-400 transition-all duration-300 group-focus-within:text-theme-color peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xs peer-focus:top-0 dark:bg-neutral-800 dark:text-neutral-600 sm:text-sm sm:peer-placeholder-shown:text-sm md:start-4">
                   Enter your Message...
                 </span>
               </label>
