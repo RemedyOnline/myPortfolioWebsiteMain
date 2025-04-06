@@ -159,12 +159,12 @@ const LandingPageMain = () => {
         >
           <img
             src={logo}
-            className="h-11 self-center p-1 hover:cursor-pointer md:h-12 lg:h-14"
+            className="h-11 w-full self-center p-1 hover:cursor-pointer md:h-12 lg:h-14"
             alt="logo"
           />
         </ScrollLink>
         <nav
-          className={`flex w-5/12 flex-col gap-2 bg-slate-100 px-4 py-3 text-sm shadow-md transition-all duration-700 dark:bg-neutral-900 sm:static sm:w-auto sm:flex-row sm:items-center sm:bg-transparent sm:py-2 sm:shadow-none dark:sm:bg-transparent lg:gap-4 lg:text-base xl:gap-6 2xl:gap-8 ${
+          className={`flex w-5/12 flex-col gap-0 bg-slate-100 px-4 py-3 text-sm shadow-md transition-all duration-700 dark:bg-neutral-900 sm:static sm:w-auto sm:flex-row sm:items-center sm:bg-transparent sm:py-2 sm:shadow-none dark:sm:bg-transparent lg:gap-4 xl:gap-6 2xl:gap-8 ${
             isMenuOpen
               ? "absolute right-0 top-12 block"
               : "absolute -top-96 right-0 sm:flex"
@@ -246,7 +246,7 @@ const LandingPageMain = () => {
             to="contact"
             smooth={true}
             duration={2000}
-            className="rounded-lg bg-theme-color px-2 py-2 text-sm text-slate-100 shadow-sm hover:cursor-pointer hover:bg-blue-400 md:shadow-md lg:px-5 lg:text-base"
+            className="rounded-lg bg-theme-color px-2 py-2.5 text-sm text-slate-100 shadow-sm hover:cursor-pointer hover:bg-blue-400 md:shadow-md lg:px-5"
           >
             Hire Me!
           </ScrollLink>
@@ -324,14 +324,14 @@ const LandingPageMain = () => {
               <Link
                 to={"https://linkedin.com/in/agyemangmichael233"}
                 target={"_blank"}
-                className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
               >
                 <Linkedin />
               </Link>
               <Link
                 to={"https://github.com/RemedyOnline"}
                 target={"_blank"}
-                className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
               >
                 <Github />
               </Link>
@@ -349,13 +349,29 @@ const LandingPageMain = () => {
                   strokeWidth="1.7"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-behance static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-behance static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M3 18v-12h4.5a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-4.5" />
                   <path d="M3 12l4.5 0" />
                   <path d="M14 13h7a3.5 3.5 0 0 0 -7 0v2a3.5 3.5 0 0 0 6.64 1" />
                   <path d="M16 6l3 0" />
+                </svg>
+              </Link>
+              <Link
+                to={"https://medium.com/@agyemangmichael555"}
+                target={"_blank"}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 50 50"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                >
+                  <path d="M15 12A13 13 0 1015 38 13 13 0 1015 12zM35.5 13c-3.59 0-6.5 5.373-6.5 12 0 1.243.102 2.441.292 3.568.253 1.503.662 2.879 1.192 4.065.265.593.56 1.138.881 1.627.642.978 1.388 1.733 2.202 2.201C34.178 36.811 34.827 37 35.5 37s1.322-.189 1.933-.539c.814-.468 1.56-1.223 2.202-2.201.321-.489.616-1.034.881-1.627.53-1.185.939-2.562 1.192-4.065C41.898 27.441 42 26.243 42 25 42 18.373 39.09 13 35.5 13zM45.5 14c-.259 0-.509.173-.743.495-.157.214-.307.494-.448.833-.071.169-.14.353-.206.551-.133.395-.257.846-.37 1.343-.226.995-.409 2.181-.536 3.497-.063.658-.112 1.349-.146 2.065C43.017 23.499 43 24.241 43 25s.017 1.501.051 2.217c.033.716.082 1.407.146 2.065.127 1.316.31 2.501.536 3.497.113.498.237.948.37 1.343.066.198.135.382.206.551.142.339.292.619.448.833C44.991 35.827 45.241 36 45.5 36c1.381 0 2.5-4.925 2.5-11S46.881 14 45.5 14z"></path>
                 </svg>
               </Link>
               <Link to={"http://wa.me/233555975976"} target={"_blank"}>
@@ -369,24 +385,24 @@ const LandingPageMain = () => {
                   strokeWidth="1.7"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
                   <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
                 </svg>
               </Link>
-              <Link
+              {/* <Link
                 to={"https://codepen.io/Michael-Agyemang-Prempeh"}
                 target={"_blank"}
                 className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
               >
                 <Codepen />
-              </Link>
+              </Link> */}
               <Link
                 to={"https://linkedin.com/in/agyemangmichael233"}
                 target={"_blank"}
-                className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
               >
                 <Instagram />
               </Link>
@@ -1073,14 +1089,14 @@ const LandingPageMain = () => {
               <Link
                 to={"https://linkedin.com/in/agyemangmichael233"}
                 target={"_blank"}
-                className="rounded-lg bg-neutral-100 p-2 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
+                className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-100 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
               >
                 <Linkedin />
               </Link>
               <Link
                 to={"https://github.com/RemedyOnline"}
                 target={"_blank"}
-                className="rounded-lg bg-neutral-100 p-2 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
+                className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-100 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
               >
                 <Github />
               </Link>
@@ -1098,13 +1114,29 @@ const LandingPageMain = () => {
                   strokeWidth="1.7"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-behance static h-10 w-10 rounded-lg bg-neutral-100 p-1 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-behance static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-100 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M3 18v-12h4.5a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-4.5" />
                   <path d="M3 12l4.5 0" />
                   <path d="M14 13h7a3.5 3.5 0 0 0 -7 0v2a3.5 3.5 0 0 0 6.64 1" />
                   <path d="M16 6l3 0" />
+                </svg>
+              </Link>
+              <Link
+                to={"https://medium.com/@agyemangmichael555"}
+                target={"_blank"}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 50 50"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                >
+                  <path d="M15 12A13 13 0 1015 38 13 13 0 1015 12zM35.5 13c-3.59 0-6.5 5.373-6.5 12 0 1.243.102 2.441.292 3.568.253 1.503.662 2.879 1.192 4.065.265.593.56 1.138.881 1.627.642.978 1.388 1.733 2.202 2.201C34.178 36.811 34.827 37 35.5 37s1.322-.189 1.933-.539c.814-.468 1.56-1.223 2.202-2.201.321-.489.616-1.034.881-1.627.53-1.185.939-2.562 1.192-4.065C41.898 27.441 42 26.243 42 25 42 18.373 39.09 13 35.5 13zM45.5 14c-.259 0-.509.173-.743.495-.157.214-.307.494-.448.833-.071.169-.14.353-.206.551-.133.395-.257.846-.37 1.343-.226.995-.409 2.181-.536 3.497-.063.658-.112 1.349-.146 2.065C43.017 23.499 43 24.241 43 25s.017 1.501.051 2.217c.033.716.082 1.407.146 2.065.127 1.316.31 2.501.536 3.497.113.498.237.948.37 1.343.066.198.135.382.206.551.142.339.292.619.448.833C44.991 35.827 45.241 36 45.5 36c1.381 0 2.5-4.925 2.5-11S46.881 14 45.5 14z"></path>
                 </svg>
               </Link>
               <Link to={"http://wa.me/233555975976"} target={"_blank"}>
@@ -1118,7 +1150,7 @@ const LandingPageMain = () => {
                   strokeWidth="1.7"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp static h-10 w-10 rounded-lg bg-neutral-100 p-1 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp static h-10 w-10 rounded-lg bg-white p-1 text-gray-500 shadow-md hover:bg-slate-100 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
@@ -1128,28 +1160,28 @@ const LandingPageMain = () => {
               <Link
                 to={"https://codepen.io/Michael-Agyemang-Prempeh"}
                 target={"_blank"}
-                className="rounded-lg bg-neutral-100 p-2 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
+                className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-100 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
               >
                 <Codepen />
               </Link>
               <Link
                 to={"https://linkedin.com/in/agyemangmichael233"}
                 target={"_blank"}
-                className="rounded-lg bg-neutral-100 p-2 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
+                className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-100 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
               >
                 <Instagram />
               </Link>
               <Link
                 to={"https://linkedin.com/in/agyemangmichael233"}
                 target={"_blank"}
-                className="rounded-lg bg-neutral-100 p-2 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
+                className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-100 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
               >
                 <Twitter />
               </Link>
               <Link
                 to={"https://linkedin.com/in/agyemangmichael233"}
                 target={"_blank"}
-                className="rounded-lg bg-neutral-100 p-2 text-gray-500 shadow-md hover:bg-slate-300 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
+                className="rounded-lg bg-white p-2 text-gray-500 shadow-md hover:bg-slate-100 dark:bg-neutral-800 dark:text-slate-200 dark:hover:bg-neutral-700"
               >
                 <Facebook />
               </Link>
